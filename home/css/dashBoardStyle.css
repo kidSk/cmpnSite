@@ -1,0 +1,113 @@
+/*md-content.md-default-theme {
+  background-color: #eee;
+}*/
+
+
+md-card h2:first-of-type {
+  margin-top: 0;
+}
+
+md-toolbar .md-button.md-default-theme {
+  border-radius: 99%;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.md-toolbar-tools-bottom {
+  font-size: small;
+}
+.md-toolbar-tools-bottom :last-child {
+  opacity: 0.8;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+
+md-sidenav {
+  fill: #737373;
+}
+md-sidenav ng-md-icon {
+  position: relative;
+  top: 5px;
+}
+
+.user-avatar {
+  border-radius: 99%;
+}
+.panel md-card md-content{
+
+  background-color: none;
+ box-shadow: none;
+}
+
+md-card img {
+   height: 180px;
+   background-color: none;
+}
+
+.btn{
+  text-transform: capitalize;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+ .btn-danger:hover{
+  color:red;
+ } 
+ .btn-primary:hover{
+  color:#4e9898;
+ } 
+ .btn-info:hover{
+  color:#1caf9a;
+ }
+
+
+ md-content{
+  color: #4e9898;
+ }
+
+ .select{
+  margin-left:30px;
+ }
+
+
+#app {
+  height: 100%;
+}
+
+sw-editor article {
+  min-height: 200px;
+}
+sw-editor article:focus {
+  outline: 0;
+}
+
+
+.all{
+   color: #4e9898;
+   
+}
+.break{
+word-wrap: break-word;
+}
+
+.valid input{
+  border-color: green;
+}
+
+[capitalize]{
+  text-transform: capitalize;
+}
+
+[bg]{
+  background-color: #ebebe0;
+}
+
+md-card{
+  word-wrap: break-word;
+}

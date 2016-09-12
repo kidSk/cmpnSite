@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="cmpnApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Camara Municipal do Porto Novo</title>
+	<link href="../admin/css/mdb.min.css" rel="stylesheet">
+
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="../admin/css/bootstrap.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet prefetch" href="../admin/bower_components/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="../admin/css/ngToast.css">
+	<link rel="stylesheet" href="../admin/css/ngToast-animations.css">
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="homeCtrl" style="background-color:#ebebe0">
+	<div ng-view bg></div>
+	<div ng-include="'views/footer.html'"></div>
+
+
+	
+	<script src="../admin/js/jquery.min.js"></script>
+
+	<script src="../admin/bower_components/angular/angular.min.js"></script>
+	<script src="../admin/bower_components/angular-material/angular-material.min.js"></script>
+	<script src="../admin/bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="../admin/bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="../admin/bower_components/angular-messages/angular-messages.min.js"></script>
+	<script src="../admin/js/ngToast.min.js"></script>
+	<script src="../admin/js/angular-sanitize.min.js"></script>
+	<!--   <script src="js/angular-messages.min.js"></script> -->
+	<script src="../admin/js/modules/adminModule.js"></script>
+	<script src="../admin/js/modules/cmpnModule.js"></script>
+	<script src="../admin/js/angular-route.min.js"></script>
+	<script src="../admin/js/angular-resource.min.js"></script>
+	<script src="../admin/js/routes/route.js"></script>
+	<script src="../admin/js/controllers/eventoController.js"></script>
+	<script src="../admin/js/controllers/adminCtrl.js"></script>
+	<script src="../admin/js/controllers/departamentoController.js"></script>
+	<script src="../admin/js/controllers/homeCtrl.js"></script>
+	<script src="../admin/js/services/eventoService.js"></script>
+	<script src="../admin/js/services/departamentoService.js"></script>
+	<script src="../admin/js/services/paginations.js"></script>
+	<script src="../admin/js/directives/paginator.js"></script>
+	<script src="../admin/js/directives/mdCmpnNavBar.js"></script>
+	<script src="../admin/js/scroller.js"></script>
+
+</body>
+</html>

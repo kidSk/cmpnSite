@@ -1,0 +1,119 @@
+ 
+
+<md-toolbar id="nav" class="nav" layout-xs ng-show="!showSearch">
+    <div class="md-toolbar-tools" layout="row" layout-md="column" layout-align="end end" layout-wrap>
+
+        <md-button class="md-icon-button menu" ng-click="openSideNav()"  show-sm show-md>
+            <md-icon>menu</md-icon>
+            <md-tooltip md-delay="0.4" md-direction="bottom" md-autohide="true">
+                menu principal
+            </md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button " aria-label="facebook">
+            <a href="https://www.facebook.com/C%C3%A2mara-Municipal-Porto-Novo-1436416846644871/?fref=ts" target="_blank">
+                <i class="fa fa-facebook-square" style="font-size:18px"></i>
+            </a>
+            <md-tooltip md-delay="0.4" md-direction="bottom" md-autohide="true">
+                pagina do facebook
+            </md-tooltip>
+        </md-button>
+        <h3 hide-sm>{{title}}</h3>
+        <span flex></span>
+
+        <md-button class="md-icon-button"   ng-click="showSearch = !showSearch">
+            <md-icon class="material-icons" aria-hidden="true">search</md-icon>
+
+            <md-tooltip md-delay="0.4" md-direction="bottom" md-autohide="true">
+               search
+           </md-tooltip>
+       </md-button>
+       <md-list-item ng-repeat="item in items" hide-sm hide-xs hide-md>
+        <div>
+            <md-button class="md-icon-button" href="{{item.link}}"  >
+                <md-icon class="material-icons" aria-hidden="true">{{item.icon}}</md-icon>
+                
+                <md-tooltip md-delay="0.4" md-direction="bottom" md-autohide="true">
+                    {{item.name}}
+                </md-tooltip>
+            </md-button>
+        </div>
+    </md-list-item>
+
+    <md-button aria-label="conta de utilizador" class="md-icon-button" ng-click="showTabDialog($event)">
+        <md-icon md-menu-origin class="material-icons">account_circle</md-icon>
+    </md-button>
+
+</div>
+
+</md-toolbar>
+
+
+<md-toolbar  ng-show="showSearch" class="md-hue-1" id="nav" class="nav">
+    <div class="md-toolbar-tools">
+        <md-button  id="procurar" class="md-icon-button"  aria-label="Back" ng-click="clean()">
+            <md-icon class="md-primary">arrow_back</md-icon>
+        </md-button>
+        <h3 flex="10">
+            Back
+        </h3>
+        <md-input-container flex>
+            <label>&nbsp;</label>
+            <input ng-model="procurar" placeholder="Procurar" name="proc">
+        </md-input-container>
+        <md-button aria-label="Search" ng-click="showSearch = !showSearch" class="md-icon-button">
+            <md-icon class="md-primary">search</md-icon>
+        </md-button>
+
+    </div>
+
+</md-toolbar>
+
+<!-- sideNav -->
+<md-sidenav  class="md-sidenav-left md-whiteframe-z5" role="navigation" md-component-id="left" style="position:fixed">
+        <!-- <md-toolbar class="md-tall md-toolbar-tools">
+        <p>Menu</p><span flex></span>
+        <md-button class="md-icon-button" ng-click="closeSideNav()" id="close">
+        <md-icon class="material-icons">arrow_back</md-icon>
+        <md-tooltip>Fechar Menu</md-tooltip>
+        </md-button>
+    </md-toolbar> -->
+
+    <md-toolbar class="md-toolbar-tools color">
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="closeSideNav()" id="close">
+            <md-icon class="material-icons">arrow_back</md-icon>
+            <md-tooltip>Fechar Menu</md-tooltip>
+        </md-button>
+    </md-toolbar> 
+
+    <header class="nav-header">
+        <h6 class="md-display-5">{{title}}</h6>
+        
+        <img src="img/10441165_1436417983311424_2399638570406314432_n.png">
+        
+
+
+    </header>
+    <md-content role="navigation">
+        <md-list ng-repeat="section in navigations.sidenav.sections">
+            <md-list-item ng-click="section.expand = !section.expand">
+                <md-icon class="material-icons {{section.color}}">{{section.icon}}</md-icon>
+                <p class="md-subheader {{section.color}}">{{section.name}}</p>
+                <span flex></span>
+                <md-icon class=" md-icon-button material-icons {{section.color}}">{{section.expand ? 'arrow_drop_up' : 'arrow_drop_down'}}</md-icon>
+            </md-list-item>
+            <div  ng-show="section.expand" ng-repeat="action in section.actions" >
+                <md-list-item ng-click="toast(action.link)" >
+
+                   <span flex="10"></span> <md-icon class="material-icons {{section.color}}">{{action.icon}}</md-icon>
+                   <md-tooltip md-delay="0.1" md-direction="bottom" md-autohide="true">
+                    {{action.nC}}
+                </md-tooltip>
+
+                <span flex="10"></span> <h3 class="md-body-2">{{action.name}}</h3>
+                <span flex></span>
+                <md-icon class="material-icons {{section.color}}">chevron_right</md-icon>
+            </md-list-item></div>
+            <md-divider></md-divider>
+        </md-content>
+    </md-sidenav>

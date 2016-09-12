@@ -1,0 +1,78 @@
+
+<div>
+	<md-cmpn-nav-bar>
+
+
+		</md-cmpn-nav-bar
+	</div>
+	<br>
+
+	<h1 align="center">{{list}}</h1>
+
+
+	<div layout="column">
+
+
+
+		<md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column"  style="background-color:#ebebe0">
+
+			<div ng-repeat="dep in dep | filter:procurar" flex-gt-md="25">
+				<div flex-gt-md="25" flex-sm="100" flex-xs="100" flex-lg="100" flex-gt-sm="100" layout="column">
+
+					<md-card class="md-whiteframe-z3">
+
+						<md-card-content>
+							<div layout-padding layout-align="center center" layout-fill>
+								<h5 align="center" >{{dep.name | uppercase}}</h5>
+								<!-- <h6>{{dep.cargo}}</h6> -->
+
+								<img class="md-card-image" src="img/cmpn.jpg" alt="image caption" style="width:100%;">
+
+								<p ><span>Responsavel : </span><a href="#">{{dep.responsavel}}</a></p>
+								<div class="md-actions" layout="column" layout-align="end end">
+									<div class="fabSpeedDial" style="z-index:1">
+										<md-fab-speed-dial  md-direction="left"
+										class="md-scale"  md-trigger="click" ng-cloak>
+										<md-fab-trigger>
+											<md-button aria-label="menu" class="md-fab md-primary" >
+												<md-icon>business</md-icon>
+											</md-button>
+										</md-fab-trigger>
+										<md-fab-actions >
+											<md-button aria-label="ver departamento" href="{{dep.link}}" class="md-fab md-raised md-mini md-accent">
+												<md-icon>people</md-icon>
+												<md-tooltip  md-delay="100" md-direction="bottom" md-autohide="true">
+													{{dep.btnName}}
+												</md-tooltip>
+											</md-button>
+											<md-button aria-label="ver departamento" href="{{dep.link}}" class="md-fab md-raised md-mini md-warn" >
+												<md-icon>public</md-icon>
+												<md-tooltip  md-delay="100" md-direction="bottom" md-autohide="true">
+													Ver Noticias
+												</md-tooltip>
+											</md-button>
+											<md-button aria-label="ver departamento" href="{{dep.link}}" class="md-fab md-raised md-mini md-primary" >
+												<md-icon>poll</md-icon>
+												<md-tooltip  md-delay="100" md-direction="bottom" md-autohide="true">
+													{{dep.btnName}}
+												</md-tooltip>
+											</md-button>
+										</md-fab-actions>
+									</md-fab-speed-dial>
+								</div>
+							</div>
+						</div>
+
+					</md-card-content>
+
+				</md-card>
+
+
+			</div>
+
+		</div>
+
+	</md-content>
+
+</div>
+
