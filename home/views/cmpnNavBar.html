@@ -1,7 +1,7 @@
  
 
 <md-toolbar id="nav" class="nav" layout-xs ng-show="!showSearch">
-    <div class="md-toolbar-tools" layout="row" layout-md="column" layout-align="end end" layout-wrap>
+    <div class="md-toolbar-tools" layout="row" layout-md="column" layout-align="start end" layout-wrap>
 
         <md-button class="md-icon-button menu" ng-click="openSideNav()"  show-sm show-md>
             <md-icon>menu</md-icon>
@@ -17,10 +17,10 @@
                 pagina do facebook
             </md-tooltip>
         </md-button>
-        <h3 hide-sm>{{title}}</h3>
+        <h4 hide-sm>{{title}}</h4>
         <span flex></span>
 
-        <md-button class="md-icon-button"   ng-click="showSearch = !showSearch">
+        <md-button class="md-icon-button"   ng-click="showSearch = !showSearch" aria-label="search">
             <md-icon class="material-icons" aria-hidden="true">search</md-icon>
 
             <md-tooltip md-delay="0.4" md-direction="bottom" md-autohide="true">
@@ -29,8 +29,8 @@
        </md-button>
        <md-list-item ng-repeat="item in items" hide-sm hide-xs hide-md>
         <div>
-            <md-button class="md-icon-button" href="{{item.link}}"  >
-                <md-icon class="material-icons" aria-hidden="true">{{item.icon}}</md-icon>
+            <md-button class="md-icon-button" href="{{item.link}}"  aria-label="{{item.name}}">
+                <md-icon class="material-icons" aria-hidden="true" >{{item.icon}}</md-icon>
                 
                 <md-tooltip md-delay="0.4" md-direction="bottom" md-autohide="true">
                     {{item.name}}
@@ -78,7 +78,7 @@
         </md-button>
     </md-toolbar> -->
 
-    <md-toolbar class="md-toolbar-tools color">
+    <md-toolbar style="background-color:rgb(255, 214, 31)">
         <span flex></span>
         <md-button class="md-icon-button" ng-click="closeSideNav()" id="close">
             <md-icon class="material-icons">arrow_back</md-icon>
@@ -98,7 +98,7 @@
         <md-list ng-repeat="section in navigations.sidenav.sections">
             <md-list-item ng-click="section.expand = !section.expand">
                 <md-icon class="material-icons {{section.color}}">{{section.icon}}</md-icon>
-                <p class="md-subheader {{section.color}}">{{section.name}}</p>
+                <p class="md-body-2 {{section.color}}">{{section.name}}</p>
                 <span flex></span>
                 <md-icon class=" md-icon-button material-icons {{section.color}}">{{section.expand ? 'arrow_drop_up' : 'arrow_drop_down'}}</md-icon>
             </md-list-item>
