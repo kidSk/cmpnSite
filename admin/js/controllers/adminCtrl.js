@@ -7,7 +7,7 @@ angular.module('adminApp').controller('adminCtrl',
          * view
          */
 
-
+         $scope.title="Camara Municiapl do Porto Novo"
          
 
 

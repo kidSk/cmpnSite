@@ -1,7 +1,7 @@
 <html lang="pt" >
 <head>
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" type="text/css" id="theme" href="css/theme-black.css">
+ <link rel="stylesheet" type="text/css" id="theme" href="css/theme-white.css">
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css"> -->
  <!-- Angular Material style sheet -->
@@ -13,13 +13,13 @@
 </head>
 <body ng-app="adminApp" ng-controller="adminCtrl" ng-cloak >
  <toast></toast>
- <div class="page-container page-navigation-top-fixed">
+ <div class="page-container page-navigation-top-fixed md-whiteframe-z3">
    <!-- START PAGE SIDEBAR -->
-   <div class="page-sidebar mCustomScrollbar _mCS_1 mCS-autoHide page-sidebar-fixed scroll">
+   <div class="page-sidebar mCustomScrollbar _mCS_1 mCS-autoHide page-sidebar-fixed scroll md-whiteframe-z3">
      <!-- START X-NAVIGATION -->
      <ul class="x-navigation">
        <li class="xn-logo">
-         <a href="index.html">Cmpn Admin</a>
+         <a href="index.html">Camara Municipal do Porto Novo</a>
          <a href="#" class="x-navigation-control"></a>
        </li>
        <li class="xn-profile">
@@ -271,15 +271,15 @@
 <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
  <div class="mb-container">
    <div class="mb-middle">
-     <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+     <div class="mb-title"><span class="fa fa-sign-out"></span>Terminar<strong> Sessão</strong> ?</div>
      <div class="mb-content">
-       <p>Are you sure you want to log out?</p> 
-       <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+       <p>Vocé tem a certeza que pretende Terminar a Sessão atual?</p> 
+       <p>Precione não para continuar a trabalhar. Precione Sim para terminar a sessão atual.</p>
      </div>
      <div class="mb-footer">
        <div class="pull-right">
-         <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
-         <button class="btn btn-default btn-lg mb-control-close">No</button>
+         <a href="pages-login.html" class="md-button  md-raised md-warn ">Sim</a>
+         <md-button class="md-raised md-primary btn-lg mb-control-close">Não</md-button>
        </div>
      </div>
    </div>

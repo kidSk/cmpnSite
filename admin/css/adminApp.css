@@ -102,16 +102,17 @@ md-select{
   border-radius: 3px;
 }
 .btn-primary {
-  background-color: #57a9a8;
-  border-color: #57a9a8;
+  background-color: rgb(3,169,244);
+  border-color: rgb(3,169,244);
 }
 .btn-primary[disabled],
 .btn-primary.disabled {
-  background: #79bab9;
-  border-color: #72b7b6;
+  background: none;
+  border-color: rgb(3,169,244);
+  color: gray;
 }
 .x-navigation.x-navigation-minimized.x-navigation.x-navigation-minimized span{
-  font-size: 18px;
+  font-size: 16px;
 }
 .hd a{
   font-size: 16px;
@@ -122,6 +123,7 @@ md-select{
 .md-button{
   margin:0;
   min-width: none;
+  text-transform: capitalize;
 }
 a:hover{
   cursor: pointer;
@@ -137,3 +139,26 @@ a:hover{
 .info(){
   color: red;
 }
+
+.x-navigation > li.xn-logo > a:first-child{
+  background-color: black;
+}
+
+.x-navigation li.active > a{
+  background-color: rgb(3,169,244);
+}
+
+[noBox]{
+  box-shadow:none;
+  -webkit-box-shadow:none;
+}
+[noBg]{
+  background: none;
+}
+
+.x-navigation.x-navigation-horizontal {
+  height: 49px;
+  background:  black;
+
+}
+

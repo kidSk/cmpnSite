@@ -28,7 +28,7 @@
          <md-card style="box-shadow:none" >
           <md-card-title layout-padding layout-margin>
           </md-card-title>
-          <md-content layout-padding>
+          <md-content layout-padding noBg>
             <div class="widget widget-default widget-item-icon">
               <div class="widget-item-left">
                 <a href="{{card.btnList}}"><span class="{{card.icon}}"></span></a>
@@ -40,8 +40,8 @@
                 <div layout-align="center center" >
 
 
-                  <md-button class="md-button md-primary" href="{{card.btnAdd}}"><md-icon>add</md-icon>Add</md-button>
-                  <md-button class="md-button md-accent" href="{{card.btnList}}"><md-icon>list</md-icon>Listar</md-button>
+                  <md-button class="md-button md-primary " href="{{card.btnAdd}}"><md-icon>add</md-icon>Adicionar</md-button>
+                  <md-button class="md-button md-warn" href="{{card.btnList}}"><md-icon>list</md-icon>Listar</md-button>
 
                 </div>
               </div>      

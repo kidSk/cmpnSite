@@ -25,9 +25,11 @@ angular.module('adminApp', ['ngMaterial','ngRoute','ngResource','ngAnimate','ngT
  		'default': '500',
  		'hue-1': '50'
  	})
- 	.accentPalette('pink');
+ 	.accentPalette('blue')
+ 	.warnPalette('red');
  	$mdThemingProvider.theme('input', 'default')
  	.primaryPalette('grey')
+
  })
  /**
  * [description]

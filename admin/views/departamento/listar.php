@@ -32,7 +32,7 @@
 <ng-toast></ng-toast>
 
 <div class="row">
- <div class="panel panel-colorful" bg>
+ <div class="panel panel-colorful" bg noBox>
   <div class="panel-heading">
     <h1 class="panel-title" align="center"><strong>{{list}}</strong></h1>
     <ul class="panel-controls">
@@ -41,7 +41,7 @@
   </div>
   <div class="col-md-4 " ng-repeat="dep in dep |reverse | paginate:rowsPerPage | filter:procurar">
 
-    <div class="panel  md-whiteframe-z4" >                            
+    <div class="panel  md-whiteframe-z1" >                            
       <div class="panel-body panel-body-image">
         <img src="img/cmpn.jpg" alt="Ocean" style="border:15px white solid">
      <!--    <a href="#" class="panel-body-inform">
@@ -66,9 +66,10 @@
 </div>
 
 </div>
+
+
+</div
 <div class="panel-footer">
   <paginator class="pagination pagination-sm pull-right"></paginator>
 </div>
-
-</div
 </div>

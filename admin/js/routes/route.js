@@ -38,9 +38,9 @@ angular.module('adminApp')
 		controller: 'criarMensagemCtrl'
 	})
 
-/*	.otherwise({
-		redirectTo: 'views/wid'
-	});*/
+	.otherwise({
+		redirectTo: '/'
+	});
 });
 
 /**

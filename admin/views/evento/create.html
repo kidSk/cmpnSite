@@ -97,17 +97,17 @@
             </div>
           </div>
           <div class="panel-footer">
-            <button class="btn btn-sucess" type="reset"><i class="fa fa-eraser"></i>Reset</button>                                    
-            <button class="btn md-raised btn-primary md-primary " ng-disabled="eventoForm.$invalid" ng-click="guardarEvento()"><i class="fa fa-save"></i>Guardar</button>
+            <md-button class="btn md-warn md-raised" type="reset"><i class="fa fa-eraser"></i>Reset</md-button>                                    
+            <md-button class="btn md-raised md-primary " ng-disabled="eventoForm.$invalid" ng-click="guardarEvento()"><i class="fa fa-save"></i>Guardar</md-button>
           </div>
         </div>
       </form>
 
     </div>
     <div class="col-md-4">
-     <div class="panel panel-colorful">
+     <div class="panel panel-colorful" ng-if="eventoForm.titulo.$valid">
 
-      <md-card  class="md-whiteframe-z4 break" ng-if="eventoForm.titulo.$valid" style="box-shadow:none; background-color:transparent">
+      <md-card  class="md-whiteframe-z4 break"  style="box-shadow:none; background-color:transparent">
        <md-card-actions layout layout-align="center center" layout-padding style="z-index:1" >
         <md-list layout-padding>
           <md-list-item class="md-6-line">

@@ -48,8 +48,8 @@
                     </div>
                     <div class="panel-footer">
 
-                      <button class="btn btn-sucess" type="reset"><i class="fa fa-eraser"></i>Reset</button>                                    
-                      <button class="btn md-raised btn-primary md-primary " ng-disabled="depForm.$invalid" ng-click="guardar(dep.name)"><i class="fa fa-save"></i>{{button}}</button>
+                      <md-button class="btn md-raised md-warn" type="reset"><i class="fa fa-eraser"></i>Limpar</md-button>                                    
+                      <md-button class="btn md-raised md-primary " ng-disabled="depForm.$invalid" ng-click="guardar(dep.name)"><i class="fa fa-save"></i>{{button}}</md-button>
                   </div>
               </div>
           </form>
