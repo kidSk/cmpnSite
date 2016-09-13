@@ -5,7 +5,7 @@
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css"> -->
  <!-- Angular Material style sheet -->
- <!--  <link rel="stylesheet prefetch" href="bower_components/angular-material/angular-material.min.css"> -->
+ <link rel="stylesheet prefetch" href="bower_components/angular-material/angular-material.min.css"> 
  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
  <link rel="stylesheet" href="css/ngToast.css">
  <link rel="stylesheet" href="css/ngToast-animations.css">
@@ -175,6 +175,7 @@
      <ul class="breadcrumb">
        <li><a href="admin">Home</a></li> 
        <li class="active">Dashboard</li>
+       
      </ul>
      <!-- END BREADCRUMB -->
      <!-- PAGE CONTENT WRAPPER -->
@@ -299,20 +300,20 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script> -->
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
-<script src="bower_components/angular-messages/angular-messages.min.js"></script> -->
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
 <!-- Angular Material requires Angular.js Libraries -->
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
 
-<!-- Angular Material Library -->
-<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+Angular Material Library
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script> -->
 <script src="js/ngToast.min.js"></script>
 <script src="js/angular-sanitize.min.js"></script>
 <!-- <script src="js/angular-messages.min.js"></script> -->

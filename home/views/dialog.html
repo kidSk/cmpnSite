@@ -1,34 +1,37 @@
 <md-dialog aria-label="login" style="width:400px">
-  <form >
 
-    <md-dialog-content style="max-width:800px;max-height:810px; ">
-      <md-tabs md-dynamic-height md-border-bottom>
-        <md-tab label="Login">
-          <md-content class="md-padding" layout-padding>
 
-            <form >
-              <div>
-                <md-input-container class="md-block" layout-padding >
+  <md-dialog-content style="max-width:800px;max-height:810px; ">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Login">
+        <md-content class="md-padding">
 
-                  <md-icon>email</md-icon>
-                  <input type="email" ng-required="true" placeholder="Email">
-                </md-input-container>
-                <md-input-container>
-                  <md-icon>vpn_key</md-icon>
-                  <input type="password" placeholder="senha">
-                </md-input-container>
-                <md-card-actions layout layout-align="start center">
-                  <md-button type=submit class="md-raised md-primary" name="acao">Login</md-button>
-                  <md-button  href="criarConta.php" type="button" class="md-raised " name="acao">Criar Conta</md-button>
+          <form name="loginForm">
+            <div>
 
-                </md-card-actions>
-              </div>
-            </form>
-          </md-content>
+              <md-input-container class="md-icon-float">
 
-        </md-dialog-content>
-      </form>
-    </md-dialog>
+                <md-icon>email</md-icon>
+                <input type="email" required placeholder="Introduzir Email">
+              </md-input-container>
+              <md-input-container class="md-icon-float">
+                <md-icon>vpn_key</md-icon>
+                <input type="password" placeholder="Introduzir Senha" required>
+              </md-input-container>
+              
+              <md-card-actions layout layout-align="start center">
+                <md-button class="md-raised md-primary" name="acao" ng-disabled="loginForm.$invalid">Login</md-button>
+                <md-button  href="criarConta.php" type="button" class="md-raised " name="acao">Criar Conta</md-button>
+
+              </md-card-actions>
+            </div>
+          </form>
+
+        </md-content>
+
+      </md-dialog-content>
+    </form>
+  </md-dialog>
 <!-- <md-dialog aria-label="login" style="width:50%">
 <form>
   <md-toolbar>

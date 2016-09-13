@@ -41,7 +41,7 @@
 }
 .iconsMainMenu{
 
-   display: inline-block;
+ display: inline-block;
 }
 .mainMenu md-icon{
     color: white;
@@ -58,11 +58,11 @@
 }
 .socialIcons{
 
-   display: inline-block;
-   left: 2px;
+ display: inline-block;
+ left: 2px;
 }
 .social md-icon{
-   color: white;
+ color: white;
 }
 .social.hide{
     transform: scale(0, 0);
@@ -211,25 +211,25 @@ th {
     }
 
     #mainPic {
-       /* background: url("http://img.ev.mu/images/paysVol/222/1605x642/222.jpg") center center no-repeat;*/
-       height: 348px;
-   }
+     /* background: url("http://img.ev.mu/images/paysVol/222/1605x642/222.jpg") center center no-repeat;*/
+     height: 348px;
+ }
 
-   #fixSmallNav {
-      box-shadow: 1px 2px 9px black;
-      position: fixed;
-      top: 0;
-      transition: top 1s linear;
-  }
-  .fixSmallNav {
-      box-shadow: 1px 2px 9px black;
-      position: fixed;
-      top: 5;
-      transition: top 1s linear;
-  }
+ #fixSmallNav {
+  box-shadow: 1px 2px 9px black;
+  position: fixed;
+  top: 0;
+  transition: top 1s linear;
+}
+.fixSmallNav {
+  box-shadow: 1px 2px 9px black;
+  position: fixed;
+  top: 5;
+  transition: top 1s linear;
+}
 
-  .card .card-media {
-      background-color: red; }
+.card .card-media {
+  background-color: red; }
 
 
 
@@ -324,4 +324,9 @@ th {
 footer.page-footer{
     margin-top:0px;
 }
+
+[fc]{
+    margin-top: 23px;
+}
+
 
