@@ -21,3 +21,8 @@ Route::get('admin', function () {
 Route::resource('departamento','departamentoController');
 Route::resource('cargo','cargoController');
 Route::resource('mensagemPresidente','mensagemPresidenteController');
+
+Route::group(['middleware'=>'cors'],function(){
+
+	Route::post('/login','loginController@userAuth');
+});

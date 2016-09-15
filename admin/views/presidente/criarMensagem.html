@@ -2,79 +2,79 @@
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap">
 
-    <div class="row">
-        <div class="" id="msg1">
-            <form class="form-horizontal" name="msgForm"  ng-submit="guardar()">
-                <div class="panel panel-colorful">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><strong>{{title}}</strong></h3>
-                        <ul class="panel-controls">
-                            <li><a href="#/" class="panel-remove"><span class="fa fa-times"></span></a></li>
-                        </ul>
-                    </div>
+  <div class="row">
+    <div class="" id="msg1">
+      <form class="form-horizontal" name="msgForm"  ng-submit="guardar()">
+        <div class="panel panel-colorful">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>{{title}}</strong></h3>
+            <ul class="panel-controls">
+              <li><a href="#/" class="panel-remove"><span class="fa fa-times"></span></a></li>
+            </ul>
+          </div>
 
-                    <div class="panel-body form-group-separated">
+          <div class="panel-body form-group-separated">
 
-                        <div class="form-group">                                        
-                            <label class="col-md-3 col-xs-12 control-label">Imagem</label>
-                            <div class="col-md-6 col-xs-12">
+            <div class="form-group">                                        
+              <label class="col-md-3 col-xs-12 control-label">Imagem</label>
+              <div class="col-md-6 col-xs-12">
 
-                                <md-input-container class="md-icon-float md-block">
+                <md-input-container class="md-icon-float md-block">
 
-                                    <md-icon>collections</md-icon>
-                                    <input type="file" ng-file-select="onFileSelect($files)" aria-label="imagem" uploader-model="msg.img" name="img">
-                                </md-input-container>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-3 col-xs-12 control-label">Mensagem</label>
-                            <div class="col-md-6 col-xs-12">
-
-                                <md-input-container class="md-icon-float md-block">
-
-                                    <label>Criar Mensagem</label>
-                                    <md-icon >border_color</md-icon>
-                                    <input type="textarea" ng-model="msg.mensagem" required="" name="msg" aria-label="msg">
-
-                                </md-input-container>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="panel-footer">
-
-                      <button class="btn btn-sucess" type="reset"><i class="fa fa-eraser"></i>Reset</button>                                    
-                      <button class="btn md-raised btn-primary md-primary " ng-disabled="msgForm.$invalid" type="submit"><i class="fa fa-save"></i>{{button}}</button>
-                  </div>
+                  <md-icon>collections</md-icon>
+                  <input type="file" ng-file-select="onFileSelect($files)" aria-label="imagem" uploader-model="msg.img" name="img">
+                </md-input-container>
               </div>
-          </form>
+            </div>
 
-      </div>
-      <div class="col-md-4" ng-if="imageSrc">
-         <i ng-if="!imageSrc" class="info">Escolher Imagem para Gerar Pre-visualização</i>
+            <div class="form-group">
+              <label class="col-md-3 col-xs-12 control-label">Mensagem</label>
+              <div class="col-md-6 col-xs-12">
 
-         <div class="col-md-12 ">
+                <md-input-container class="md-icon-float md-block">
 
-            <div class="panel  md-whiteframe-z4" >
+                  <label>Criar Mensagem</label>
+                  <md-icon >border_color</md-icon>
+                  <input type="textarea" ng-model="msg.mensagem" required="" name="msg" aria-label="msg">
 
-               <div class="panel-body panel-body-image">
+                </md-input-container>
 
-                  <img ng-if="imageSrc" ng-src="{{imageSrc}}" style="border:15px white solid">
-                  <!--      <progress value="{{progress}}" ></progress> -->
+              </div>
+            </div>
+
+          </div>
+          <div class="panel-footer">
+
+            <md-button class="btn md-raised md-warn" type="reset"><i class="fa fa-eraser"></i>Reset</md-button>                                    
+            <md-button class="btn md-raised md-primary " ng-disabled="msgForm.$invalid" type="submit"><i class="fa fa-save"></i>{{button}}</md-button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-md-4" ng-if="imageSrc">
+     <i ng-if="!imageSrc" class="info">Escolher Imagem para Gerar Pre-visualização</i>
+
+     <div class="col-md-12 ">
+
+      <div class="panel  md-whiteframe-z4" >
+
+       <div class="panel-body panel-body-image">
+
+        <img ng-if="imageSrc" ng-src="{{imageSrc}}" style="border:15px white solid">
+        <!--      <progress value="{{progress}}" ></progress> -->
      <!--    <a href="#" class="panel-body-inform">
        <span class="fa fa-info"></span>
-   </a> -->
-</div>
-<div class="panel-body">
+     </a> -->
+   </div>
+   <div class="panel-body">
     <h3><md-icon>portrait<md-tooltip>Mensagem do Presidente</md-tooltip></md-icon>Mensagem do Presidente</h3>
 
-</div>
-<div class="panel-footer break " align="center">
+  </div>
+  <div class="panel-footer break " align="center">
     {{msg.mensagem}}
 
-</div>
+  </div>
 </div>
 
 </div>
