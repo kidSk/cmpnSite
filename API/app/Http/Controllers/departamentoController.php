@@ -11,7 +11,7 @@ use cmpn\dep;
 class departamentoController extends Controller
 {
     public function __construct(){
-        $this->middleware('cors');
+      
         $this->beforeFilter('@find',['only'=>['show','update','destroy']]);
 
     }

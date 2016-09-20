@@ -306,6 +306,10 @@
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/satellizer/dist/satellizer.min.js"></script>
+<script src="bower_components/ngstorage/ngStorage.min.js"></script> 
+
+
 <!-- Angular Material requires Angular.js Libraries -->
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -331,7 +335,9 @@ Angular Material Library
 <script src="js/services/eventoService.js"></script>
 <script src="js/services/departamentoService.js"></script>
 <script src="js/services/presidenteService.js"></script>
+<script src="js/services/multipartForm.js"></script>
 <script src="js/services/cargoService.js"></script>
+<script src="js/services/authService.js"></script>
 <script src="js/services/paginations.js"></script>
 <script src="js/directives/paginator.js"></script>
 <script src="js/directives/imgPreview.js"></script>

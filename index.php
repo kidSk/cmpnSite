@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="adminApp">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -218,24 +218,25 @@
 
 </style>
 <body>
-	
-	<div class="container">
+
+	<div class="container" ng-controller="loginCtrl as login">
 		<div class="card"></div>
+		
 		<div class="card">
-			<h1 class="title">Login</h1>
+			<h1 class="title">{{login.title}}</h1>
 			<form>
 				<div class="input-container">
-					<input type="text" id="Username" required="required"/>
+					<input type="email" ng-model="login.loginForm.email"/>
 					<label for="Username">Email</label>
 					<div class="bar"></div>
 				</div>
 				<div class="input-container">
-					<input type="password" id="Password" required="required"/>
+					<input type="text" ng-model="login.loginForm.password"/>
 					<label for="Password">Password</label>
 					<div class="bar"></div>
 				</div>
 				<div class="button-container">
-					<button><span>Login</span></button>
+					<button ng-click="login.login(loginForm)"><span>Login</span></button>
 				</div>
 				<div class="footer"><a href="#">Esqueceu a sua Palavra Passe?</a></div>
 			</form>
@@ -247,5 +248,34 @@
 	<script src="admin/bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="admin/bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="admin/bower_components/angular-messages/angular-messages.min.js"></script>
+	<script src="admin/bower_components/satellizer/dist/satellizer.min.js"></script>
+	<script src="admin/bower_components/ngstorage/ngStorage.min.js"></script> 
+	<script src="admin/js/ngToast.min.js"></script>
+	<script src="admin/js/angular-sanitize.min.js"></script>
+	<!-- <script src="js/angular-messages.min.js"></script> -->
+	<script src="admin/js/modules/adminModule.js"></script>
+	<script src="admin/js/modules/cmpnModule.js"></script>
+	<script src="admin/js/modules/uploadPreviewModule.js"></script>
+	<script src="admin/js/angular-route.min.js"></script>
+	<script src="admin/js/angular-resource.min.js"></script>
+	<script src="admin/js/routes/route.js"></script>
+	<script src="admin/js/controllers/eventoController.js"></script>
+	<script src="admin/js/controllers/adminCtrl.js"></script>
+	<script src="admin/js/controllers/departamentoController.js"></script>
+	<script src="admin/js/controllers/cargoController.js"></script>
+	<script src="admin/js/controllers/presidenteController.js"></script>
+	<script src="admin/js/controllers/loginController.js"></script>
+	<script src="admin/js/services/eventoService.js"></script>
+	<script src="admin/js/services/departamentoService.js"></script>
+	<script src="admin/js/services/presidenteService.js"></script>
+	<script src="admin/js/services/multipartForm.js"></script>
+	<script src="admin/js/services/cargoService.js"></script>
+	<script src="admin/js/services/paginations.js"></script>
+	<script src="admin/js/services/authService.js"></script>
+	<script src="admin/js/directives/paginator.js"></script>
+	<script src="admin/js/directives/imgPreview.js"></script>
+	<script src="admin/js/directives/uploader.js"></script>
+
+
 </body>
 </html>

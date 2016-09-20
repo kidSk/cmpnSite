@@ -9,7 +9,7 @@ angular.module('adminApp')
  * controller responsavel para criar mensagem do presidente
  */
 
- .controller('criarMensagemCtrl',function ($scope, fileReader) {
+ .controller('criarMensagemCtrl',function ($scope, fileReader,kidMultipartForm) {
  	$scope.title="Mensagem do Presidente";
 
  	$scope.button = "Guardar Mensagem";
@@ -21,7 +21,8 @@ angular.module('adminApp')
  */
 
  $scope.guardar = function(){
-
+ 	var uploadUrl='file.php';
+ 	kidMultipartForm.post(uploadUrl,$scope.msg);
  	console.log($scope.msg);
  }
 

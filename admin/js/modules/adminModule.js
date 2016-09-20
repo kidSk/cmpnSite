@@ -4,7 +4,20 @@
 * Modulo de suporte ao administrador,onde serao injetadas todas as dependencias necessarias para o funcionamento da dashboard administrador
 * 
 */
-angular.module('adminApp', ['ngMaterial','ngRoute','ngResource','ngAnimate','ngToast','upLoadPreview']);
+angular.module('adminApp', [
+	'kidAuthService',
+	'ngMaterial',
+	'ngRoute',
+	'ngResource',
+	'ngAnimate',
+	'ngToast',
+	'upLoadPreview',
+	'satellizer',
+	'ngSanitize',
+	'ngStorage'
+
+	
+	]);
 /**
  * localização do modulo e criacao de serviços
  */

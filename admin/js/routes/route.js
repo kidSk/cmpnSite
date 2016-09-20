@@ -1,5 +1,6 @@
 angular.module('adminApp')
-.config(function($routeProvider){
+.config(function($routeProvider,$authProvider){
+	$authProvider.loginUrl='http://localhost:8000/login';
 	$routeProvider
 	.when('/evento',{
 		templateUrl: 'views/evento/index.php',

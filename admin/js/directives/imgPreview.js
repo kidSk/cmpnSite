@@ -3,7 +3,7 @@
 *
 * Description
 */
-angular.module('adminApp').directive('ngFileSelect',function () {
+angular.module('adminApp').directive('kidFileSelect',function () {
 	return {
 		link: function ($scope,el) {
 			el.bind("change",function(e){

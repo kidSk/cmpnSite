@@ -3,13 +3,20 @@
 *
 * Description
 */
-angular.module('adminApp').directive('uploaderModel',function ($parse) {
+angular.module('adminApp').directive('kidUploader',function ($parse) {
 	return {
 		restrict: 'A',
-		link: function (scope, iElement, iAttrs) {
-			iElement.on("change",function(e){
-				$parse(iAttrs.uploaderModel).assign(scope, iElement[0].files[0]);
+		link: function (scope, element, attrs) {
+			var model = $parse(attrs.kidUploader);
+			var modelSetter = model.assign;
+			element.bind('change', function(){
+				scope.$apply(function(){
+					modelSetter(scope, element[0].files[0]);
+
+				});
+
 			});
+
 		}
 	};
 })

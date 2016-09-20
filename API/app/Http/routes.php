@@ -10,19 +10,21 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+/*
 Route::get('/', function () {
-	return view('welcome');
-});
-Route::get('admin', function () {
 	return view('index');
 });
+Route::get('login', function () {
+	return view('login');
+});
+*/
 
-Route::resource('departamento','departamentoController');
-Route::resource('cargo','cargoController');
-Route::resource('mensagemPresidente','mensagemPresidenteController');
 
 Route::group(['middleware'=>'cors'],function(){
-
-	Route::post('/login','loginController@userAuth');
+	Route::post('login','loginController@userAuth');
+	Route::resource('departamento','departamentoController');
+	Route::resource('cargo','cargoController');
+	Route::resource('mensagemPresidente','mensagemPresidenteController');
+	Route::get('users','loginController@index');
+	Route::get('users/{id}','loginController@show');
 });

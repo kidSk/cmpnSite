@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'user' => 'App\User',
+    'user' => 'cmpn\User',
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +168,6 @@ return [
 
         'storage' => 'Tymon\JWTAuth\Providers\Storage\IlluminateCacheAdapter',
 
-    ],
+        ],
 
-];
+        ];
