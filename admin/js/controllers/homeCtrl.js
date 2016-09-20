@@ -24,14 +24,15 @@ angular.module('cmpnApp').controller('homeCtrl',function ($scope,$mdDialog) {
 
 	$scope.showTabDialog = function(ev) {
 		$mdDialog.show({
-      //controller: cmpnCtrl,
-      templateUrl: 'views/dialog.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-      escapeToClose: true,
-      clickOutsideToClose: true,
-      focusOnOpen: true
-  });
+			/*controller: loginCtrl,
+			controllerAs: login,*/
+			templateUrl: 'views/dialog.html',
+			parent: angular.element(document.body),
+			targetEvent: ev,
+			escapeToClose: true,
+			clickOutsideToClose: true,
+			focusOnOpen: true
+		});
 
 	};
 });

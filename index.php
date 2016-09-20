@@ -8,6 +8,9 @@
 	<link rel="stylesheet prefetch" href="admin/bower_components/angular-material/angular-material.min.css"> 
 </head>
 <style>
+	html{
+		background: #e9e9e9;
+	}
 	body {
 		background: #e9e9e9;
 		color: #666666;

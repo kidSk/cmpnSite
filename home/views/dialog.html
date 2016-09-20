@@ -1,4 +1,4 @@
-<md-dialog aria-label="login" style="width:400px">
+<md-dialog aria-label="login" style="width:400px" ng-controller="loginCtrl as login">
 
 
   <md-dialog-content style="max-width:800px;max-height:810px; ">
@@ -12,15 +12,15 @@
               <md-input-container class="md-icon-float">
 
                 <md-icon>email</md-icon>
-                <input type="email" required placeholder="Introduzir Email">
+                <input type="email" required placeholder="Introduzir Email" ng-model="login.loginForm.email">
               </md-input-container>
               <md-input-container class="md-icon-float">
                 <md-icon>vpn_key</md-icon>
-                <input type="password" placeholder="Introduzir Senha" required>
+                <input type="password" placeholder="Introduzir Senha" required ng-model="login.loginForm.password">
               </md-input-container>
               
               <md-card-actions layout layout-align="start center">
-                <md-button class="md-raised md-primary" name="acao" ng-disabled="loginForm.$invalid">Login</md-button>
+                <md-button class="md-raised md-primary" name="acao" ng-disabled="loginForm.$invalid" ng-click="login.login()">Login</md-button>
                 <md-button  href="criarConta.php" type="button" class="md-raised " name="acao">Criar Conta</md-button>
 
               </md-card-actions>

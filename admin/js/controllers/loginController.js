@@ -6,7 +6,7 @@
 
 angular.module('adminApp').controller('loginCtrl',function ($scope,kidAuthUser) {
 	var vm=this;
-	vm.title="login"
+	vm.title="admin login"
 	vm.loginForm = {
 		email: 'kid@kid.com',
 		password:'123456789'
