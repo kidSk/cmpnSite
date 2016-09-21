@@ -59,8 +59,21 @@ angular.module('cmpnApp')
 	.when('/departamentos',{
 		templateUrl: 'views/departamentos/list.html',
 		controller : 'listDepCtrl'
-	});
+	})
 
+	.when('/login',{
+		templateUrl: 'views/login.html',
+		controller : 'loginCtrl',
+		controllerAs:'login'
+	})
+	.when('/criarConta',{
+		templateUrl: 'views/criarConta.html',
+		controller : 'criarContaCtrl',
+		controllerAs:'conta'
+		
+	})
 	;
+
+	
 
 });

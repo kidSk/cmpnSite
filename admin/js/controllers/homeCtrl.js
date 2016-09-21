@@ -21,11 +21,11 @@ angular.module('cmpnApp').controller('homeCtrl',function ($scope,$mdDialog) {
 	];
 
 	$scope.links="Links Uteis";
-
+/*
 	$scope.showTabDialog = function(ev) {
 		$mdDialog.show({
-			/*controller: loginCtrl,
-			controllerAs: login,*/
+			controller: loginCtrl,
+			controllerAs: login,
 			templateUrl: 'views/dialog.html',
 			parent: angular.element(document.body),
 			targetEvent: ev,
@@ -34,5 +34,5 @@ angular.module('cmpnApp').controller('homeCtrl',function ($scope,$mdDialog) {
 			focusOnOpen: true
 		});
 
-	};
+	};*/
 });
