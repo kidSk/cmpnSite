@@ -1,0 +1,119 @@
+  
+<style>
+
+
+
+  .login-card {
+    padding: 40px;
+    width: 350px;
+    background-color: #F7F7F7;
+    margin: 0 auto 10px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .login-card h1 {
+    font-weight: 100;
+    text-align: center;
+    font-size: 2.3em;
+  }
+
+
+  .login-card a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    opacity: 0.6;
+    transition: opacity ease 0.5s;
+  }
+
+  .login-card a:hover {
+    opacity: 1;
+  }
+
+  .login-help {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .account md-icon{
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    align-content: center;
+    margin-left: 35%;
+    font-size: 90px;
+    margin-top: -70px;
+    top: 20px;
+  }
+  md-input-container {
+    top:20px;
+  }
+</style>
+
+<md-cmpn-nav-bar>
+
+
+ </md-cmpn-nav-bar
+ <br><br>
+
+ <div class="login-card">
+  <h1>Log-in</h1><br>
+  <div class="account"">
+    <md-icon>account_circle</md-icon></div>
+    <form name="loginForm">
+      <md-input-container class="md-icon md-block">
+        <md-icon>mail</md-icon>
+        <label>Email</label>
+
+        <input type="text" ng-model="login.loginForm.email" required>
+      </md-input-container>
+      <md-input-container class="md-icon md-block">
+        <label>Password</label>
+        <md-icon>vpn_key</md-icon>
+        <input type="password" ng-model="login.loginForm.password" required>
+      </md-input-container>
+      <md-button class="md-raised md-primary" layout-fill ng-disabled="loginForm.$invalid" ng-click="login.login()">Login</md-button>
+    </form>
+
+    <div class="login-help">
+      <a href="#/criarConta">Registar</a> • <a href="#">Recuperar Conta</a>
+    </div>
+  </div>
+
+
+
+
+<!-- <md-dialog aria-label="login" style="width:50%">
+<form>
+  <md-toolbar>
+  <div class="md-toolbar-tools">
+    <h2>Login / Signup</h2>
+    <span flex></span>
+    <md-button class="md-icon-button" ng-click="cancel()">
+    <md-icon class="material-icons" aria-label="Close dialog">ic_close</md-icon>
+    </md-button>
+  </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px; ">
+  <md-input-container class="" >
+  <label for="input_0">Email</label>
+  <input type="text" ng-required="ng-required" ng-model="mail" class="ng-pristine md-input ng-valid ng-valid-required ng-touched" id="input_0" aria-required="false" aria-invalid="false" name="mail">
+  </md-input-container>
+  <md-input-container class="" style="height: auto;">
+  <label for="input_1">Password</label>
+  <input type="password" pang-required="ng-required" ng-model="password" class="ng-pristine md-input ng-valid ng-valid-required ng-touched" id="input_1" aria-multiline="true" aria-required="false" aria-invalid="false" name="senha">
+  </md-input-container>
+  <md-card-actions layout layout-align="end center">
+  <md-button type=submit class="md-raised md-primary login" name="acao">Login</md-button>
+  <md-button class="md-button md-raised">Signup</md-button>
+  </md-card-actions>
+  </md-dialog-content>
+</form>
+</md-dialog>
+-->
+`

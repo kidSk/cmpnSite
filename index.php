@@ -234,12 +234,12 @@
 					<div class="bar"></div>
 				</div>
 				<div class="input-container">
-					<input type="text" ng-model="login.loginForm.password"/>
+					<input type="password" ng-model="login.loginForm.password"/>
 					<label for="Password">Password</label>
 					<div class="bar"></div>
 				</div>
 				<div class="button-container">
-					<button ng-click="login.login(loginForm)"><span>Login</span></button>
+					<button ng-click="login.login($event)"><span>Login</span></button>
 				</div>
 				<div class="footer"><a href="#">Esqueceu a sua Palavra Passe?</a></div>
 			</form>

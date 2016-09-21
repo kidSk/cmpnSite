@@ -24,11 +24,11 @@
             <md-icon class="material-icons" aria-hidden="true">search</md-icon>
 
             <md-tooltip md-delay="0.4" md-direction="bottom" md-autohide="true">
-               search
-           </md-tooltip>
-       </md-button>
+             search
+         </md-tooltip>
+     </md-button>
 
-       <div style="margin-left:15px" ng-repeat="item in items" hide-sm hide-xs hide-md>
+     <div style="margin-left:15px" ng-repeat="item in items" hide-sm hide-xs hide-md>
         <md-button class="md-icon-button" href="{{item.link}}"  aria-label="{{item.name}}">
             <md-icon class="material-icons" aria-hidden="true" >{{item.icon}}</md-icon>
 
@@ -39,7 +39,7 @@
     </div>
 
 
-    <md-button aria-label="conta de utilizador" class="md-icon-button" ng-click="showTabDialog($event)">
+    <md-button aria-label="conta de utilizador" class="md-icon-button" href="#/login">
         <md-icon md-menu-origin class="material-icons">account_circle</md-icon>
     </md-button>
 
@@ -105,8 +105,8 @@
             <div  ng-show="section.expand" ng-repeat="action in section.actions" >
                 <md-list-item ng-click="toast(action.link)" >
 
-                   <span flex="10"></span> <md-icon class="material-icons {{section.color}}">{{action.icon}}</md-icon>
-                   <md-tooltip md-delay="0.1" md-direction="bottom" md-autohide="true">
+                 <span flex="10"></span> <md-icon class="material-icons {{section.color}}">{{action.icon}}</md-icon>
+                 <md-tooltip md-delay="0.1" md-direction="bottom" md-autohide="true">
                     {{action.nC}}
                 </md-tooltip>
 
