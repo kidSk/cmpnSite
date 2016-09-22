@@ -26,9 +26,9 @@ class loginController extends Controller
 
         return response()->json(['error' => 'impossivel criar token'], 500);
     }
-
+    $user = JWTAuth::toUser($token);
         //tudo ok return token
-    return response()->json(compact('token'));
+    return response()->json(compact('token','user'));
 }
 
 

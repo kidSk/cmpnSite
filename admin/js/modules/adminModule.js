@@ -14,7 +14,8 @@ angular.module('adminApp', [
 	'upLoadPreview',
 	'satellizer',
 	'ngSanitize',
-	'ngStorage'
+	'ngStorage',
+	'ngMessages'
 
 	
 	]);

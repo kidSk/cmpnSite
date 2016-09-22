@@ -17,7 +17,14 @@ angular.module('adminApp')
  * @param  {[type]} 300);		ngToast.create({			className: 'warning',			content: 'Departamento '+d+' Guardado com sucesso',		});			};	} [description]
  * @return {[type]}                                       [description]
  */
- .controller('createDepCtrl',function ($scope,departamentoService,$location, $timeout,$mdToast,ngToast){
+ .controller('createDepCtrl',function (
+ 	$scope,
+ 	departamentoService,
+ 	$location,
+ 	$timeout,
+ 	$mdToast,
+ 	ngToast)
+ {
  	$scope.title="Criar Departamentos";
  	$scope.dep={};
  	$scope.button="adicionar";
@@ -56,7 +63,16 @@ angular.module('adminApp')
 
  })
 
- .controller('listDepCtrl',function ($scope, $route,departamentoService, $location, $timeout,$mdToast,ngToast,$mdDialog) {
+ .controller('listDepCtrl',function (
+ 	$scope, 
+ 	$route,
+ 	departamentoService,
+ 	$location,
+ 	$timeout,
+ 	$mdToast,
+ 	ngToast,
+ 	$mdDialog
+ 	) {
  	$scope.list="Lista de Departamentos";
  	$scope.dep=departamentoService.query();
 
@@ -65,7 +81,7 @@ angular.module('adminApp')
  	$scope.rowsPerPage = 3;
 
  	$scope.removeDep = function(ev,id,name){
- 		/*departamentoService.delete({id:id});
+ 		departamentoService.delete({id:id});
  		$timeout(function() {
  			$location.path('/');
  		},300);
@@ -74,7 +90,7 @@ angular.module('adminApp')
  			content: 'Departamento '+d+' atualizado com sucesso',
 
 
- 		});*/
+ 		});
 
  		var confirm = $mdDialog.confirm()
 
@@ -114,7 +130,15 @@ angular.module('adminApp')
 
 
  })
- .controller('editDepCtrl',function ($scope,departamentoService,$location, $timeout,$mdToast,ngToast,$routeParams) {
+ .controller('editDepCtrl',function (
+ 	$scope,
+ 	departamentoService,
+ 	$location,
+ 	$timeout,
+ 	$mdToast,
+ 	ngToast,
+ 	$routeParams
+ 	) {
  	$scope.title="Editar Departamentos";
  	$scope.button="atualizar";
  	$scope.dep=departamentoService.get({

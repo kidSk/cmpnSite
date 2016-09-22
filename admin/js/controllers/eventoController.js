@@ -11,7 +11,14 @@ angular.module('adminApp')
  * @param  {[type]} functfion          ($scope       [description]
  * @return {[type]}                    [description]
  */
- .controller('CreateEventoCtrl',function ($scope,eventoService,$timeout, $location,$mdToast,ngToast){
+ .controller('CreateEventoCtrl',function (
+  $scope,
+  eventoService,
+  $timeout, 
+  $location,
+  $mdToast,
+  ngToast
+  ){
    $scope.title="Criar Eventos ou Atividades";
 
     /**

@@ -1,1 +1,5 @@
-angular.module('cmpnApp', ['ngMaterial','ngRoute','ngResource','ngAnimate','ngToast','adminApp','satellizer']);
+angular.module('cmpnApp', [
+
+	'adminApp',
+	
+	]);

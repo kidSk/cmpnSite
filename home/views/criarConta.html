@@ -30,7 +30,7 @@
 
         z-index: 1;
         border-left: 3px solid rgb(3,169,244);
-        margin: 0 0 35px;
+        margin: 0 0 15px;
         padding: 10px 0 10px 50px;
         color: rgb(3,169,244);
         font-size: 20px;
@@ -46,12 +46,12 @@
 <md-cmpn-nav-bar>
 
 
-   </md-cmpn-nav-bar
-   <br><br>
+ </md-cmpn-nav-bar
+ <br><br>
 
-   <div ng-cloak layout-align="center center"  layout-padding layout-wrap layout="column">
+ <div ng-cloak layout-align="center center"  layout-padding layout-wrap layout="column">
     <md-card>
-        <md-card-title>{{conta.title}}</md-card-title>
+        <md-card-title>{{conta.title}}!!</md-card-title>
 
 
         <fieldset ng-if="step == 1">
@@ -60,79 +60,149 @@
                 <md-input-container class="md-icon-float md-block">
                     <md-icon>assignment_ind</md-icon>
                     <label>Nome</label>
-                    <input type="text" ng-model="conta.name" required>
-                </md-input-container>
-                <md-input-container class="md-icon-float md-block">
-                    <md-icon>assignment_ind</md-icon>
-                    <label>Apelido</label>
-                    <input type="text" ng-model="conta.apelido" required>
-                </md-input-container>
-                <md-input-container class="md-icon md-block" md-no-float>
-                    <md-icon>photo_camera</md-icon>
-                    <label>Imagem</label>
-                    <input type="file" value="escolher uma imagem" ng-model="conta.apelido"placeholder="escolher uma imagem">
-                </md-input-container>
-                <md-input-container class="md-block">
-                    <label>Data Nascimendo</label>
-                    <md-datepicker 
-                    ng-model="conta.data" 
-                    required  >
+                    <input type="text" ng-model="conta.name" name="name" required  ng-minlength="3"  ng-pattern="string">
+                    <div ng-messages="dadosPessoais.name.$error">
+                        <div ng-message="required">
+                         Campo obrigatorio!
+                     </div>
+                     <div ng-message="minlength">
+                       O nome deve ter no minino 3 caracters
+                   </div>
+                   <div ng-message="pattern">
+                       O Nome deve ter Somente Letras!!!
+                   </div>
+               </div>
+           </md-input-container>
+           <md-input-container class="md-icon-float md-block">
+            <md-icon>assignment_ind</md-icon>
+            <label>Apelido</label>
+            <input type="text" ng-model="conta.apelido" name="apelido" ng-minlength="3" ng-pattern="string" required>
+            <div ng-messages="dadosPessoais.apelido.$error">
+                <div ng-message="required">
+                 Campo obrigatorio!
+             </div>
+             <div ng-message="minlength">
+                 O Apelido deve ter no minino 3 caracters
+             </div>
+             <div ng-message="pattern">
+                 O Apelido deve ter Somente Letras!!!
+             </div>
 
-                </md-datepicker>
-            </md-input-container>
+         </div>
 
-            <button class="md-button md-raised md-primary" ng-click="nextStep()">Proximo
-                <md-icon>chevron_right</md-icon></button>
-            </form>
-        </fieldset>
-        <fieldset ng-if="step == 2">
-            <legend class="md-whiteframe-z1"><i class="material-icons">contacts</i>Morada e Contactos</legend>
-            <md-input-container class="md-icon-float md-block">
-                <md-icon>store_mall_directory</md-icon>
-                <label>Morada</label>
-                <input type="text" ng-model="conta.morada" required>
-            </md-input-container>
-            <md-input-container class="md-icon-float md-block">
-                <md-icon>phone</md-icon>
-                <label>Telefone</label>
-                <input type="text" ng-model="conta.telefone" required>
-            </md-input-container>
-            <button class="md-button md-warn" ng-click="prevStep()">  <md-icon>chevron_left</md-icon>Anterior</button>
-            <button class="md-button md-raised md-primary" ng-click="nextStep()">Proximo  <md-icon>chevron_right</md-icon></button>
-        </fieldset>
-        <fieldset ng-if="step == 3">
-            <legend class="md-whiteframe-z1"><i class="material-icons">email</i>Definições de Conta</legend>
-            <md-input-container class="md-icon-float md-block">
-                <md-icon>email</md-icon>
-                <label>Email</label>
-                <input type="text" ng-model="conta.email" required>
-            </md-input-container>
-            <md-input-container class="md-icon-float md-block">
-                <md-icon>email</md-icon>
-                <label>Confirmar Email</label>
-                <input type="text" ng-model="conta.email2" required>
-            </md-input-container>
-            <md-input-container class="md-icon-float md-block">
-                <md-icon>vpn_key</md-icon>
-                <label>Senha</label>
-                <input type="text" ng-model="conta.password" required>
-            </md-input-container>
-            <md-input-container class="md-icon-float md-block">
-                <md-icon>vpn_key</md-icon>
-                <label>Confirmar Senha</label>
-                <input type="text" ng-model="conta.password2" required>
-            </md-input-container>
-            <md-input-container class="md-icon-float md-block">
-                <md-checkbox ng-checked="" ng-click="" style="float:right;margin-right:30px;">
-                    Concordo
-                </md-checkbox></md-input-container>
+     </md-input-container>
 
-                <button class="md-button md-warn" ng-click="prevStep()">  <md-icon>chevron_left</md-icon>Anterior</button>
-                <button class="md-button md-raised md-primary" ng-click="criarConta();">Criar Conta
-                    <md-icon>beenhere</md-icon>
-                    <md-tooltip>Criar Conta</md-tooltip>
-                </button>
-            </fieldset>
-            {{conta}}
-        </md-card>
-    </div>
+     <md-input-container class="md-block">
+        <label>Data Nascimendo</label>
+        <md-datepicker 
+        ng-model="conta.data" 
+        required  name="data" md-no-asterisk>
+
+
+    </md-datepicker>
+    <div ng-messages="dadosPessoais.data.$error">
+        <div ng-message="required">
+           Campo obrigatorio!
+       </div>
+   </div>
+</md-input-container>
+
+
+</form>
+<button class="md-button md-raised md-primary" ng-click="nextStep()" ng-disabled="dadosPessoais.$invalid">Proximo
+    <md-icon>chevron_right</md-icon></button>
+
+</fieldset>
+<fieldset ng-if="step == 2">
+    <legend class="md-whiteframe-z1"><i class="material-icons">contacts</i>Morada e Contactos</legend>
+    <form name="moradaCont">
+        <md-input-container class="md-icon-float md-block">
+            <md-icon>store_mall_directory</md-icon>
+            <label>Morada</label>
+            <input type="text" ng-model="conta.morada" name="morada" ng-pattern="string" ng-minlength="3" required>
+            <div ng-messages="moradaCont.morada.$error">
+                <div ng-message="required">
+                 Campo obrigatorio!
+             </div>
+             <div ng-message="minlength">
+                 A Morada deve ter no minino 3 caracters
+             </div>
+             <div ng-message="pattern">
+                A Morada deve ter Somente Letras!!!
+            </div>
+
+        </div>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+        <md-icon>phone</md-icon>
+        <label>Telefone</label>
+        <input type="text" ng-model="conta.telefone" name="telefone" ng-pattern="number">
+        <div ng-messages="moradaCont.telefone.$error">
+         <div ng-message="pattern">
+             Somente Numeros!!!
+         </div>
+     </div>
+
+
+ </md-input-container>
+ <md-input-container class="md-icon-float md-block">
+    <md-icon>tap_and_play</md-icon>
+    <label>Movel</label>
+    <input type="text" ng-model="conta.movel" name="movel" ng-pattern="mobile">
+    <div ng-messages="moradaCont.telefone.$error">
+     <div ng-message="pattern">
+         Somente Numeros!!!
+     </div>
+     <div class="hint" ng-if="showHints">###-##-####</div>
+ </div>
+
+</md-input-container>
+</form>
+<button class="md-button md-warn" ng-click="prevStep()" ng-disabled="moradaCont.$valid">  <md-icon>chevron_left</md-icon>Anterior</button>
+<button class="md-button md-raised md-primary" ng-click="nextStep()" ng-disabled="moradaCont.$invalid">Proximo  <md-icon>chevron_right</md-icon></button>
+</fieldset>
+<fieldset ng-if="step == 3">
+    <legend class="md-whiteframe-z1"><i class="material-icons">email</i>Definições de Conta</legend>
+    <form name="definicoesConta">
+        <md-input-container class="md-icon-float md-block">
+            <md-icon>email</md-icon>
+            <label>Email</label>
+            <input required type="email" name="clientEmail" ng-model="conta.email"
+            maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+
+            <div ng-messages="definicoesContaclientEmail.$error" role="alert">
+              <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+               Introduza um email valido!!! Ex. user@domain.com
+           </div>
+       </div>
+   </md-input-container>
+   <md-input-container class="md-icon-float md-block">
+    <md-icon>email</md-icon>
+    <label>Confirmar Email</label>
+    <input type="text" ng-model="conta.email2" required>
+</md-input-container>
+<md-input-container class="md-icon-float md-block">
+    <md-icon>vpn_key</md-icon>
+    <label>Senha</label>
+    <input type="text" ng-model="conta.password" required>
+</md-input-container>
+<md-input-container class="md-icon-float md-block">
+    <md-icon>vpn_key</md-icon>
+    <label>Confirmar Senha</label>
+    <input type="text" ng-model="conta.password2" required>
+</md-input-container>
+<md-input-container class="md-icon-float md-block">
+    <md-checkbox ng-checked="" ng-click="" style="float:right;margin-right:30px;">
+        Concordo
+    </md-checkbox></md-input-container>
+</form>
+
+<button class="md-button md-warn" ng-click="prevStep()" ng-disabled="definicoesConta.$valid">  <md-icon>chevron_left</md-icon>Anterior</button>
+<button class="md-button md-raised md-primary" ng-click="criarConta();" ng-disabled="definicoesConta.$invalid">Criar Conta
+    <md-icon>beenhere</md-icon>
+    <md-tooltip>Criar Conta</md-tooltip>
+</button>
+</fieldset>
+
+</md-card>
+</div>

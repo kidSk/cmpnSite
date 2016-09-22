@@ -41,7 +41,7 @@
 }
 .iconsMainMenu{
 
- display: inline-block;
+   display: inline-block;
 }
 .mainMenu md-icon{
     color: white;
@@ -58,11 +58,11 @@
 }
 .socialIcons{
 
- display: inline-block;
- left: 2px;
+   display: inline-block;
+   left: 2px;
 }
 .social md-icon{
- color: white;
+   color: white;
 }
 .social.hide{
     transform: scale(0, 0);
@@ -211,25 +211,25 @@ th {
     }
 
     #mainPic {
-     /* background: url("http://img.ev.mu/images/paysVol/222/1605x642/222.jpg") center center no-repeat;*/
-     height: 348px;
- }
+       /* background: url("http://img.ev.mu/images/paysVol/222/1605x642/222.jpg") center center no-repeat;*/
+       height: 348px;
+   }
 
- #fixSmallNav {
-  box-shadow: 1px 2px 9px black;
-  position: fixed;
-  top: 0;
-  transition: top 1s linear;
-}
-.fixSmallNav {
-  box-shadow: 1px 2px 9px black;
-  position: fixed;
-  top: 5;
-  transition: top 1s linear;
-}
+   #fixSmallNav {
+      box-shadow: 1px 2px 9px black;
+      position: fixed;
+      top: 0;
+      transition: top 1s linear;
+  }
+  .fixSmallNav {
+      box-shadow: 1px 2px 9px black;
+      position: fixed;
+      top: 5;
+      transition: top 1s linear;
+  }
 
-.card .card-media {
-  background-color: red; }
+  .card .card-media {
+      background-color: red; }
 
 
 
@@ -330,3 +330,26 @@ footer.page-footer{
 }
 
 
+
+
+.hint {
+
+    position: absolute;
+    left: 37px;
+    right: auto;
+    bottom: 7px;
+
+    font-size: 12px;
+    line-height: 14px;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+
+    color: grey; }
+    .hint.ng-hide,
+    .hint.ng-enter,
+    .hint.ng-leave.ng-leave-active {
+        bottom: 26px;
+        opacity: 0; }
+        .hint.ng-leave,
+        .hint.ng-enter.ng-enter-active {
+            bottom: 7px;
+            opacity: 1; }

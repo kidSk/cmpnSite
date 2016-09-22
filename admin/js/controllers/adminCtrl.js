@@ -1,17 +1,58 @@
 angular.module('adminApp').controller('adminCtrl',
-  function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, $http,$location, $timeout) {
+  function(
+    $scope,
+    kidAuthUser,
+    sessionControl,
+    $mdBottomSheet, 
+    $mdSidenav, 
+    $mdDialog, 
+    $http,
+    $location, 
+    $timeout,
+    ngToast
+    )
+  {
 
         /**
          * @dashBoardCard
          * md-card
          * view
+         * 
          */
 
          $scope.title="Camara Municiapl do Porto Novo"
          
+         var vm = this;
+         vm.isActive = function(viewLocation){
+
+          return viewLocation = $location.path();
+        }
+        vm.isLogin=kidAuthUser.isLoggedIn();
+         //escutador
+         $scope.$watch(function(){
+          return kidAuthUser.isLoggedIn();
+        },function(newVal){
+          if(typeof newVal !== 'undefined'){
+            vm.isLogin = kidAuthUser.isLoggedIn(); 
+          }
+
+        });
+
+         vm.user={
+          email:sessionControl.get('email'),
+          name:sessionControl.get('name'),
+        }
+
+        vm.logout = function(){
+          kidAuthUser.logout();
+          window.location.assign("http://localhost/cmpnSite/");
+        }
 
 
-         $scope.dashBoardCard = [{
+
+
+
+        $scope.dashBoardCard = [{
           name: 'Departamento',
           btnAdd: '#/createDep',
           btnList: '#/departamento/list',
@@ -52,6 +93,27 @@ angular.module('adminApp').controller('adminCtrl',
           descricao: 'Adicionar, Editar ou Remover Cargos'
         },
 
+        {
+          name: 'Projetos',
+          btnAdd: '#/criarCargo',
+          btnEdit: 'Editar',
+          btnRm: 'Remover',
+          img: '../img/event.svg',
+          iconAdd: 'add',
+          icon: 'fa fa fa-briefcase',
+          descricao: 'Adicionar, Editar ou Remover Projetos'
+        },
+
+        {
+          name: 'Serviços',
+          btnAdd: '#/criarCargo',
+          btnEdit: 'Editar',
+          btnRm: 'Remover',
+          img: '../img/event.svg',
+          iconAdd: 'add',
+          icon: 'fa fa-shopping-bag',
+          descricao: 'Adicionar, Editar ou Remover Projetos'
+        },
 
         ];
 

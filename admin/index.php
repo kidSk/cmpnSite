@@ -1,6 +1,7 @@
 <html lang="pt" >
 <head>
  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8">
  <link rel="stylesheet" type="text/css" id="theme" href="css/theme-white.css">
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css"> -->
@@ -11,7 +12,7 @@
  <link rel="stylesheet" href="css/ngToast-animations.css">
  <link rel="stylesheet" href="css/adminApp.css">
 </head>
-<body ng-app="adminApp" ng-controller="adminCtrl" ng-cloak >
+<body ng-app="adminApp" ng-controller="adminCtrl as admin" ng-cloak >
  <toast></toast>
  <div class="page-container page-navigation-top-fixed md-whiteframe-z3">
    <!-- START PAGE SIDEBAR -->
@@ -31,8 +32,8 @@
              <img src="assets/images/users/avatar.jpg" alt="John Doe"/>
            </div>
            <div class="profile-data">
-             <div class="profile-data-name">Kidiatoliny</div>
-             <div class="profile-data-title">Web Developer/Designer</div>
+             <div class="profile-data-name">{{admin.user.name}}</div>
+             <div class="profile-data-title">{{admin.user.email}}</div>
            </div>
            <div class="profile-controls">
              <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
@@ -173,8 +174,9 @@
      <!-- END X-NAVIGATION VERTICAL -->
      <!-- START BREADCRUMB -->
      <ul class="breadcrumb">
-       <li><a href="admin">Home</a></li> 
-       <li class="active">Dashboard</li>
+
+       <li><md-icon>home</md-icon>Dashboard</li>
+       <li class="active" style="text-transform:uppercase">{{admin.isActive()}}</li>
        
      </ul>
      <!-- END BREADCRUMB -->
@@ -279,7 +281,7 @@
      </div>
      <div class="mb-footer">
        <div class="pull-right">
-         <a href="pages-login.html" class="md-button  md-raised md-warn ">Sim</a>
+         <button class="md-button  md-raised md-warn " ng-click="admin.logout()">Sim</button>
          <md-button class="md-raised md-primary btn-lg mb-control-close">Não</md-button>
        </div>
      </div>
@@ -287,9 +289,9 @@
  </div>
 </div>
 <!-- END MESSAGE BOX-->
-<!-- START PRELOADS -->
+<!-- START PRELOADS
 <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
-<audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
+<audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio> -->
 <!-- END PRELOADS -->
 <!-- START SCRIPTS -->
 <!-- START PLUGINS -->
@@ -310,6 +312,7 @@
 <script src="bower_components/ngstorage/ngStorage.min.js"></script> 
 
 
+
 <!-- Angular Material requires Angular.js Libraries -->
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -318,7 +321,7 @@
 
 Angular Material Library
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script> -->
-<script src="js/ngToast.min.js"></script>
+<script src="js/ngToast.min.js"></script> 
 <script src="js/angular-sanitize.min.js"></script>
 <!-- <script src="js/angular-messages.min.js"></script> -->
 <script src="js/modules/adminModule.js"></script>

@@ -38,10 +38,28 @@ angular.module('adminApp')
 		templateUrl: 'views/presidente/criarMensagem.html',
 		controller: 'criarMensagemCtrl'
 	})
+	.when('/error',{
+		templateUrl: 'views/errors/403.html',
+		controller: 'criarMensagemCtrl'
+	})
 
 	.otherwise({
 		redirectTo: '/'
 	});
+})
+.run(function ($rootScope,$location,kidAuthUser) {
+	var rotasPrivadas = ['/','/evento','/evento/create','/wid','/createDep','/departamento/list',
+	'/editDep/:id','/criarCargo','/criarMensagem',];
+	$rootScope.$on('$routeChangeStart',function(){
+		if(($.inArray($location.path(), rotasPrivadas)!==-1) && !kidAuthUser.isLoggedIn()){
+			/*$location.path('/error');*/
+
+
+			window.location.assign("http://localhost/cmpnSite/admin/views/errors/403.html");
+			
+		}
+	});
+	
 });
 
 /**
@@ -52,7 +70,7 @@ angular.module('adminApp')
 angular.module('cmpnApp')
 .config(function ($routeProvider) {
 	$routeProvider
-	.when('/',{
+	.when('/home',{
 		templateUrl: 'views/home.html',
 		controller : 'homeCtrl'
 	})
