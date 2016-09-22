@@ -84,7 +84,7 @@ angular.module('adminApp')
 
  				$location.path('/departamento/list');
  				$route.reload();
- 				console.log($scope.dep);
+ 				
 
  			});
 
