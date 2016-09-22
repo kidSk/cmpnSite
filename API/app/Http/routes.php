@@ -24,6 +24,7 @@ Route::group(['middleware'=>'cors'],function(){
 	Route::post('login','loginController@userAuth');
 	Route::resource('departamento','departamentoController');
 	Route::resource('cargo','cargoController');
+	Route::resource('usuariosRegistados','usuariosRegistadosController');
 	Route::resource('mensagemPresidente','mensagemPresidenteController');
 	Route::get('users','loginController@index');
 	Route::get('users/{id}','loginController@show');

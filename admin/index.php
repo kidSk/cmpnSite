@@ -211,7 +211,7 @@
              <div class="widget-item-left">
                <span class="fa fa-envelope"></span>
              </div> 
-             <div class="widget-data">
+             <div class="widget-data" >
                <div class="widget-int num-count">48</div>
                <div class="widget-title">Mensagens Novas</div>
                <div class="widget-subtitle">No seu mailbox</div>
@@ -228,8 +228,8 @@
              <div class="widget-item-left">
                <span class="fa fa-user"></span>
              </div>
-             <div class="widget-data">
-               <div class="widget-int num-count">375</div>
+             <div class="widget-data" ng-controller="listUsers">
+               <div class="widget-int num-count" ng-repeat="qtd in qtd">{{qtd.quantidade}}</div>
                <div class="widget-title">Utilizadores registados</div>
                <div class="widget-subtitle">No Site</div>
              </div>
@@ -330,11 +330,16 @@ Angular Material Library
 <script src="js/angular-route.min.js"></script>
 <script src="js/angular-resource.min.js"></script>
 <script src="js/routes/route.js"></script>
+
+<!-- controllers -->
 <script src="js/controllers/eventoController.js"></script>
 <script src="js/controllers/adminCtrl.js"></script>
 <script src="js/controllers/departamentoController.js"></script>
 <script src="js/controllers/cargoController.js"></script>
 <script src="js/controllers/presidenteController.js"></script>
+<script src="js/controllers/usuariosRegistados.js"></script>
+
+<!-- services -->
 <script src="js/services/eventoService.js"></script>
 <script src="js/services/departamentoService.js"></script>
 <script src="js/services/presidenteService.js"></script>
@@ -342,6 +347,9 @@ Angular Material Library
 <script src="js/services/cargoService.js"></script>
 <script src="js/services/authService.js"></script>
 <script src="js/services/paginations.js"></script>
+<script src="js/services/usuariosRegistados.js"></script>
+
+<!-- directives -->
 <script src="js/directives/paginator.js"></script>
 <script src="js/directives/imgPreview.js"></script>
 <script src="js/directives/uploader.js"></script>
