@@ -38,9 +38,13 @@ angular.module('adminApp')
 		templateUrl: 'views/presidente/criarMensagem.html',
 		controller: 'criarMensagemCtrl'
 	})
-	.when('/error',{
-		templateUrl: 'views/errors/403.html',
+	.when('/criarMensagem',{
+		templateUrl: 'views/presidente/criarMensagem.html',
 		controller: 'criarMensagemCtrl'
+	})
+	.when('/atendimento',{
+		templateUrl: 'views/departamento/accaoSocial/atendimento.html',
+		controller: 'atendimentoCtrl'
 	})
 
 	.otherwise({

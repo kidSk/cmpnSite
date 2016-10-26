@@ -57,7 +57,7 @@
 
 
 
-      <md-button class="md-button md-primary" href="{{card.btnList}}"><md-icon>view_list</md-icon>Listar</md-button>
+      <md-button class="md-button md-primary" href="{{card.btnList}}"><md-icon>view_list</md-icon>Ver</md-button>
       <md-button class="md-button md-accent" href="#/editDep/{{dep.id}}"><md-icon>content_paste</md-icon>Editar</md-button>
       <md-button class="md-button md-warn" ng-click="removeDep($event,dep.id,dep.name)"><md-icon>delete</md-icon>Remover</md-button>
 
