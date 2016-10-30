@@ -342,6 +342,7 @@ Angular Material Library
 <script src="js/controllers/usuariosRegistados.js"></script>
 <script src="js/controllers/accaoSocial/atendimentoCtrl.js"></script>
 
+
 <!-- services -->
 <script src="js/services/eventoService.js"></script>
 <script src="js/services/departamentoService.js"></script>
@@ -388,7 +389,7 @@ Angular Material Library
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
   <script src="js/exportPDF.js"></script>
 
-  <script type="text/javascript">
+<!--   <script type="text/javascript">
    $(document).ready(function() { 
      $('.sh').on("click",function() {
        $('.x-navigation.x-navigation-minimized li.active > ul').css('display', 'none');
@@ -396,7 +397,7 @@ Angular Material Library
    });
 
 
- </script>
+ </script> -->
 
 </body>
 </html>

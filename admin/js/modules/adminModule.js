@@ -15,9 +15,7 @@ angular.module('adminApp', [
 	'satellizer',
 	'ngSanitize',
 	'ngStorage',
-	'ngMessages'
-
-	
+	'ngMessages',
 	]);
 /**
  * localização do modulo e criacao de serviços

@@ -1,0 +1,118 @@
+   
+<!-- ------Nav Bar ----- -->
+<div class="navbar-fixed">
+  <nav>
+    <div class="row  blue lighten-1">
+      <div class="nav-wrapper ">
+        <a href="#!" class="brand-logo  col s2 offset-s2 l6" >{{title}}</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">Javascript</a></li>
+          <li><a href="mobile.html">Mobile</a></li>
+          <li><a class="waves-effect waves-light"><i class="material-icons">search</i></a></li>
+          <li><a class="waves-effect waves-light"><i class="material-icons">person</i></a></li>
+
+
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+
+         <li><div class="userView">
+           <img class="background" src="../admin/assets/images/gallery/nature-2.jpg">
+           <a href="#!user"><img class="circle" src="../admin/assets/images/users/avatar.jpg"></a>
+           <a href="#!name"><span class="white-text name">Kidiatoliny </span></a>
+           <a href="#!email"><span class="white-text email">kidikalibra@gmail.com</span></a>
+         </div>
+       </li>
+
+       <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+       <li><a href="#!">Second Link</a></li>
+       <li><div class="divider"></div></li>
+       <li><a class="subheader">Subheader</a></li>
+       <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+
+       <li><a href="sass.html">Sass</a></li>
+       <li><a href="badges.html">Components</a></li>
+       <li><a href="collapsible.html">Javascript</a></li>
+       <li><a href="mobile.html">Mobile</a></li>
+
+       <!-- fsdafas -->
+
+     </ul>
+   </div>
+ </div>
+</nav>
+</div>
+<!-- ------Nav Bar ----- -->
+
+
+<!-- fab button -->
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a class="btn-floating btn-large red">
+    <i class="material-icons">menu</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red"><i class="material-icons">search</i></a></li>
+    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">email</i></a></li>
+    <li><a class="btn-floating blue button-collapse"  data-activates="slide-out"><i class="material-icons">person</i></a></li>
+  </ul>
+</div>
+<!-- fab button -->
+
+
+
+
+<!-- ------Nav Bar ----- -->
+
+<ul id="slide-out" class="side-nav">
+ <li><div class="userView">
+   <img class="background" src="../admin/assets/images/gallery/nature-2.jpg">
+   <a href="#!user"><img class="circle" src="../admin/assets/images/users/avatar.jpg"></a>
+   <a href="#!name"><span class="white-text name">Kidiatoliny </span></a>
+   <a href="#!email"><span class="white-text email">kidikalibra@gmail.com</span></a>
+ </div>
+</li>
+
+<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+<li><a href="#!">Second Link</a></li>
+<li><div class="divider"></div></li>
+<li><a class="subheader">Subheader</a></li>
+<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+
+<div class="row">
+
+  <div class="col l4 s12 m12" ng-repeat="cards in Cards.card">
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="../admin/assets/images/gallery/{{cards.img}}">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{cards.name}}<i class="material-icons right">more_vert</i></span>
+        <p><a href="#">Mais Informações</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Atendimento<i class="material-icons right">close</i></span>
+        <div class="cardBtn" ng-repeat="action in cards.actions">
+
+          <a  href="{{action.link}}"class="waves-effect waves-teal btn-large blue lighten-1"><i class="material-icons right">{{action.icon}}</i>{{action.name}}</a>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+<script>
+
+ $( document ).ready(function(){
+  $(".button-collapse").sideNav()
+});
+</script>

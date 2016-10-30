@@ -46,6 +46,10 @@ angular.module('adminApp')
 		templateUrl: 'views/departamento/accaoSocial/atendimento.html',
 		controller: 'atendimentoCtrl'
 	})
+	.when('/accaoSocial',{
+		templateUrl: 'views/departamento/accaoSocial/index.html',
+		controller: 'accaoSocialCtrl'
+	})
 
 	.otherwise({
 		redirectTo: '/'

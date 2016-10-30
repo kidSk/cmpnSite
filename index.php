@@ -258,6 +258,8 @@
 	<!-- <script src="js/angular-messages.min.js"></script> -->
 	<script src="admin/js/modules/adminModule.js"></script>
 	<script src="admin/js/modules/cmpnModule.js"></script>
+	
+
 	<script src="admin/js/modules/uploadPreviewModule.js"></script>
 	<script src="admin/js/angular-route.min.js"></script>
 	<script src="admin/js/angular-resource.min.js"></script>
