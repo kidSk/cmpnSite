@@ -40,6 +40,11 @@ angular.module('cmpnApp').config(function ($routeProvider) {
 		controller: 'perfilCtrl',
 		controllerAs:'perfil'
 	})
+	.when('/userList', {
+		templateUrl: 'views/profile/userList.html',
+		controller: 'perfilCtrl',
+		controllerAs:'perfil'
+	})
 	.otherwise({
 		redirectTo: '/home'
 	});

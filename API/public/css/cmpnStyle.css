@@ -1,16 +1,26 @@
-[bg]{
-	background-color: #e0e0e0 ;
-}
+   body,html {
+   	background-image: : url(../img/bg.jpg) no-repeat center center fixed;
+   	-webkit-background-size: cover;
+   	-moz-background-size: cover;
+   	-o-background-size: cover;
+   	background-size: cover;
+   }
 
-[tp]{
-	background-color: transparent;
-}
 
-[fixedMenu]{
-	position: fixed;
-	margin:0;
-	z-index: 9000
-}
+   [bg]{
+   	background: url(../img/bg.jpg) no-repeat center center fixed;
+   	background-size: cover;
+   }
+
+   [tp]{
+   	background-color: transparent;
+   }
+
+   [fixedMenu]{
+   	position: fixed;
+   	margin:0;
+   	z-index: 9000
+   }
 
 
 

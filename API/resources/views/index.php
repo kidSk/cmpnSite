@@ -4,14 +4,22 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Camara Municipal do Porto Novo</title>
+
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<!--Materialize  style shee-->
 	<link type="text/css" rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+	<link rel='stylesheet prefetch' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
 	<link type="text/css" rel="stylesheet" href="css/materialize/materialize.min.css"  media="screen,projection"/>
 	<!-- Angular Material style sheet -->
 	<link rel="stylesheet prefetch" href="bower_components/angular-material/angular-material.min.css">
+
 	<link rel="stylesheet prefetch" href="css/animations.css">
 	<link rel="stylesheet prefetch" href="css/cmpnStyle.css">
+	
 
 </head>
 
@@ -67,6 +75,7 @@
 
 	<!--Materialize-->
 	<script type="text/javascript" src="js/materialize/materialize.min.js"></script>
+
 
 
 
