@@ -1,0 +1,16 @@
+[bg]{
+	background-color: #e0e0e0 ;
+}
+
+[tp]{
+	background-color: transparent;
+}
+
+[fixedMenu]{
+	position: fixed;
+	margin:0;
+	z-index: 9000
+}
+
+
+

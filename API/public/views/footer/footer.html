@@ -1,0 +1,56 @@
+<style>
+  footer.page-footer{
+    margin-top: -20px;
+  }
+</style>
+
+<footer class="page-footer black">
+  <div class="container">
+    <div class="row">
+      <div class="col l4 s12 m12">
+        <h5 class="white-text">Desenvolvedor</h5>
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <img src="img/avatar.jpg" alt="" class="circle">
+            <span class="title">Kidiatoliny Gonçalves</span>
+            <p>Engenharia de Sistemas <br>
+              Studio One
+            </p>
+            <a href="#!" class="secondary-content blue-text"><i class="material-icons">grade</i></a>
+          </li>
+
+
+        </ul>
+        <div layout="row" flex="40" flex-sm="100" flex-xs="100" flex-lg="100">
+          <div ng-repeat="social in social" >
+            <md-button class="md-icon-button"><md-icon class=" {{social.icon}}" style="color:white"></md-icon>
+              <md-tooltip md-visible="false" md-delay="200" md-direction="bottom" md-autohide="true">
+                {{social.name}}
+              </md-tooltip>
+            </md-button>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col l4 s12 m12" style="overflow: hidden;">
+        <h5 class="white-text">Seguir</h5>
+        <iframe src="http://ghbtns.com/github-btn.html?user=dogfalo&amp;repo=materialize&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+        <br>
+        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="http://platform.twitter.com/widgets/follow_button.2dbd32894063b53338de1c1d4a747ea9.en.html#dnt=true&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=MaterializeCSS&amp;show_count=true&amp;show_screen_name=true&amp;size=l&amp;time=1478091077092" style="position: static; visibility: visible; width: 281px; height: 28px;" data-screen-name="{{title}}"></iframe>
+        <br>
+
+      </div>
+      <div class="col l4 s12 m12">
+        <h5 class="white-text">Localização</h5>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7630.089012053721!2d-25.073311458127286!3d17.021486880600513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f05a28b52e5a9%3A0x88162743e830f014!2sPorto+Novo!5e0!3m2!1sen!2scv!4v1478093938928" width="320" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="footer-copyright">
+
+      © 2016 Camâra Municipal do Porto Novo.
+
+    </div>
+  </footer>

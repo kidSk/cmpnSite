@@ -1,0 +1,50 @@
+
+<style type="text/css">
+	.slider .indicators .indicator-item{
+		background-color: #e3f2fd;
+	}
+	.slider .indicators .indicator-item.active {
+		background-color: #42a5f5;
+	}
+</style>
+<div class="slider md-whiteframe-z2 white" ng-show="home">
+	<ul class="slides">
+		<li>
+			<img src="img/slider/cmpn.jpg"> <!-- random image -->
+			<div class="caption left-align">
+				<h3>{{title}}</h3>
+				<h5 class="light grey-text text-lighten-3">Edificio do Paços do Concelho</h5>
+			</div>
+		</li>
+		<li>
+			<img src="img/slider/2.jpg"> <!-- random image -->
+			<div class="caption left-align">
+				<h3>Left Aligned Caption</h3>
+				<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			</div>
+		</li>
+		<li>
+			<img src="img/slider/3.jpg""> <!-- random image -->
+			<div class="caption right-align">
+				<h3>Right Aligned Caption</h3>
+				<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			</div>
+		</li>
+		<li>
+			<img src="img/slider/4.jpg"> <!-- random image -->
+			<div class="caption center-align">
+				<h3>This is our big Tagline!</h3>
+				<h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+			</div>
+		</li>
+	</ul>
+</div>
+<br>
+
+
+<script>
+	$(document).ready(function(){
+		$('.slider').slider({full_width: true});
+	});
+
+</script>
