@@ -1,8 +1,0 @@
-algoritmo - 12
-IO  =10
-ES = 14
-MAT = 10
-IA=12
-
-
-
