@@ -18,7 +18,12 @@ angular.module('cmpnApp', [
 	'ngStorage',
 	'satellizer',
 	'ngMdIcons',
-	'ngResource'
+	'ngResource',
+	'cmpnAuthService',
+	'menuApp',
+	'filterApp',
+	'themeApp',
+	'departamento',
 	
 
 

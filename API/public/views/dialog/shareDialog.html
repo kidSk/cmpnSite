@@ -1,0 +1,39 @@
+<style>
+  md-list-item{
+    cursor: pointer;
+  }
+</style>
+
+
+<md-dialog aria-label="Share" ng-controller="DialogController"> 
+  <form ng-cloak style="width: 300px;"">
+
+    <md-dialog-content style="align:center">
+      <div class="md-dialog-content">
+        <md-subheader class="md-no-sticky">Partilhar  no ....</md-subheader><!--You can use md-no-sticky class-->
+        <md-list-item ng-click="share()">
+
+          <img alt="google+" ng-src="img/social/google-plus.svg" class="md-avatar" />
+          <p ng-model="share.google">Google +</p>
+        </md-list-item>
+        <md-list-item ng-click="share()">
+
+          <img alt="facebook" ng-src="img/social/facebook.svg" class="md-avatar" />
+          <p>Facebook</p>
+        </md-list-item>
+        <md-list-item ng-click="share()">
+
+          <img alt="twitter" ng-src="img/social/twitter.svg" class="md-avatar"  />
+          <p>Twitter</p>
+        </md-list-item>
+        <md-list-item ng-click="share()">
+
+          <img alt="copyLink" ng-src="img/social/link.svg" class="md-avatar" />
+          <p>Copiar Link</p>
+        </md-list-item>
+
+      </div>
+    </md-dialog-content>
+
+  </form>
+</md-dialog>

@@ -13,7 +13,7 @@ angular.module('cmpnApp').controller('departamentoCtrl', ['$scope','departamento
 	var vm=this;
 	$scope.title="Departamentos";
 
-	$scope.dep=departamentoService.query();//listar departamentos
+	$scope.dep=departamentoService.listar();//listar departamentos
 
 	
 	

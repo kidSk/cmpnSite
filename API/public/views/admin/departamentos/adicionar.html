@@ -1,0 +1,121 @@
+
+<!-- PAGE CONTENT WRAPPER -->
+
+<div class="row">
+    <h4 align="center" class="col offset-l5">{{title}}</h4>
+    <div class="col offset-l4 l6 s12">
+
+
+        <md-card layout-padding layout-margin>
+
+            <form  name="depForm">
+
+
+
+                <md-input-container class="md-icon-float md-block">
+
+                    <label>Introduzir Nome Departamento</label>
+                    <md-icon >business</md-icon>
+                    <input type="text" ng-model="dep.name" name="name" required>
+                    <div  ng-messages="depForm.name.$error">
+                        <div ng-message="required">
+                            campo obrigatorio
+                        </div>
+                    </div>
+
+                </md-input-container>
+
+
+                <md-input-container class="md-icon-float md-block">
+
+                    <label>Introduzir Nome do Responsavel do Departamento</label>
+                    <md-icon>assignment_ind</md-icon>
+                    <input type="text" ng-model="dep.responsavel" required name="responsavel">
+                    <div  ng-messages="depForm.responsavel.$error">
+                        <div ng-message="required">
+                            campo obrigatorio
+                        </div>
+                    </div>
+                </md-input-container>
+
+                <md-button class="md-raised md-warn" type="reset"><md-icon>restore</md-icon>Limpar</md-button>                                    
+                <md-button class="md-raised md-accent" ng-disabled="depForm.name.$invalid" ng-click="showPrerenderedDialog()"><md-icon>pageview</md-icon>Pre-visualizar</md-button>                                    
+                <md-button class=" md-raised md-primary" ng-disabled="depForm.$invalid" ng-click="guardar(dep)" >{{button}}<md-icon>done</md-icon></md-icon></md-button>
+
+
+            </form>
+        </md-card>
+
+    </div>
+
+<!-- <div class="col l3 hide-on-small-only hide-sm">
+    <div class="card small">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="img/nature-3.jpg">
+    </div>
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{dep.name}}</span>
+        <p><a  class="activator">{{dep.responsavel}}</a></p>
+    </div>
+
+</div>
+
+</div> -->
+
+<div class="col m3 l3  hide-sm hide-xs"  style="top:150px">
+
+    <ul class="section table-of-contents">
+        <h6 align="center">Content</h6>
+        <li><a href="#/departamentos/adicionar">Adicionar Departamentos</a></li>
+        <li><a href="#/departamentos/listar">Listar Departamentos</a></li>
+        <li><a href="#/departamentos/atualizar">Atualizar Departamentos</a></li>
+        <li><a href="#/departamentos/eliminar">Eliminar Departamentos</a></li>
+        <li><a href="#/departamentos/membros/listar">Listar Membros Departamentos</a></li>
+    </ul>
+</div>
+
+<div class="container">
+    <div style="visibility: hidden">
+
+        <div class="md-dialog-container" id="myDialog" bg> 
+          <md-dialog layout-padding bg>
+
+
+            <div class="card large" style="background-color: transparent;box-shadow: none">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="img/nature-3.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><md-icon  class="black-text">business</md-icon>&#160&#160<strong class="blue-text">Nome Departamento:</strong>{{dep.name}}</span>
+                <p  ><a class="black-text"><md-icon  class="black-text">assignment_ind</md-icon>&#160&#160&#160&#160<strong  class="blue-text">Responsavel Departamento:</strong>{{dep.responsavel}}</a></p>
+            </div>
+            <md-dialog-actions >
+                <md-button ng-click="cancel()" class="md-primary" layout-fill><md-icon>done_all</md-icon>ok</md-button>
+            </md-dialog-actions>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+</md-dialog>
+</div>
+</div>
+
+</div>
+
+
+
+<script>
+ $(document).ready(function(){
+    $('.table-of-contents').pushpin({ offset: 80});
+});
+
+
+</script>
+
+
+
+<!-- END PAGE CONTENT WRAPPER -->   

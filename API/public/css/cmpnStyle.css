@@ -1,5 +1,5 @@
    body,html {
-   	background-image: : url(../img/bg.jpg) no-repeat center center fixed;
+   	background: #eeeeee;
    	-webkit-background-size: cover;
    	-moz-background-size: cover;
    	-o-background-size: cover;
@@ -8,12 +8,13 @@
 
 
    [bg]{
-   	background: url(../img/bg.jpg) no-repeat center center fixed;
-   	background-size: cover;
+      /*   	background: url(../img/bg.jpg) no-repeat center center fixed;*/
+      background-size: cover;
    }
 
    [tp]{
    	background-color: transparent;
+      box-shadow: none;
    }
 
    [fixedMenu]{
@@ -22,5 +23,8 @@
    	z-index: 9000
    }
 
+   [fixed]{
+      position:fixed;
+   }
 
 

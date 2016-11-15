@@ -9,7 +9,7 @@
 * ghostechnology
 * 2016
 */
-angular.module('cmpnApp')	
+angular.module('filterApp',[])	
  /**
  * [description]
  * filtro responsavel pelo num de elementos que serao exibidos em uma pagina
@@ -48,4 +48,10 @@ angular.module('cmpnApp')
  	return function(items){
  		return items.slice().reverse();
  	};
+ });/*.run(function(routeFilter,authUser){
+ 	routeFilter.register('kid', ['/admin'], function(){
+ 		return isAdmin();
+ 	},'/');
  });
+ 
+*/

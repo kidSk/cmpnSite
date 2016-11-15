@@ -1,0 +1,40 @@
+
+<div class="row">
+  <div class="container col offset-l3 s12 l9">
+    <div class="col s12 m6 l5" ng-repeat="card in card">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img src="img/cmpn.jpg" ng-click="link(card.path)">
+          <span class="card-title">{{card.name}} Departamento</span>
+        </div>
+        <div align="center">
+          <md-button class="md-primary {{color}}-text" href="{{card.link}}"> <md-icon class="black-text">{{card.icon}}</md-icon> {{card.name}} Departamento</md-button>
+        </div>
+      </div>
+    </div>
+    <div class="col m3 l2  hide-sm hide-xs"  style="top:150px">
+
+      <ul class="section table-of-contents {{color}}-text">
+        <h6><strong>Content</strong></h6>
+        <li><a href="#/departamentos/adicionar">Adicionar Departamentos</a></li>
+        <li><a href="#structure">Listar Departamentos</a></li>
+        <li><a href="#initialization">Atualizar Departamentos</a></li>
+        <li><a href="#initialization">Eliminar Departamentos</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+
+
+</div>
+
+
+<script>
+ $(document).ready(function(){
+  $('.table-of-contents').pushpin({ offset: 80});
+});
+
+
+</script>

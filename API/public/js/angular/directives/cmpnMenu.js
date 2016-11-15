@@ -9,14 +9,18 @@
 * ghostechnology
 * 2016
 */
-angular.module('cmpnApp').directive('cmpnMenu', ['$mdDialog',function ($mdDialog) {
+angular.module('menuApp',[]).directive('cmpnMenu', ['$mdDialog','authUser',function ($mdDialog,authUser) {
 	return {
 		restrict: 'A',
 		templateUrl:'views/directives/menu.html',
 		link: function ($scope, iElement, iAttrs) {
+
+
 			$scope.title="Camâra Municipal do Porto Novo";
 			
-
+			$scope.location=function(){
+				window.location.assign("http://kingoroot/#/perfil");
+			}
 			$scope.clean = function(){
 				$scope.search = !$scope.search
 				$scope.procurar=null
@@ -25,19 +29,8 @@ angular.module('cmpnApp').directive('cmpnMenu', ['$mdDialog',function ($mdDialog
 
 			$scope.items = [
 			{name: 'Pagina Principal', icon: 'home',link:'#/home'},
-			{name: 'Sobre', icon: 'info',click:function(ev){
-				$mdDialog.show(
-					$mdDialog.alert()
-					.parent(angular.element(document.querySelector('#popupContainer')))
-					.clickOutsideToClose(true)
-					.title('ALERTA')
-					.textContent('Disponivel Brevemente')
-					.ariaLabel('Alert Dialog')
-					.ok('OK')
-					.targetEvent(ev)
-					);
-			}},
-			
+			{name: 'Sobre', icon: 'info', link:'#/sobre'},
+
 			{name: 'Projetos', icon: 'work',click:function(ev){
 				$mdDialog.show(
 					$mdDialog.alert()
@@ -62,7 +55,7 @@ angular.module('cmpnApp').directive('cmpnMenu', ['$mdDialog',function ($mdDialog
 					);
 			}},
 			{name: 'Departamentos', icon: 'business',link:'#/departamentos',},
-			
+
 			{name: 'Serviços', icon: 'airplay',click:function(ev){
 				$mdDialog.show(
 					$mdDialog.alert()
@@ -100,30 +93,15 @@ angular.module('cmpnApp').directive('cmpnMenu', ['$mdDialog',function ($mdDialog
 					);
 			}},
 
-			{name: 'User', icon: 'account_circle',link:'#/login'},
-
-
-			];
-
-			$scope.item = [
-			{name: 'Admin', icon: 'home',link:'#/admin'},
-			{name: 'S', icon: 'info'},
-			{name: 'Departamentos', icon: 'business',link:'#/departamentos'},
-			{name: 'Projetos', icon: 'work'},
-			{name: 'Galeria', icon: 'camera_alt'},
-			{name: 'Contactos', icon: 'mail'},
-			{name: 'Search', icon: 'search', click:function(){
-				$scope.search = !$scope.search
-				$scope.procurar=null
-			}},
-			{name: 'User', icon: 'account_circle',link:'#/login'},
 
 
 			];
 
 
 
-			
+
+
+
 		}
 	};
 }]);

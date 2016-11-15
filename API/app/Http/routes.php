@@ -14,7 +14,16 @@
 Route::get('/', function () {
 	return view('index');
 });
+Route::get('/error403', function () {
+	return view('403');
+});
+Route::get('/admin', function () {
+	return view('admin');
+});
 
+
+
+/*
 Route::get('/admin', function () {
 	return view('admin');
 });
@@ -24,7 +33,7 @@ Route::get('/home', function () {
 Route::get('/departamentos', function () {
 	return view('dep');
 });
-
+*/
 
 Route::group(['middleware'=>'cors'],function(){
 	Route::post('login','loginController@userAuth');

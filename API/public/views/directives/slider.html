@@ -1,14 +1,16 @@
 
 <style type="text/css">
 	.slider .indicators .indicator-item{
-		background-color: #e3f2fd;
+		background-color: #d7ccc8 ;
 	}
 	.slider .indicators .indicator-item.active {
 		background-color: #42a5f5;
 	}
+
+	
 </style>
-<div class="slider md-whiteframe-z2 white" ng-show="home">
-	<ul class="slides">
+<div class="slider" ng-show="home">
+	<ul class="slides md-whiteframe-z4">
 		<li>
 			<img src="img/slider/cmpn.jpg"> <!-- random image -->
 			<div class="caption left-align">
@@ -39,12 +41,10 @@
 		</li>
 	</ul>
 </div>
-<br>
 
 
 <script>
 	$(document).ready(function(){
 		$('.slider').slider({full_width: true});
 	});
-
 </script>

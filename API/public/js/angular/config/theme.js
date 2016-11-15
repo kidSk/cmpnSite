@@ -3,7 +3,7 @@
 *
 * Configuraçao do tema, icons e paletes de cor
 */
-angular.module('cmpnApp') .config(function($mdThemingProvider) {
+angular.module('themeApp',[]).config(function($mdThemingProvider) {
 	var customBlueMap = 		$mdThemingProvider.extendPalette('light-blue', {
 		'contrastDefaultColor': 'light',
 		'contrastDarkColors': ['50'],
