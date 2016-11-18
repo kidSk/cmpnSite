@@ -20,6 +20,9 @@ Route::get('/error403', function () {
 Route::get('/admin', function () {
 	return view('admin');
 });
+Route::get('/departamentos', function () {
+	return view('funcionario');
+});
 
 
 

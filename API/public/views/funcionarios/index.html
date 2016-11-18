@@ -1,0 +1,32 @@
+<cmpn-toolbar></cmpn-toolbar>
+
+<!-- fixed Side nav -->
+<left-menu></left-menu>
+<!-- ------User Nav Bar ----- -->
+<cmpn-user-sidenav></cmpn-user-sidenav>
+
+
+
+<div class="row">
+	<div class="container col offset-l3 s12 l9">
+		<div class="col s12 m6 l5" ng-repeat="card in card">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img src="img/cmpn.jpg" ng-click="link(card.path)">
+					<span class="card-title">{{card.name}}</span>
+				</div>
+				<div align="center">
+					<md-button class="md-primary {{color}}-text" href="{{card.link}}"> <md-icon class="black-text">{{card.icon}}</md-icon> {{card.name}} </md-button>
+				</div>
+			</div>
+		</div>
+
+
+		<div  ng-include="'views/directives/pushPin.html'"></div>
+	</div>
+
+
+
+
+</div>
+<cmpn-fab-button></cmpn-fab-button>

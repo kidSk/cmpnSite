@@ -1,0 +1,18 @@
+<!-- fixed Side nav -->
+<ul class="side-nav fixed" style="width: 300px">
+
+	<li><div class="userView " >
+		<img class="background md-whiteframe-z2" src="img/nature-3.jpg">
+		<a href="#!user"><img class="circle" src="img/cm.png" ng-hide="admin.isLogin"></a>
+		<a href="#!user"><img class="circle" src="img/avatar.jpg" ng-show="admin.isLogin"></a>
+		<a href="#!name"><span class="white-text name">{{funcionario.user.name}}</span></a>
+		<a href="#!email"><span class="white-text email">{{funcionario.user.email}}</span></a>
+	</div>
+</li>
+<li><a class="subheader">Menu</a></li>
+
+<li ng-repeat="item in items"><a class="waves-effect" href="{{item.link}}" ng-click="item.click()"><i class="material-icons {{item.color}}">{{item.icon}}</i>{{item.name}}</a></li>
+
+<!-- fsdafas -->
+
+</ul>

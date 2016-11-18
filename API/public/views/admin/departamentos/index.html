@@ -12,29 +12,22 @@
         </div>
       </div>
     </div>
-    <div class="col m3 l2  hide-sm hide-xs"  style="top:150px">
 
-      <ul class="section table-of-contents {{color}}-text">
-        <h6><strong>Content</strong></h6>
-        <li><a href="#/departamentos/adicionar">Adicionar Departamentos</a></li>
-        <li><a href="#structure">Listar Departamentos</a></li>
-        <li><a href="#initialization">Atualizar Departamentos</a></li>
-        <li><a href="#initialization">Eliminar Departamentos</a></li>
-      </ul>
-    </div>
 
+    <div  ng-include="'views/directives/pushPin.html'"></div>
   </div>
 
   
 
 
 </div>
+<cmpn-fab-button></cmpn-fab-button>
 
-
-<script>
+<!-- <script>
  $(document).ready(function(){
   $('.table-of-contents').pushpin({ offset: 80});
 });
 
 
 </script>
+ -->

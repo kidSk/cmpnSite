@@ -44,7 +44,7 @@ angular.module('adminApp').config(function ($routeProvider,$authProvider) {
 	var rotasPrivada = ['/', '/admin',];
 	
 	$rootScope.$on('$routeChangeStart',function(){
-		if(($.inArray($location.path(), rotasPrivada)!==-1) && !authUser.isLoggedIn()  || sessionControl.get('name')!=='kid'){
+		if(($.inArray($location.path(), rotasPrivada)!==-1) && !authUser.isLoggedIn()  || sessionControl.get('type')!=='admin'){
 
 
 			//Materialize.toast('Error 401 - Acesso nao Autorizado por favor efectue login', 4000) ;

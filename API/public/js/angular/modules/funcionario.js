@@ -1,9 +1,10 @@
 /**
-* adminApp Module;
+* funcionario Module
 *
 * Description
 */
-angular.module('adminApp', [
+angular.module('funcionarioApp', [
+
 	'ngMaterial',
 	'ngRoute',
 	'ngAnimate',
@@ -13,14 +14,15 @@ angular.module('adminApp', [
 	'ngMdIcons',
 	'ngResource',
 	'cmpnAuthService',
-	'menuApp',
 	'filterApp',
 	'themeApp',
-	'departamento',
 	'paginations',
-	'paginator',
-	'pushPin',
-	'fabButton'
+	'fabButton',
+	'leftMenu',
+	'cmpnToolbar',
+	'cmpnUser',
+	'pattern',
 	
 	
+
 	]);

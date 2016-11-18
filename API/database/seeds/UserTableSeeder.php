@@ -13,14 +13,36 @@ class UserTableSeeder extends Seeder
     public function run()
     {
     	$users = [
-       [
-       'name'=>'kid',
-       'email'=>'kid@kid.com',
-       'password'=>Hash::make(123456789)
-       ]
-       ];
-       foreach ($users as $user) {
-          User::create($user);
-      }
+     [
+     'name'=>'admin',
+     'email'=>'kid@kid.com',
+     'avatar'=>'avatar.png',
+     'type'=>'admin',
+     'subNivel'=>'',
+
+     'password'=>Hash::make(123456789)
+     ],
+     [
+     'name'=>'funcionario',
+     'email'=>'kid2@kid.com',
+     'avatar'=>'avatar.png',
+     'type'=>'funcionario',
+     'subNivel'=>'social',
+
+     'password'=>Hash::make(123456789)
+     ],
+     [
+     'name'=>'cidadao',
+     'email'=>'kid3@kid.com',
+     'avatar'=>'avatar.png',
+     'type'=>'',
+     'subNivel'=>'',
+
+     'password'=>Hash::make(123456789)
+     ]
+     ];
+     foreach ($users as $user) {
+      User::create($user);
+    }
   }
 }

@@ -9,7 +9,7 @@
 * ghostechnology
 * 2016
 */
-angular.module('filterApp',[])	
+angular.module('filterApp',['paginations'])	
  /**
  * [description]
  * filtro responsavel pelo num de elementos que serao exibidos em uma pagina

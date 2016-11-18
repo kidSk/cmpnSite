@@ -1,0 +1,64 @@
+<md-toolbar ng-hide="search" class="navbar-fixed" ng-class="color">
+
+	<nav class="{{color}}">
+		<div class="row md-whiteframe-z3" ng-class="color">
+			<div class="nav-wrapper " ng-class="{logIN: funcionario.isLogin}">
+				<div class="brand-logo col s12 offset-s7 l6 offset-l3">
+					<h5><md-icon>business</md-icon>{{title}}</h5><h6 class="loc" >{{activeTab()}}</h6>
+
+				</div>	
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+
+			</div>
+
+		</div>
+	</nav>
+	<a href="#!" class="button-collapse" data-activates="slide-out"><img src="img/avatar.jpg" alt="userProfile" class="circle userProfile" ng-if="funcionario.isLogin" hide-sm hide-xs></a>
+</md-toolbar>
+
+<md-toolbar ng-if="search" class="md-hue-1 md-whiteframe-z4 page-home " fixedMenu>
+	<div class="md-toolbar-tools">
+		<md-button id="procurar" class="md-icon-button" aria-label="Back" ng-click="clean()">
+			<ng-md-icon icon="arrow_back" style="fill:black" ></ng-md-icon>
+		</md-button>
+			<!-- <h3 flex="10">
+				Back
+			</h3> -->
+			<md-input-container flex >
+				<label>&nbsp;</label>
+				<input ng-model="procurar" placeholder="Procurar" name="proc" style="margin-top:23px">
+			</md-input-container>
+			<md-button aria-label="Search" ng-click="clean()" class="md-icon-button">
+				<ng-md-icon icon="search" style="fill:black" ></ng-md-icon>
+			</md-button>
+
+		</div>
+
+	</md-toolbar>
+	
+
+
+	<ul class="side-nav" id="mobile-demo" >
+
+		<li><div class="userView " >
+			<img class="background md-whiteframe-z2" src="img/nature-3.jpg">
+			<a href="#!user"><img class="circle" src="img/cm.png" ng-hide="funcionario.isLogin"></a>
+			<a href="#!user"><img class="circle" src="img/avatar.jpg" ng-show="funcionario.isLogin"></a>
+			<a href="#!name"><span class="white-text name">{{funcionario.user.name}}</span></a>
+			<a href="#!email"><span class="white-text email">{{funcionario.user.email}}</span></a>
+		</div>
+	</li>
+	<div class=" hide-on-large-only">
+		<li ng-hide="!funcionario.isLogin"><a class="subheader">Account Settings</a></li>
+		<!-- <li><a class="subheader">Configurações de Conta</a></li> -->
+		<li ng-hide="!funcionario.isLogin"><a href="#/perfil"><i class="material-icons blue-text">settings</i>Definições</a></li>
+		<!-- <li><a href="#!"><i class="material-icons green-text">inbox</i>Inbox</a></li> -->
+		<li ng-hide="!funcionario.isLogin"><a href="#!" ng-click="funcionario.logout()"><i class="material-icons red-text" >power_settings_new</i>Sair</a></li>
+	</div>
+	<li><a class="subheader">Menu</a></li>
+	<li ng-repeat="item in items" ><a class="waves-effect" href="{{item.link}}" ng-click="item.click()"><i class="material-icons">{{item.icon}}</i>{{item.name}}</a></li>
+
+	<!-- fsdafas -->
+
+</ul>

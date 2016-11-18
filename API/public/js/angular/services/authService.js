@@ -14,27 +14,39 @@ angular.module('cmpnAuthService',[])
 	};
 })
 .factory('authUser',function($auth,sessionControl,$mdDialog,$location,$route) {
-	var cacheSession = function(email,password,name){
+	var cacheSession = function(email,password,name,type,avatar,subNivel){
 		sessionControl.set('userIsLogin',true);
 		sessionControl.set('email',email);
 		sessionControl.set('name',name);
-		/*		sessionControl.set('avatar',avatar);*/
+		sessionControl.set('avatar',avatar);
+		sessionControl.set('type',type);
+		sessionControl.set('subNivel',subNivel);
 	}
 	var unCacheSession = function(){
 		sessionControl.unset('userIsLogin');
 		sessionControl.unset('email');
 		sessionControl.unset('name');
-		/*sessionControl.unset('avatar');*/
+		sessionControl.unset('avatar');
+		sessionControl.set('type');
+		sessionControl.set('subNivel');
 	}
 
 	var login = function(loginForm,ev){
 		$auth.login(loginForm).then(function(response){
 			
-			cacheSession(response.data.user.email, response.data.user.password, response.data.user.name)
-			if(response.data.user.name==='kid'){
+			cacheSession(response.data.user.email, response.data.user.password, response.data.user.name,response.data.user.type,response.data.user.avatar,response.data.user.subNivel)
+			if(response.data.user.type==='admin'){
 
 				window.location.assign("http://kingoroot/admin/");
 			}
+
+			else if(response.data.user.type==='funcionario'){
+
+				if(response.data.user.subNivel==='social')
+					window.location.assign("http://kingoroot/departamentos#/Accao Social");
+			}
+
+
 			else{
 				window.location.assign("http://kingoroot");
 
@@ -72,7 +84,11 @@ console.log(response.data.user);*/
 			return sessionControl.get('userIsLogin')!==null;
 		},
 		isAdmin:function(){
-			return this.isLoggedIn() && sessionControl.get('name')=='kid';
+			return isLoggedIn() && sessionControl.get('type')==='admin';
+		},
+
+		isSocial:function(){
+			return isLoggedIn() && sessionControl.get('type')==='social';
 		}
 	}
 });

@@ -12,6 +12,7 @@
 */
 angular.module('adminApp').controller('adminCtrl', function ($scope,$location,authUser,  sessionControl,$mdDialog) {
 	var vm = this;
+   
 
 
   vm.title="CMPN Admin DashBoard";
@@ -133,6 +134,5 @@ vm.isLogin=authUser.isLoggedIn();
 
 
          ];
-
 
       });

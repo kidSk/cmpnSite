@@ -1,0 +1,36 @@
+<style>
+  .pagination li i{
+    font-size: 1rem;
+  }
+</style>
+
+
+<div ng-show="paginator.pageCount() > 1">
+  <ul class="pagination " >
+    <li ng-click="paginator.firstPage()" ng-class="paginator.isFirstPage() && 'disabled'">
+      <a>
+        <i class="fa fa-step-backward" ng-class="paginator.isFirstPage() && 'icon-white'"></i>
+      </a>
+    </li>
+    <li ng-click="paginator.perviousPage()" ng-class="paginator.isFirstPage() && 'disabled'">
+      <a>
+        <i class="fa fa-backward" ng-class="paginator.isFirstPage() && 'icon-white'"></i>
+      </a>
+    </li>
+    <li ng-click="paginator.setPage(i)" ng-repeat="i in [] | forLoop:paginator.lowerLimit():paginator.pageCount() | limitTo : paginator.limitPerPage" ng-class="paginator.page==i && 'active'"> 
+      <a> 
+        <i>{{i+1}}</i> 
+      </a> 
+    </li>
+    <li ng-click="paginator.nextPage()" ng-class="paginator.isLastPage() && 'disabled'">
+      <a>
+        <i class="fa fa-forward" ng-class="paginator.isLastPage() && 'icon-white'"></i>
+      </a>
+    </li>
+    <li ng-click="paginator.lastPage()" ng-class="paginator.isLastPage() && 'disabled'">
+      <a>
+        <i class="fa fa-step-forward" ng-class="paginator.isLastPage() && 'icon-white'"></i>
+      </a>
+    </li>
+  </ul>
+</div>
