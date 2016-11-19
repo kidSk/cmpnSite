@@ -39,10 +39,19 @@ class UserTableSeeder extends Seeder
      'subNivel'=>'',
 
      'password'=>Hash::make(123456789)
+     ],
+     [
+     'name'=>'assembleia',
+     'email'=>'kid4@kid.com',
+     'avatar'=>'avatar.png',
+     'type'=>'',
+     'subNivel'=>'',
+
+     'password'=>Hash::make(123456789)
      ]
      ];
      foreach ($users as $user) {
       User::create($user);
-    }
   }
+}
 }

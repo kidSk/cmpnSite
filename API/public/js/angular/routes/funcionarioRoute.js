@@ -5,22 +5,32 @@
 		.when('/Accao Social', {
 			templateUrl: 'views/funcionarios/index.html',
 			controller: 'accaoSocialCtrl',
-			controllerAs:'social'
-			
+			controllerAs:'vm',
+
 			resolve: {
-				checkRoles: function(RouteAccessService, Profile) {
-					return RouteAccessService.checkRoles(Profile.isAdmin());
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
 				}
 			}
 		})
 		.when('/assembleia', {
 			templateUrl: 'views/funcionarios/index.html',
 			controller: 'assembleiaCtrl',
-			controllerAs:'assembleia'
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isAssembleia());
+				}
+			}
 		}).when('/accao social/atendimento', {
 			templateUrl: 'views/funcionarios/accaoSocial/atendimento.html',
 			controller: 'atendimentoCtrl',
-			controllerAs:'atendimento'
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
 		})
 		.otherwise({ redirectTo: '/' })
 

@@ -13,7 +13,7 @@ angular.module('cmpnAuthService',[])
 		}
 	};
 })
-.factory('authUser',function($auth,sessionControl,$mdDialog,$location,$route) {
+.factory('authUser',function($auth,sessionControl,$mdDialog,$location,$route){
 	var cacheSession = function(email,password,name,type,avatar,subNivel){
 		sessionControl.set('userIsLogin',true);
 		sessionControl.set('email',email);
@@ -35,6 +35,7 @@ angular.module('cmpnAuthService',[])
 		$auth.login(loginForm).then(function(response){
 			
 			cacheSession(response.data.user.email, response.data.user.password, response.data.user.name,response.data.user.type,response.data.user.avatar,response.data.user.subNivel)
+			
 			if(response.data.user.type==='admin'){
 
 				window.location.assign("http://kingoroot/admin/");
@@ -42,8 +43,12 @@ angular.module('cmpnAuthService',[])
 
 			else if(response.data.user.type==='funcionario'){
 
-				if(response.data.user.subNivel==='social')
+				if(response.data.user.subNivel==='social'){
 					window.location.assign("http://kingoroot/departamentos#/Accao Social");
+					
+				}
+				if(response.data.user.subNivel==='assembleia')
+					window.location.assign("http://kingoroot/departamentos#/assembleia");
 			}
 
 
@@ -52,23 +57,24 @@ angular.module('cmpnAuthService',[])
 
 			}
 			
-/*
-console.log(response.data.user);*/
+			
+
+			
 
 
 
-}, function(){
-	unCacheSession();
-	$mdDialog.show(
-		$mdDialog.alert()
-		.title('ERRO AO FAZER LOGIN')
-		.clickOutsideToClose(true)
-		.content('Email e/ou Password Incorretos !!! Por favor tente outra vez')
-		.ariaLabel('Login Repport')
-		.ok('ok')
-		.targetEvent(ev)
-		);
-});
+		}, function(){
+			unCacheSession();
+			$mdDialog.show(
+				$mdDialog.alert()
+				.title('ERRO AO FAZER LOGIN')
+				.clickOutsideToClose(true)
+				.content('Email e/ou Password Incorretos !!! Por favor tente outra vez')
+				.ariaLabel('Login Repport')
+				.ok('ok')
+				.targetEvent(ev)
+				);
+		});
 
 	};
 
@@ -83,12 +89,12 @@ console.log(response.data.user);*/
 		isLoggedIn:function(){
 			return sessionControl.get('userIsLogin')!==null;
 		},
-		isAdmin:function(){
-			return isLoggedIn() && sessionControl.get('type')==='admin';
-		},
-
 		isSocial:function(){
-			return isLoggedIn() && sessionControl.get('type')==='social';
+			return sessionControl.get('subNivel')==='social';
+		},
+		isAssembleia:function(){
+			return sessionControl.get('subNivel')==='assembleia';
 		}
+		
 	}
 });

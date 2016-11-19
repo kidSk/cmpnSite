@@ -58,6 +58,7 @@
 	<script src="js/angular/services/departamentoService.js"></script>
 	<script src="js/angular/services/paginationsService.js"></script>
 	<script src="js/angular/services/patternService.js"></script>
+	<script src="js/angular/services/routeAccessService.js"></script>
 	
 
 	<!-- <script src="js/angular/services/departamentoService.js"></script> -->
