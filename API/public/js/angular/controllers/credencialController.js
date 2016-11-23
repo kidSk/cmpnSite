@@ -1,12 +1,12 @@
 (function(){
-	function atendimentoCtrl ($scope, pattern, $mdDialog){
+	function credencialCtrl ($scope, pattern, $mdDialog){
 		$scope.color="green";
 		var self =this;
 		var date = new Date();
 		self.cmpn="Camâra Municipal do Porto Novo";
 		$scope.social="Serviços de Desenvovimento e Integração Social";
-		self.icon="perm_identity";
-		self.title="Criar Ficha de Atendimento";
+		self.icon="local_atm";
+		self.title="Criar Ficha  de Credêncial";
 		self.color="green";
 		self.string =/^[a-z A-Z]{1,225}$/;
 		self.number = /^[0-9]{1,225}$/;
@@ -33,9 +33,7 @@
 
 
 		$scope.FromDate = date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
-		
-
 	}
 
-	angular.module('funcionarioApp').controller('atendimentoCtrl',atendimentoCtrl);
+	angular.module('funcionarioApp').controller('credencialCtrl',credencialCtrl);
 })();

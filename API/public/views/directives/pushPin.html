@@ -1,21 +1,21 @@
     <div class="col m3 l2  hide-sm hide-xs"  style="top:150px">
 
-      <ul class="section table-of-contents {{color}}-text">
-        <h6 align="center"><strong>Content</strong></h6>
-        <li ng-repeat="item in pushPin"><a href="{{item.link}}">{{item.nome}}</a></li>
-        
-      </ul>
+    	<ul class="section table-of-contents {{color}}-text">
+    		<h6 align="center"><strong>Content</strong></h6>
+    		<li ng-repeat="item in card"><a href="{{item.linkAdd}}">{{item.name}}</a></li>
+
+    	</ul>
     </div>
-  </div>
+</div>
 
 
 
 </div>  
 
 <script>
- $(document).ready(function(){
-  $('.table-of-contents').pushpin({ offset: 80});
-});
+	$(document).ready(function(){
+		$('.table-of-contents').pushpin({ offset: 80});
+	});
 
 
 </script>

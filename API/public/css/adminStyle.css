@@ -81,7 +81,7 @@
 		.loc{
 			width: 25%;
 			margin-top: -31px;
-			margin-left: 23em;
+			margin-left: 23.5em;
 			left: auto;
 			right: auto;
 		}
@@ -93,14 +93,14 @@
 		background-color: transparent;
 		}*/
 
-	[fixedMenu]{
-		position: fixed;
-		margin:0;
-		z-index: 9000
-	}
-	.cardBtn a{
-		width: 100% ;
-		margin-top:22px;
-	}
+		[fixedMenu]{
+			position: fixed;
+			margin:0;
+			z-index: 9000
+		}
+		.cardBtn a{
+			width: 100% ;
+			margin-top:22px;
+		}
 
-	
+		

@@ -32,6 +32,16 @@
 				}
 			}
 		})
+		.when('/credencial', {
+			templateUrl: 'views/funcionarios/accaoSocial/credencial.html',
+			controller: 'credencialCtrl',
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
+		})
 		.otherwise({ redirectTo: '/' })
 
 	}).run(function ($rootScope,$location,authUser,$mdDialog,sessionControl,$route,$window) {

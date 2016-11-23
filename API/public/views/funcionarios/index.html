@@ -3,24 +3,38 @@
 <!-- fixed Side nav -->
 <left-menu></left-menu>
 <!-- ------User Nav Bar ----- -->
-<cmpn-user-sidenav></cmpn-user-sidenav>
+<!-- <cmpn-user-sidenav></cmpn-user-sidenav> -->
 
 
 
 <div class="row">
 	<div class="container col offset-l3 s12 l9">
-		<div class="col s12 m6 l5" ng-repeat="card in card">
-			<div class="card">
+		<div class="col l5 m6 s12" ng-repeat=" dep in card">
+			<div class="card small">
 				<div class="card-image waves-effect waves-block waves-light">
-					<img src="img/cmpn.jpg" ng-click="link(card.path)">
-					<span class="card-title">{{card.name}}</span>
+					<img class="activator" src="img/nature-3.jpg">
 				</div>
-				<div align="center">
-					<md-button class="md-primary {{color}}-text" href="{{card.link}}"> <md-icon class="black-text">{{card.icon}}</md-icon> {{card.name}} </md-button>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4"><md-icon  class="black-text">{{dep.icon}}</md-icon>&#160&#160{{dep.name}}<i class="material-icons right">more_vert</i></span>
+					
+				</div>
+				<div class="card-reveal">
+					<span class="card-title grey-text text-darken-4">{{dep.name}}<i class="material-icons right">close</i></span>
+					<div class="cardBtn" >
+
+						<a  href="{{dep.linkAdd}}" class="waves-effect waves-light btn blue lighten-1 left black-text"><i class="material-icons right white-text">create</i>Ficha {{dep.name}}<md-tooltip>Criar Ficha de {{dep.name}}</md-tooltip></a>
+						<a  href="#/userList" class="waves-effect waves-light btn green lighten-1 left black-text"><i class="material-icons right white-text">library_books</i>Listar Fichas<md-tooltip>Listar Fichas {{dep.name}}</md-tooltip> </a>
+						
+						<a  href="#" class="waves-effect waves-light btn yellow lighten-1 black-text"><i class="material-icons right white-text">receipt</i>Atulaizar Ficha <md-tooltip>Atualizar Fichas {{dep.name}}</md-tooltip></a>
+						<a  href="#" class="waves-effect waves-light btn redblack-text red " ><i class="material-icons right white-text">delete_forever</i>Remover <md-tooltip>Remover Fichas {{dep.name}}</md-tooltip></a>
+
+
+					</div>
 				</div>
 			</div>
-		</div>
 
+
+		</div>
 
 		<div  ng-include="'views/directives/pushPin.html'"></div>
 	</div>
@@ -30,3 +44,4 @@
 
 </div>
 <cmpn-fab-button></cmpn-fab-button>
+

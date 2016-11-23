@@ -22,6 +22,7 @@ angular.module('funcionarioApp', [
 	'cmpnToolbar',
 	'cmpnUser',
 	'pattern',
+	'date',
 	
 	
 

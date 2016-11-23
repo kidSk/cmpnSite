@@ -1,11 +1,11 @@
 <!-- fab button -->
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	<a class="btn-floating btn-large {{color}}">
+	<a class="btn-floating btn-large {{vm.color}}">
 		<i class="material-icons">playlist_add</i>
 	</a>
 	<ul>
-		<li><a class="btn-floating purple" ng-click="clean()"><i class="material-icons" >search</i> <md-tooltip md-direction="left">Procurar</md-tooltip></a></li>
-		<li ng-repeat="item in  fab | reverse"><a  href="{{item.link}}"class="btn-floating {{item.color}}" ><i class="material-icons">{{item.icon}}</i><md-tooltip md-direction="left">{{item.name}}</md-tooltip></a></li>
+		<li><a class="btn-floating {{vm.color}}" ng-click="clean()"><i class="material-icons" >search</i> <md-tooltip md-direction="left">Procurar</md-tooltip></a></li>
+		<li ng-repeat="item in  card | reverse"><a  href="{{item.linkAdd}}" class="btn-floating {{item.color}}" ><i class="material-icons ">{{item.icon}}</i><md-tooltip md-direction="left">{{item.name}}</md-tooltip></a></li>
 		<!-- <li><a class="btn-floating green" ><i class="material-icons">assignment</i><md-tooltip md-direction="left">Editar</md-tooltip></a></li>
 		<li><a class="btn-floating yellow" ><i class="material-icons">playlist_add_check</i><md-tooltip md-direction="left">Listar</md-tooltip></a></li>
 		<li ng-show="admin.isLogin"><a class="btn-floating blue button-collapse" data-activates="slide-out"><i class="material-icons">add</i><md-tooltip md-direction="left">Adicionar </md-tooltip></a></li>

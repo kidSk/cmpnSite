@@ -3,6 +3,8 @@
 	function funcionarioCtrl($scope,authUser,sessionControl){
 		var self =this;
 		self.isLogin=authUser.isLoggedIn();
+       
+        self.icon="business";
          //escutador
          $scope.$watch(function(){
          	return authUser.isLoggedIn();

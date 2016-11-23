@@ -24,7 +24,7 @@ angular.module('cmpnAuthService',[])
 	}
 	var unCacheSession = function(){
 		sessionControl.unset('userIsLogin');
-		sessionControl.unset('email');
+		sessionControl.unset('email'); 
 		sessionControl.unset('name');
 		sessionControl.unset('avatar');
 		sessionControl.set('type');
@@ -43,12 +43,20 @@ angular.module('cmpnAuthService',[])
 
 			else if(response.data.user.type==='funcionario'){
 
-				if(response.data.user.subNivel==='social'){
+				switch(response.data.user.subNivel){
+					case 'social':
+					window.location.assign("http://kingoroot/departamentos#/Accao Social"); break;
+					case'assembleia':
+					window.location.assign("http://kingoroot/departamentos#/assembleia");break;
+
+				}
+
+				/*if(response.data.user.subNivel==='social'){
 					window.location.assign("http://kingoroot/departamentos#/Accao Social");
 					
 				}
 				if(response.data.user.subNivel==='assembleia')
-					window.location.assign("http://kingoroot/departamentos#/assembleia");
+					window.location.assign("http://kingoroot/departamentos#/assembleia");*/
 			}
 
 

@@ -2,8 +2,9 @@
 	function accaoSocialCtrl($scope,$location){
 
 
-		var vm = this;
-		$scope.title="Dashboard Departamento ";
+		var self= this;
+		self.title="Dashboard Departamento ";
+		self.icon = "business"
 
 		$scope.clean = function(){
 			$scope.search = !$scope.search
@@ -12,9 +13,9 @@
 
 
 		}
-		$scope.activeTab = function(viewLocation){
+		self.activeTab = function(viewLocation){
 			if($location.path()=="/Accao Social"){
-				$scope.color="green";
+				self.color="green";
 			}
 
 
@@ -28,10 +29,11 @@
 		]
 
 		$scope.card=[
-		{name:'Atendimento ', link:'#/accao social/atendimento', icon:'add_circle', path:'accao social/atendimento'},
-		{name:'Apoio a Habitação',link:'#/accao social/apoio a habitacao', icon:'home',path:'/accao social/apoio a habitacao'},
-		{name:'Apoio a Saúde',link:'#/accao social/apoio a saude', icon:'home',path:'/accao social/apoio a saude'},
-		{name:'Apoio a Saúde',link:'#/accao social/apoio a saude', icon:'home',path:'/accao social/apoio a saude'},
+		{name:'Atendimento ', linkAdd:'#/accao social/atendimento', icon:'perm_identity', path:'accao social/atendimento', color:'blue'},
+		{name:'Credênciais',link:'#/credencial', icon:'local_atm',path:'#/credencial',color:'green',},
+		{name:'Apoio a Habitação',link:'#/accao social/apoio a habitacao', icon:'store',path:'/accao social/apoio a habitacao',color:'yellow',},
+		{name:'Apoio a Saúde',link:'#/accao social/apoio a saude', icon:'tag_faces',path:'/accao social/apoio a saude',color:'green',color:'red',},
+		
 		
 
 		
@@ -43,14 +45,14 @@
 
 		$scope.add="adicionar departamento"
 
-		$scope.fab=[
+	/*	$scope.fab=[
 		{name:'Adicionar', icon:'add', color:'blue', link:'#/departamentos/adicionar'},
 		{name:'Listar', icon:'playlist_add_check', color:'green', link:'#/departamentos/listar'},
 		{name:'Remover', icon:'delete_forever', color:'red', link:'#/departamentos/listar'},
-		];
+		];*/
 		$scope.items = [
-		{name: 'Pagina Principal', icon: 'home',link:'#/home', color:'blue-text'},
-		{name: 'Sobre', icon: 'info', link:'#/sobre', color:'green-text'},
+		{name: 'Home', icon: 'home',link:'#/home', color:'green-text'},
+		{name: 'Sobre', icon: 'info', link:'#/sobre', color:'blue-text'},
 
 		{name: 'Projetos', icon: 'work', color:'yellow-text',click:function(ev){
 			$mdDialog.show(

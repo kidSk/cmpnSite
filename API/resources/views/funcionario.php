@@ -53,6 +53,7 @@
 	<script src="js/angular/directives/leftMenu.js"></script>
 	<script src="js/angular/directives/cmpnToolbar.js"></script>
 	<script src="js/angular/directives/cmpnUser.js"></script>
+	<script src="js/angular/directives/dataDirective.js"></script>
 	<!-- Services-->
 	<script src="js/angular/services/authService.js"></script>
 	<script src="js/angular/services/departamentoService.js"></script>
@@ -67,6 +68,7 @@
 	<script src="js/angular/controllers/assembleiaController.js"></script>
 	<script src="js/angular/controllers/atendimentoController.js"></script>
 	<script src="js/angular/controllers/funcionarioController.js"></script>
+	<script src="js/angular/controllers/credencialController.js"></script>
 
 
 	<!-- 	routes -->
