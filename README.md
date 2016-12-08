@@ -10,7 +10,7 @@ Estado de Desenvolvimento  - versao 1.0
 #Materialize
 
 
-Desenvolvido por: kidSk
+Desenvolvido por: kid.onestudio
 
 
 

@@ -20,8 +20,8 @@ Route::get('/error403', function () {
 Route::get('/admin', function () {
 	return view('admin');
 });
-Route::get('/departamentos', function () {
-	return view('funcionario');
+Route::get('/social', function () {
+	return view('social');
 });
 
 
@@ -44,6 +44,8 @@ Route::group(['middleware'=>'cors'],function(){
 	Route::resource('cargo','cargoController');
 	Route::resource('usuariosRegistados','usuariosRegistadosController');
 	Route::resource('mensagemPresidente','mensagemPresidenteController');
+	Route::resource('atendimento','atendimentoController');
 	Route::get('users','loginController@index');
 	Route::get('users/{id}','loginController@show');
+	
 });

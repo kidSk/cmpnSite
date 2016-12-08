@@ -45,9 +45,9 @@ angular.module('cmpnAuthService',[])
 
 				switch(response.data.user.subNivel){
 					case 'social':
-					window.location.assign("http://kingoroot/departamentos#/Accao Social"); break;
+					window.location.assign("http://kingoroot/social"); break;
 					case'assembleia':
-					window.location.assign("http://kingoroot/departamentos#/assembleia");break;
+					window.location.assign("http://kingoroot/assembleia");break;
 
 				}
 

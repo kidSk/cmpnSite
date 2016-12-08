@@ -1,4 +1,4 @@
-(function(){
+/*(function(){
 	function assembleiaCtrl($scope,$location){
 
 
@@ -107,4 +107,4 @@
 
 	
 	angular.module("funcionarioApp").controller('assembleiaCtrl',assembleiaCtrl);
-})();
+})();*/

@@ -8,6 +8,6 @@ class dep extends Model
 {
 	use SoftDeletes;
 	protected $table="departamento";
-	protected $fillable = ['name','responsavel'];
+	protected $fillable = ['responsavel','name'];
 	protected $dates = ['delete_at'];
 }

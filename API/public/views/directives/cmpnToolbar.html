@@ -2,7 +2,7 @@
 
 	<nav class="{{vm.color}}">
 		<div class="row md-whiteframe-z3" ng-class="color">
-			<div class="nav-wrapper " ng-class="{logIN: funcionario.isLogin}">
+			<div class="nav-wrapper " ng-class="{logIN: main.isLogin}">
 				<div class="brand-logo col s12 offset-s7 l6 offset-l3">
 					<h5><md-icon>{{vm.icon}}</md-icon>{{vm.title}}</h5><h6 class="loc" >{{vm.activeTab()}}</h6>
 
@@ -14,7 +14,7 @@
 
 		</div>
 	</nav>
-	<a href="#!" class="button-collapse" data-activates="slide-out"><img src="img/avatar.jpg" alt="userProfile" class="circle userProfile" ng-if="funcionario.isLogin" hide-sm hide-xs></a>
+	<a href="#!" class="button-collapse" data-activates="slide-out"><img src="img/avatar.jpg" alt="userProfile" class="circle userProfile" ng-if="main.isLogin" hide-sm hide-xs></a>
 </md-toolbar>
 
 <md-toolbar ng-if="search" class="md-hue-1 md-whiteframe-z4 page-home " fixedMenu>
@@ -43,18 +43,18 @@
 
 		<li><div class="userView " >
 			<img class="background md-whiteframe-z2" src="img/nature-3.jpg">
-			<a href="#!user"><img class="circle" src="img/cm.png" ng-hide="funcionario.isLogin"></a>
-			<a href="#!user"><img class="circle" src="img/avatar.jpg" ng-show="funcionario.isLogin"></a>
-			<a href="#!name"><span class="white-text name">{{funcionario.user.name}}</span></a>
-			<a href="#!email"><span class="white-text email">{{funcionario.user.email}}</span></a>
+			<a href="#!user"><img class="circle" src="img/cm.png" ng-hide="social.isLogin"></a>
+			<a href="#!user"><img class="circle" src="img/avatar.jpg" ng-show="social.isLogin"></a>
+			<a href="#!name"><span class="white-text name">{{social.user.name}}</span></a>
+			<a href="#!email"><span class="white-text email">{{social.user.email}}</span></a>
 		</div>
 	</li>
 	<div class=" hide-on-large-only">
-		<li ng-hide="!funcionario.isLogin"><a class="subheader">Account Settings</a></li>
+		<li ng-hide="!main.isLogin"><a class="subheader">Account Settings</a></li>
 		<!-- <li><a class="subheader">Configurações de Conta</a></li> -->
-		<li ng-hide="!funcionario.isLogin"><a href="#/perfil"><i class="material-icons blue-text">settings</i>Definições</a></li>
+		<li ng-hide="!main.isLogin"><a href="#/perfil"><i class="material-icons blue-text">settings</i>Definições</a></li>
 		<!-- <li><a href="#!"><i class="material-icons green-text">inbox</i>Inbox</a></li> -->
-		<li ng-hide="!funcionario.isLogin"><a href="#!" ng-click="funcionario.logout()"><i class="material-icons red-text" >power_settings_new</i>Sair</a></li>
+		<li ng-hide="!main.isLogin"><a href="#!" ng-click="main.logout()"><i class="material-icons red-text" >power_settings_new</i>Sair</a></li>
 	</div>
 	<li><a class="subheader">Menu</a></li>
 	<li ng-repeat="item in items" ><a class="waves-effect" href="{{item.link}}" ng-click="item.click()"><i class="material-icons {{item.color}}">{{item.icon}}</i>{{item.name}}</a></li>
@@ -67,14 +67,14 @@
 	<li><div class="userView">
 		<img class="background" src="img/nature-2.jpg">
 		<a href="#!user"><img class="circle" src="img/avatar.jpg"> </a>
-		<a href="#!name"><span class="white-text name">{{funcionario.user.name}} </span></a>
-		<a href="#!email"><span class="white-text email">{{funcionario.user.email}}</span></a>
+		<a href="#!name"><span class="white-text name">{{main.user.name}} </span></a>
+		<a href="#!email"><span class="white-text email">{{main.user.email}}</span></a>
 	</div>
 </li>
 <li ><a class="subheader">Configurações de Conta</a></li>
 <li ><a href="#/perfil"><i class="material-icons blue-text">settings</i>Definições</a></li>
 <li ><a href="#!"><i class="material-icons green-text">inbox</i>Inbox</a></li>
-<li ><a href="#!" ng-click="funcionario.logout()"><i class="material-icons red-text" >power_settings_new</i>Sair</a></li>
+<li ><a href="#!" ng-click="main.logout()"><i class="material-icons red-text" >power_settings_new</i>Sair</a></li>
 
 <li><div class="divider"></div></li>
 <li><a href="#!" ><i class="material-icons ">feedback</i>Enviar Sugestões</a></li>

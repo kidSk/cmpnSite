@@ -1,110 +1,115 @@
-<ng-include src="'views/funcionarios/includes/nav.html'"></ng-include>
+
 <div class="row">
 
   <br>
-  <div class="col offset-l3  offset-m2 l6 s12 m9">
-   <!--    <md-button class="md-primary {{color}}-text"  href="#/Accao Social"><md-icon class=" material-icons {{color}}-text">arrow_back</md-icon>Voltar</md-button>        -->                             
+  <div class="container col  offset-l3 ">
+    <div class="col  offset-l1 s12 m9">
+     <!--    <md-button class="md-primary {{color}}-text"  href="#/Accao Social"><md-icon class=" material-icons {{color}}-text">arrow_back</md-icon>Voltar</md-button>        -->                             
 
 
-   <md-card layout-padding layout-margin>
-
-    <form  name="atendimentoForm">
+     <md-card layout-padding layout-margin>
 
 
+      <form  name="atendimentoForm">
 
-      <md-input-container class="md-icon-float md-block">
 
-        <label>Introduzir Nome  Completo</label>
-        <md-icon >person</md-icon>
-        <input type="text" ng-model="atendimento.name" name="name" required ng-pattern="vm.string">
-        <div  ng-messages="atendimentoForm.name.$error">
+
+        <md-input-container class="md-icon-float md-block">
+
+          <label>Introduzir Nome  Completo</label>
+          <md-icon >person</md-icon>
+          <input type="text" ng-model="atendimento.name" name="name" required ng-pattern="vm.string">
+          <div  ng-messages="atendimentoForm.name.$error">
+            <div ng-message="required">
+              campo obrigatorio
+            </div>
+            <div ng-message="pattern">
+              o nome deve conter somente letras
+            </div>
+          </div>
+
+        </md-input-container>    
+        <md-input-container class="md-icon-float md-block">
+
+          <label>Introduzir Idade</label>
+          <md-icon >cake</md-icon>
+          <input type="text" ng-model="atendimento.idade" name="idade"  required ng-pattern="vm.number"  ng-minlength="2" md-maxlength="3">
+          <div  ng-messages="atendimentoForm.idade.$error">
+            <div ng-message="required">
+              campo obrigatorio
+            </div>
+            <div ng-message="pattern">
+             A idade deve conter somente  numeros
+           </div>
+           <div ng-message="minlength">
+             A idade deve ter no minino 2 caracteres
+           </div>
+           <div ng-message="md-maxlength">
+             A idade deve ter no maximo 3 caracteres
+           </div>
+         </div>
+
+       </md-input-container>
+       <md-input-container class="md-icon-float md-block">
+
+        <label>Morada</label>
+        <md-icon >home</md-icon>
+        <input type="text" ng-model="atendimento.morada" name="morada" required ng-pattern="vm.string">
+        <div  ng-messages="atendimentoForm.morada.$error">
           <div ng-message="required">
             campo obrigatorio
           </div>
           <div ng-message="pattern">
-            o nome deve conter somente letras
+            o Morada deve conter somente letras
           </div>
         </div>
 
       </md-input-container>    
       <md-input-container class="md-icon-float md-block">
 
-        <label>Introduzir Idade</label>
-        <md-icon >cake</md-icon>
-        <input type="text" ng-model="atendimento.idade" name="idade"  required ng-pattern="vm.number"  ng-minlength="2" md-maxlength="3">
-        <div  ng-messages="atendimentoForm.idade.$error">
+        <label>Introduzir Assunto</label>
+        <md-icon >library_books</md-icon>
+        <input type="text" ng-model="atendimento.assunto" name="assunto"  required>
+        <div  ng-messages="atendimentoForm.assunto.$error">
           <div ng-message="required">
             campo obrigatorio
           </div>
-          <div ng-message="pattern">
-           A idade deve conter somente  numeros
-         </div>
-         <div ng-message="minlength">
-           A idade deve ter no minino 2 caracteres
-         </div>
-         <div ng-message="md-maxlength">
-           A idade deve ter no maximo 3 caracteres
-         </div>
-       </div>
-
-     </md-input-container>
-     <md-input-container class="md-icon-float md-block">
-
-      <label>Morada</label>
-      <md-icon >home</md-icon>
-      <input type="text" ng-model="atendimento.morada" name="morada" required ng-pattern="vm.string">
-      <div  ng-messages="atendimentoForm.morada.$error">
-        <div ng-message="required">
-          campo obrigatorio
         </div>
-        <div ng-message="pattern">
-          o Morada deve conter somente letras
+
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+
+        <label>Escolher Sexo</label>
+        <md-icon>wc</md-icon>
+        <md-select ng-model="atendimento.sexo" required name="sexo"> <!--md-on-close: expression; multiple:boolean; placeholder: string;-->
+
+          <md-option value="Masculino">Masculino</md-option>
+          <md-option  value="Feminino">Feminino</md-option>
+        </md-select>
+
+
+
+        <div  ng-messages="atendimentoForm.sexo.$error">
+          <div ng-message="required">
+            campo obrigatorio
+          </div>
         </div>
-      </div>
 
-    </md-input-container>    
-    <md-input-container class="md-icon-float md-block">
+      </md-input-container>
 
-      <label>Introduzir Assunto</label>
-      <md-icon >library_books</md-icon>
-      <input type="text" ng-model="atendimento.assunto" name="assunto"  required>
-      <div  ng-messages="atendimentoForm.assunto.$error">
-        <div ng-message="required">
-          campo obrigatorio
-        </div>
-      </div>
-
-    </md-input-container>
-    <md-input-container class="md-icon-float md-block">
-
-      <label>Escolher Sexo</label>
-      <md-icon>wc</md-icon>
-      <md-select ng-model="atendimento.sexo" required name="sexo"> <!--md-on-close: expression; multiple:boolean; placeholder: string;-->
-
-        <md-option value="Masculino">Masculino</md-option>
-        <md-option  value="Feminino">Feminino</md-option>
-      </md-select>
+      <md-button class="md-raised md-warn" type="reset"><md-icon>restore</md-icon>Limpar</md-button>                                    
+      <md-button class="md-raised md-accent" ng-disabled="atendimentoForm.name.$invalid" ng-click="vm.showPrerenderedDialog()" ><md-icon  ng-hide="atendimentoForm.name.$valid">pageview</md-icon>Pre-visualizar<md-icon  ng-hide="atendimentoForm.name.$invalid">aspect_ratio</md-icon></md-button>                                    
+      <md-button class=" md-raised {{color}} md-primary " ng-disabled="atendimentoForm.$invalid" ng-click="vm.guardar(atendimento)" ><md-icon ng-hide="atendimentoForm.$valid">not_interested</md-icon>{{vm.button}}<md-icon  ng-hide="atendimentoForm.$invalid">done_all</md-icon></md-button>
 
 
-
-      <div  ng-messages="atendimentoForm.sexo.$error">
-        <div ng-message="required">
-          campo obrigatorio
-        </div>
-      </div>
-
-    </md-input-container>
-
-    <md-button class="md-raised md-warn" type="reset"><md-icon>restore</md-icon>Limpar</md-button>                                    
-    <md-button class="md-raised md-accent" ng-disabled="atendimentoForm.name.$invalid" ng-click="vm.showPrerenderedDialog()" ><md-icon  ng-hide="atendimentoForm.name.$valid">pageview</md-icon>Pre-visualizar<md-icon  ng-hide="atendimentoForm.name.$invalid">aspect_ratio</md-icon></md-button>                                    
-    <md-button class=" md-raised {{color}} md-primary " ng-disabled="atendimentoForm.$invalid" ng-click="vm.guardar(atendimento)" ><md-icon ng-hide="atendimentoForm.$valid">not_interested</md-icon>{{vm.button}}<md-icon  ng-hide="atendimentoForm.$invalid">done_all</md-icon></md-button>
-
-
-  </form>
-</md-card>
+    </form>
+  </md-card>
 
 
 </div>
+<div  ng-include="'views/directives/pushPin.html'"></div>
+</div>
+<cmpn-fab-button></cmpn-fab-button>
 
 <!-- preview -->
 
@@ -120,18 +125,18 @@
           <div class="card large" style="background-color: transparent;box-shadow: none; float: left">
             <div class="waves-effect waves-block waves-light" >
               <div align="center">
-               <img src="img/cm.png" class="circle" style="width: 40px; height:40px;" >
-               <h5>{{vm.cmpn}}</h5>
-               <h6 style="font-size: 13px;">{{social}}</h6>
-               <h6>{{vm.title}} nº </h6>
+               <img src="img/cm.png" class="circle" style="width: 20px; height:20px;" >
+               <h6>{{vm.cmpn}}</h6>
+               <h6 style="font-size: 12px;">{{social}}</h6>
+               <h6 style="font-size: 12px;">FICHA DE ATENDIMENTO nº {{atendimento.id}}/ <span date="yyyy"></span></h6>
              </div>
              <div align="center">
-              <img src="img/man.svg" class="circle" style="width: 100px; height:100px;" >
+               <img src="img/man.svg" class="circle" style="width: 50px; height:50px;" >
 
-            </div>
+             </div>
 
-          </div>
-          <div class="card-content">
+           </div>
+           <div class="card-content">
 
             <h6 ng-if="atendimentoForm.name.$valid"><strong>Nome: &#160</strong><span style="font-size: 14px;">{{atendimento.name}}</span></h6>
             <h6 ng-if="atendimentoForm.idade.$valid"><strong>Idade: &#160</strong><span style="font-size: 14px;">{{atendimento.idade}}</span></h6>
@@ -143,25 +148,26 @@
 
           <div layout-align="end end" layout="row">
             <div layout="column" ng-if="atendimentoForm.$valid">
-              <h6><strong >Atendido por:&#160 </strong><span style="font-size: 14px; text-transform: capitalize;">{{funcionario.user.name}}</span></h6>
+              <h6><strong >Atendido por:&#160 </strong><span style="font-size: 14px; text-transform: capitalize;">{{main.user.name}}</span></h6>
               <h6><strong >Data:&#160 </strong><span style="font-size: 14px; text-transform: capitalize;" date="dd/MM/yyyy"></span></h6>
             </div>
           </div>
           <md-dialog-actions >
-            <md-button ng-click="vm.cancel()" class="md-primary md-raised" layout-fill><md-icon>done_all</md-icon>ok</md-button>
-            <md-button  class="md-primary" layout-fill ng-if="atendimentoForm.$valid"><md-icon>print</md-icon>Imprimir</md-button>
-          </md-dialog-actions>
-        </div>
-      </md-dialog>
+           <!--  <md-button ng-click="vm.cancel()" class="md-primary " layout-fill><md-icon>done_all</md-icon>ok</md-button> -->
+           <md-button  class="md-primary" layout-fill ng-if="atendimentoForm.$valid" onclick="window.print();"><md-icon>print</md-icon>Imprimir</md-button>
+         </md-dialog-actions>
+       </div>
+     </md-dialog>
 
 
 
 
 
-    </div>
+   </div>
 
-  </div>
+ </div>
 
 
 </div>
 </div>
+

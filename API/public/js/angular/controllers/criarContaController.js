@@ -18,6 +18,7 @@
    vm.title="Crie a Sua Conta";
    $scope.string =/^[a-z A-Z]{1,225}$/;
    $scope.number = /^[0-9]{1,225}$/;
+   
 
  }]);
 })();

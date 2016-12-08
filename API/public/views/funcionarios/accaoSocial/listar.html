@@ -1,0 +1,35 @@
+
+<div class="row" bg>
+
+	<div class="container col offset-l3" bg >
+
+		<div class="col l12 s12" layout-padding layout-margin bg>
+			<md-card>
+				<table datatable="ng" dt-options="vm.dtOptions" dt-columns-defs="vm.dtColumns-Defs"  class="row-border hover">
+					<thead>
+						<tr>
+							<th class="red-text">ID</th>
+							<th>Nome</th>
+							<th>Idade</th>
+							<th>Assunto</th>
+							<th>Morada</th>
+							<th>Data</th>
+						</tr>
+
+					</thead>
+					<tbody>
+						<tr ng-repeat="atendimento in atendimento">
+							<td class="red-text" >{{atendimento.id}}</td>
+							<td>{{atendimento.name}}</td>
+							<td>{{atendimento.idade}}</td>
+							<td>{{atendimento.assunto}}</td>
+							<td>{{atendimento.morada}}</td>
+							<td>{{atendimento.created_at}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</md-card>
+		</div>
+	</div>
+
+</div>
