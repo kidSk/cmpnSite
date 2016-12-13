@@ -1,5 +1,5 @@
 (function(){
-	function credencialCtrl ($scope, pattern, $mdDialog){
+	function credencialCtrl ($scope, pattern, $mdDialog,$location){
 		var self =this;
 		self.color="teal";
 		
@@ -34,8 +34,8 @@
 
 		$scope.FromDate = date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
 		$scope.card=[
-		{name:'Criar Ficha', linkAdd:'#/criar ficha de atendimento', icon:'library_add', path:'criar ficha de atendimento', color:'purple'},
-		{name:'Lista de Fichas',linkAdd:'#/lista de atendimentos', icon:'playlist_add_check',path:'lista de atendimentos',color:'green'},
+		{name:'Criar Ficha', linkAdd:'#/criar ficha de credencial', icon:'library_add', path:'criar ficha de credencial', color:'purple'},
+		{name:'Lista de Fichas',linkAdd:'#/lista de credenciais', icon:'playlist_add_check',path:'lista de credenciais',color:'green'},
 		{name:'Remover Ficha ',linkAdd:'',icon:'delete_forever',path:'',color:'yellow'},
 		{name:'Atualizar Ficha',linkAdd:'',icon:'language',path:'',color:'red'},
 		

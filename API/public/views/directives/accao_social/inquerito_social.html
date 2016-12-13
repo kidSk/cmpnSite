@@ -1,0 +1,184 @@
+		<div class="row">
+			<div class="col l12 s12 m9 " ng-show="step==2">
+				<fieldset>
+					<legend>Inquerito Social</legend>
+
+
+					<div class="row">
+						<div class="col l6">
+							<md-radio-group ng-model="pensao.inquerito_social">
+
+								<md-radio-button value="sozinho" class="md-primary">Vive sozinho</md-radio-button>
+								<md-radio-button value="internado" class="md-primary">Vive internado na Instituicao</md-radio-button>
+								<md-radio-button value="vive com pessoas" class="md-primary">Convive sob o mesmo teto com as pessoas abaixo</md-radio-button>
+
+								{{pensao.inquerito_social}}
+
+							</md-radio-group>
+						</div>
+						<div class="col l6">
+							<md-radio-group ng-model="pensao.inquerito_social">
+
+								<md-radio-button value="chefe de familia" class="md-primary">E chefe de familia</md-radio-button>
+								<md-radio-button value="nao e chefe" class="md-primary">Nao e chefe de familia</md-radio-button>
+								<md-radio-button value="uniao de facto" class="md-primary">Uniao de Facto</md-radio-button>
+
+
+							</md-radio-group>
+						</div>
+
+					</div>
+
+
+				</fieldset>
+
+
+			</div>
+			<div class="col l12 s12 m9 " ng-show="step==2">
+
+				<caption ><h4 align="center">Composicao do Agregado </h4></caption>
+				<table datatable="ng" dt-options="vm.dtOptions" dt-columns-defs="vm.dtColumns-Defs"  class="row-border hover" ng-show="agregados.length >0">
+
+					<thead>
+						<tr>
+
+							<th>Nome</th>
+							<th>Documento de ID</th>
+							<th>Nivel de Instrucao</th>
+							<th>Idade</th>
+							<th>Grau de Parentesco</th>
+							<th>Profissao</th>
+							<th>Ocupacao</th>
+							<th>Rendimento Mensal</th>
+							<th>Selecionar</th>
+
+
+
+
+						</tr>
+
+					</thead>
+					<tbody >
+						<tr ng-class="{selecionado : agregado.selecionado}" ng-repeat="agregado in agregados"  >
+
+							<td>{{agregado.name}}</td>
+							<td>{{agregado.id}}</td>
+							<td>{{agregado.escolaridade}}</td>
+							<td>{{agregado.idade}}</td>
+							<td>{{agregado.grau_parentesco}}</td>
+							<td>{{agregado.profissao}}</td>
+							<td>{{agregado.ocupacao}}</td>
+							<td>{{agregado.rendimento_mensal}}</td>
+							<td>
+								<p>
+									<input type="checkbox" id="{{agregado.name}}" ng-model="agregado.selecionado" />
+									<label for="{{agregado.name}}"></label>
+								</p>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+				<div layout="row" layout-align="end end" ng-show="agregados.length >0">
+					<md-button   class="md-icon-button" ng-click="apagar(agregados)" ><md-icon class="black-text">delete</md-icon></md-button>
+				</div>
+
+			</form>
+
+		</div>
+
+
+		<div class="row" ng-show="isChecked"  >
+			<div class="col " align="center">
+				<form name="agregadoForm">
+
+
+					<md-input-container>
+						<label>Nome</label>
+						<input type="text" ng-model="agregado.name"  name="name" required>
+						<div  ng-messages="agregado.name.$error">
+							<div ng-message="required">
+								campo obrigatorio
+							</div>
+
+						</div>
+					</md-input-container>
+
+					<md-input-container>
+						<label>Documento de ID</label>
+						<input type="text" ng-model="agregado.id"  name="id" required>
+						<div  ng-messages="agregado.id.$error">
+							<div ng-message="required">
+								campo obrigatorio
+							</div>
+
+						</div>
+					</md-input-container>
+
+					<md-input-container>
+						<label>Escolaridade</label>
+						<input type="text" ng-model="agregado.escolaridade" required>
+					</md-input-container>
+					<md-input-container>
+						<label>Idade</label>
+						<input type="text" ng-model="agregado.idade" required>
+					</md-input-container>
+					<md-input-container>
+						<label>Parentesco</label>
+						<input type="text" ng-model="agregado.grau_parentesco" required>
+					</md-input-container>
+					<md-input-container>
+						<label>Profissao</label>
+						<input type="text" ng-model="agregado.profissao" required>
+					</md-input-container>
+					<md-input-container>
+						<label>Ocupacao</label>
+						<input type="text" ng-model="agregado.ocupacao" required>
+					</md-input-container>
+					<md-input-container>
+						<label>Rendimento Mensal</label>
+						<input type="text" ng-model="agregado.rendimento_mensal" required>
+					</md-input-container>
+				</form>
+
+
+				<div layout-fill>
+
+
+					<!-- 	<md-button ng-disabled="agregadoForm.$invalid" class="md-button md-raised" ng-click="addPerson(agregado)"><md-icon class="white-text ">person_add</md-icon> <md-tooltip>Adicionar agregado familiar</md-tooltip>Adicionar agregado familiar</md-button> -->
+					<md-button class=" md-raised {{color}} md-primary " ng-disabled="agregadoForm.$invalid" ng-click="addPerson(agregado)" ><md-icon>person_add</md-icon>Adicionar Agregado Familiar</md-button>
+
+
+
+
+				</div>
+
+
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+	<div layout="row"  layout-align="end end" ng-show="step==2">
+		<div class="col">
+			<div class="switch" ng-show="step==2">
+
+				<label style="font-size: 14px;">
+
+					<input type="checkbox"  ng-checked="isChecked " ng-model="isChecked">
+					<span class="lever"></span>
+					Mostrar Formulario
+				</label>
+			</div>
+
+
+
+		</div>
+	</div>

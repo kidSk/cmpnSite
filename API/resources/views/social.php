@@ -29,11 +29,12 @@
 
 
 
-
-	<link rel="stylesheet prefetch" href="css/animations.css">
 	<link rel="stylesheet prefetch" href="css/cmpnStyle.css">
 	<link rel="stylesheet prefetch" href="css/adminStyle.css">
 	<link rel="stylesheet prefetch" href="css/funcionarioStyle.css">
+
+
+	<link rel="stylesheet " href="css/animations.css">
 	
 
 
@@ -193,6 +194,9 @@
 <script src="js/angular/directives/cmpnToolbar.js"></script>
 <script src="js/angular/directives/cmpnUser.js"></script>
 <script src="js/angular/directives/dataDirective.js"></script>
+<script src="js/angular/directives/accao_social/dados_pessoais.js"></script>
+<script src="js/angular/directives/accao_social/inquerito.js"></script>
+<script src="js/angular/directives/accao_social/situacao_habitacional.js"></script>
 <!-- Services-->
 <script src="js/angular/services/authService.js"></script>
 <script src="js/angular/services/departamentoService.js"></script>
@@ -208,6 +212,9 @@
 <script src="js/angular/controllers/assembleiaController.js"></script>
 <script src="js/angular/controllers/atendimentoController.js"></script>
 <script src="js/angular/controllers/socialMainCtrl.js"></script>
+<script src="js/angular/controllers/pensaoCtrl.js"></script>
+<script src="js/angular/controllers/inqueritoCtrl.js"></script>
+
 
 <script src="js/angular/controllers/credencialController.js"></script>
 

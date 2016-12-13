@@ -12,6 +12,15 @@
 					return routeAccessService.checkRoles(authUser.isSocial());
 				}
 			}
+		}).when('/atendimento', {
+			templateUrl: 'views/funcionarios/menu.html',
+			controller: 'atendimentoCtrl',
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
 		})
 		/*.when('/assembleia', {
 			templateUrl: 'views/funcionarios/index.html',
@@ -45,6 +54,15 @@
 					return atendimentoService.listar();
 				}
 			}
+		})	.when('/credencial', {
+			templateUrl: 'views/funcionarios/menu.html',
+			controller: 'credencialCtrl',
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
 		})
 		.when('/criar ficha de credencial', {
 			templateUrl: 'views/funcionarios/accaoSocial/credencial.html',
@@ -55,9 +73,18 @@
 					return routeAccessService.checkRoles(authUser.isSocial());
 				}
 			}
-		}).when('/atendimento', {
+		})	.when('/pedido de pensao', {
 			templateUrl: 'views/funcionarios/menu.html',
-			controller: 'atendimentoCtrl',
+			controller: 'pensaoCtrl',
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
+		}).when('/criar ficha de pedido de pensao', {
+			templateUrl: 'views/funcionarios/accaoSocial/pensao.html',
+			controller: 'pensaoCtrl',
 			controllerAs:'vm',
 			resolve: {
 				checkRoles: function(routeAccessService, authUser) {
@@ -65,6 +92,18 @@
 				}
 			}
 		})
+
+		.when('/inquerito para casos', {
+			templateUrl: 'views/funcionarios/menu.html',
+			controller: 'inqueritoCtrl',
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
+		})
+
 		.otherwise({ redirectTo: '/' })
 
 	}).run(function ($rootScope,$location,authUser,$mdDialog,sessionControl,$route,$window) {

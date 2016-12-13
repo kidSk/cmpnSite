@@ -1,0 +1,55 @@
+	<div class="row">
+		<div class="col l12 s12 m9 " ng-show="step==3">
+			<form name="{{formName}}">
+				<div class="row">
+					<div class="col l6 m6" ng-repeat="field  in field">
+
+						<fieldset >
+							<legend>{{field.categoria}}</legend>
+							<md-radio-group ng-model="field.categoria" ng-hide="habitacao_outros">
+
+								<md-radio-button  ng-repeat="item in field.tipo" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}</md-radio-button >
+
+
+
+
+								</md-radio-group>
+
+
+
+
+								<div class="switch">
+									<h6 class="teal-text">Em caso de Outros </h6>
+
+									<label style="font-size: 14px;">
+
+										<input type="checkbox" ng-model="habitacao_outros">
+										<span class="lever"></span>
+										Adicionar Outros
+									</label>
+								</div>
+
+								<md-input-container ng-hide="!habitacao_outros">
+									<label>Outros</label>
+									<md-icon>add_circle</md-icon>
+									<input type="text" ng-model="situacao_habitacional.tipo">
+
+								</md-input-container>
+
+								<div align="right">
+									<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{field.categoria}}</span></h6>
+								</div>
+								
+
+							</fieldset>
+
+						</div>
+						
+
+					</form>
+					<md-button ng-click="guardar(situacao_habitacional)">guardar</md-button>
+
+
+
+				</div>
+			</div>
