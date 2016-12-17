@@ -1,5 +1,5 @@
 		<div class="row">
-			<div class="col l12 s12 m9 " ng-show="step==2">
+			<div class="col l12 s12 m12 " ng-show="step==2">
 				<fieldset>
 					<legend>Inquerito Social</legend>
 
@@ -34,9 +34,25 @@
 
 
 			</div>
-			<div class="col l12 s12 m9 " ng-show="step==2">
+			<div class="col l12 s12 m12 " ng-show="step==2">
 
 				<caption ><h4 align="center">Composicao do Agregado </h4></caption>
+				<div layout="row"  layout-align="end end" ng-show="step==2">
+					<div class="col">
+						<div class="switch" ng-show="step==2">
+
+							<label style="font-size: 14px;">
+
+								<input type="checkbox"  ng-checked="isChecked " ng-model="isChecked">
+								<span class="lever"></span>
+								adicionar Agregdo Familiar
+							</label>
+						</div>
+
+
+
+					</div>
+				</div>
 				<table datatable="ng" dt-options="vm.dtOptions" dt-columns-defs="vm.dtColumns-Defs"  class="row-border hover" ng-show="agregados.length >0">
 
 					<thead>
@@ -91,7 +107,7 @@
 		</div>
 
 
-		<div class="row" ng-show="isChecked"  >
+		<div class="row" ng-if="step==2" ng-show="isChecked"  >
 			<div class="col " align="center">
 				<form name="agregadoForm">
 
@@ -166,19 +182,3 @@
 
 
 
-	<div layout="row"  layout-align="end end" ng-show="step==2">
-		<div class="col">
-			<div class="switch" ng-show="step==2">
-
-				<label style="font-size: 14px;">
-
-					<input type="checkbox"  ng-checked="isChecked " ng-model="isChecked">
-					<span class="lever"></span>
-					Mostrar Formulario
-				</label>
-			</div>
-
-
-
-		</div>
-	</div>

@@ -29,7 +29,7 @@
 			$scope.step--;
 		}
 
-		$scope.agregados=[];
+		
 		
 		
 		
@@ -47,6 +47,10 @@
 		DTColumnDefBuilder.newColumnDef(7).withClass('none'),
 		DTColumnDefBuilder.newColumnDef(8).withClass('none'),
 		];
+
+		self.save = function(pensao){
+			console.log(pensao)
+		}
 		
 		
 		

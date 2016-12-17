@@ -197,6 +197,8 @@
 <script src="js/angular/directives/accao_social/dados_pessoais.js"></script>
 <script src="js/angular/directives/accao_social/inquerito.js"></script>
 <script src="js/angular/directives/accao_social/situacao_habitacional.js"></script>
+<script src="js/angular/directives/accao_social/tutor.js"></script>
+<script src="js/angular/directives/accao_social/pensionista.js"></script>
 <!-- Services-->
 <script src="js/angular/services/authService.js"></script>
 <script src="js/angular/services/departamentoService.js"></script>
@@ -214,6 +216,7 @@
 <script src="js/angular/controllers/socialMainCtrl.js"></script>
 <script src="js/angular/controllers/pensaoCtrl.js"></script>
 <script src="js/angular/controllers/inqueritoCtrl.js"></script>
+<script src="js/angular/controllers/provaDeVidaCtrl.js"></script>
 
 
 <script src="js/angular/controllers/credencialController.js"></script>

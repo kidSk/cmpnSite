@@ -1,0 +1,35 @@
+
+<form name="tutorForm" ng-show="step==1">
+
+ <md-input-container class="md-icon-float md-block">
+    <label>Nome Completo</label>
+    <md-icon>person_add</md-icon>
+    <input type="text" ng-model="prova_de_vida.tutor.nome" required ng-pattern="vm.string" name="nome">
+    <div ng-messages="tutorForm.nome.$error">
+       <div ng-message="required">
+          Campo nome obrigatorio
+       </div>
+       <div ng-message="pattern">
+         Campo nome deve conter somente letras
+      </div>
+
+   </div>
+</md-input-container>
+<md-input-container class="md-icon-float md-block">
+
+ <label>Numero de B.I.</label>
+ <md-icon>style</md-icon>
+ <input type="text" ng-model="prova_de_vida.tutor.num_bilhete" required ng-pattern="vm.number" name="num_bilhete">
+ <div ng-messages="tutorForm.num_bilhete.$error">
+    <div ng-message="required">
+       Campo nome obrigatorio
+    </div>
+    <div ng-message="pattern">
+       Campo numerico, aceita somente numeros!!
+    </div>
+
+ </div>
+</md-input-container>
+
+
+</form>

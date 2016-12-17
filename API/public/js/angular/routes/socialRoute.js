@@ -102,7 +102,38 @@
 					return routeAccessService.checkRoles(authUser.isSocial());
 				}
 			}
+		}).when('/criar ficha de inquerito de casos', {
+			templateUrl: 'views/funcionarios/inqueritos_de_casos.html',
+			controller: 'inqueritoCtrl',
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
 		})
+
+		.when('/prova de vida', {
+			templateUrl: 'views/funcionarios/menu.html',
+			controller: 'provaDeVidaCtrl',
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
+		}).when('/criar ficha de prova de vida', {
+			templateUrl: 'views/funcionarios/accaoSocial/prova_de_vida.html',
+			controller: 'provaDeVidaCtrl',
+			controllerAs:'vm',
+			resolve: {
+				checkRoles: function(routeAccessService, authUser) {
+					return routeAccessService.checkRoles(authUser.isSocial());
+				}
+			}
+		})
+		
+
 
 		.otherwise({ redirectTo: '/' })
 

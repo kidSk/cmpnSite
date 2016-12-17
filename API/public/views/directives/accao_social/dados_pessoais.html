@@ -2,12 +2,12 @@
 
 
 
-<div class="col l6">
+<div class="col l6 s12 m12">
 	<md-input-container class="md-icon-float md-block">
 
 		<label>Introduzir Nome  Completo</label>
 		<md-icon >person</md-icon>
-		<input type="text" ng-model="pensao.name" name="name" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.name" name="name" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.name.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -23,7 +23,7 @@
 
 		<label>Data de Nascimento</label>
 		<md-icon >cake</md-icon>
-		<input type="date" ng-model="pensao.data_nascimento" name="data_nascimento"  required >
+		<input type="date" ng-model="pensao.dados_pessoais.data_nascimento" name="data_nascimento"  required >
 		<div  ng-messages="dadosPessoais.data_nascimento.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -37,7 +37,7 @@
 
 		<label>Numero de ID</label>
 		<md-icon >style</md-icon>
-		<input type="text" ng-model="pensao.numero_id" name="numero_id" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.numero_id" name="numero_id" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.numer_id.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -52,7 +52,7 @@
 
 		<label>Introduzir Nome  do Pai</label>
 		<md-icon >person_outline</md-icon>
-		<input type="text" ng-model="pensao.nome_pai" name="nome_pai" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.nome_pai" name="nome_pai" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.nome_pai.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -66,7 +66,7 @@
 
 		<label>Residencia</label>
 		<md-icon >store</md-icon>
-		<input type="text" ng-model="pensao.residencia" name="residencia" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.residencia" name="residencia" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.residencia.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -81,7 +81,7 @@
 
 		<label>Freguesia</label>
 		<md-icon >local_activity</md-icon>
-		<input type="text" ng-model="pensao.freguesia" name="freguesia" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.freguesia" name="freguesia" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.freguesia.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -96,7 +96,7 @@
 
 		<label>Iha</label>
 		<md-icon >local_offer</md-icon>
-		<input type="text" ng-model="pensao.ilha" name="ilha" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.ilha" name="ilha" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.ilha.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -111,7 +111,7 @@
 
 		<label>Nivel de Escolaridade</label>
 		<md-icon >library_books</md-icon>
-		<input type="text" ng-model="pensao.nivel_escolaridade" name="nivel_escolaridade" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.nivel_escolaridade" name="nivel_escolaridade" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.nivel_escolaridade.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -126,7 +126,7 @@
 
 		<label>Contacto Fixo</label>
 		<md-icon >phone</md-icon>
-		<input type="text" ng-model="pensao.fixo" name="fixo" required ng-pattern="vm.number">
+		<input type="text" ng-model="pensao.dados_pessoais.fixo" name="fixo" required ng-pattern="vm.number">
 		<div  ng-messages="dadosPessoais.fixo.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -140,7 +140,7 @@
 
 	<fieldset>
 		<legend>Estado Civil</legend>
-		<md-radio-group ng-model="pensao.estado_civil">
+		<md-radio-group ng-model="pensao.dados_pessoais.estado_civil">
 
 			<md-radio-button value="solteiro" class="md-primary">Solteiro (a)</md-radio-button>
 			<md-radio-button value="casado" class="md-primary">Casado (a)</md-radio-button>
@@ -151,7 +151,7 @@
 
 		</md-radio-group>
 
-		{{pensao.estado_civil}}
+		{{pensao.dados_pessoais.estado_civil}}
 
 
 	</fieldset>
@@ -168,14 +168,14 @@
 
 
 
-<div class="col l6">
+<div class="col l6 m12 s12">
 
 
 	<md-input-container class="md-icon-float md-block">
 
 		<label>Alcunha</label>
 		<md-icon >face</md-icon>
-		<input type="text" ng-model="pensao.alcunha" name="alcunha" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.alcunha" name="alcunha" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.alcunha.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -190,7 +190,7 @@
 
 		<label>Escolha o  Sexo !!!</label>
 		<md-icon>wc</md-icon>
-		<md-select ng-model="pensao.sexo" required name="sexo"> 
+		<md-select ng-model="pensao.dados_pessoais.sexo" required name="sexo"> 
 
 			<md-option value="Masculino">Masculino</md-option>
 			<md-option  value="Feminino">Feminino</md-option>
@@ -210,7 +210,7 @@
 
 		<label>Escoha o Tipo de Documento !!!</label>
 		<md-icon>assignment</md-icon>
-		<md-select ng-model="pensao.tipo_documento" required name="tipo_documento"> 
+		<md-select ng-model="pensao.dados_pessoais.tipo_documento" required name="tipo_documento"> 
 
 			<md-option value="bilhete de Identidade">Bilhete de Identidade</md-option>
 			<md-option  value="passaporte">Passaporte</md-option>
@@ -230,7 +230,7 @@
 
 		<label>Introduzir Nome  da Mae</label>
 		<md-icon >person_outline</md-icon>
-		<input type="text" ng-model="pensao.nome_mae" name="nome_mae" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.nome_mae" name="nome_mae" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.nome_mae.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -245,7 +245,7 @@
 
 		<label>Ponto de Referencia</label>
 		<md-icon >store</md-icon>
-		<input type="text" ng-model="pensao.ponto_referencia" name="ponto_referencia" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.ponto_referencia" name="ponto_referencia" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.ponto_referencia.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -260,7 +260,7 @@
 
 		<label>Concelho</label>
 		<md-icon >edit_location</md-icon>
-		<input type="text" ng-model="pensao.concelho" name="concelho" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.concelho" name="concelho" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.concelho.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -275,7 +275,7 @@
 
 		<label>Naturalidade</label>
 		<md-icon >texture</md-icon>
-		<input type="text" ng-model="pensao.name" name="name" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.name" name="name" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.name.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -290,7 +290,7 @@
 
 		<label>Profissao</label>
 		<md-icon >local_offer</md-icon>
-		<input type="text" ng-model="pensao.profissao" name="profissao" required ng-pattern="vm.string">
+		<input type="text" ng-model="pensao.dados_pessoais.profissao" name="profissao" required ng-pattern="vm.string">
 		<div  ng-messages="dadosPessoais.profissao.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -305,7 +305,7 @@
 
 		<label>Contacto Movel</label>
 		<md-icon >phonelink_ring</md-icon>
-		<input type="text" ng-model="pensao.movel" name="movel" required ng-pattern="vm.number">
+		<input type="text" ng-model="pensao.dados_pessoais.movel" name="movel" required ng-pattern="vm.number">
 		<div  ng-messages="dadosPessoais.movel.$error">
 			<div ng-message="required">
 				campo obrigatorio
@@ -319,54 +319,57 @@
 	<fieldset>
 		<legend>Dados do Conjuge / Companheiro</legend>
 
-		<md-input-container class="md-icon-float md-block" ng-hide="viuvo">
+		<div class="col l12 m12 s12">
 
-			<label>Nome do Conjuge</label>
-			<md-icon >person</md-icon>
-			<input type="text" ng-model="pensao.none_conjuge" name="nome_conjuge" ng-pattern="vm.string">
-			<div  ng-messages="dadosPessoais.nome_conjuge.$error">
+			<md-input-container class="md-icon-float md-block" ng-hide="viuvo">
 
-				<div ng-message="pattern">
-					o nome deve conter somente letras
+				<label>Nome do Conjuge</label>
+				<md-icon >person</md-icon>
+				<input type="text" ng-model="pensao.dados_pessoais.none_conjuge" name="nome_conjuge" ng-pattern="vm.string">
+				<div  ng-messages="dadosPessoais.nome_conjuge.$error">
+
+					<div ng-message="pattern">
+						o nome deve conter somente letras
+					</div>
 				</div>
-			</div>
 
 
-		</md-input-container> 
-		<md-input-container class="md-icon-float md-block">
+			</md-input-container> 
+			<md-input-container class="md-icon-float md-block">
 
-			<label>Escoha o Tipo de Documento !!!</label>
-			<md-icon>assignment</md-icon>
-			<md-select ng-model="pensao.tipo_documento_conjuge" required name="tipo_documento_conjuge"> 
+				<label>Escoha o Tipo de Documento !!!</label>
+				<md-icon>assignment</md-icon>
+				<md-select ng-model="pensao.dados_pessoais.tipo_documento_conjuge" required name="tipo_documento_conjuge"> 
 
-				<md-option value="bilhete de Identidade">Bilhete de Identidade</md-option>
-				<md-option  value="passaporte">Passaporte</md-option>
-			</md-select>
+					<md-option value="bilhete de Identidade">Bilhete de Identidade</md-option>
+					<md-option  value="passaporte">Passaporte</md-option>
+				</md-select>
 
 
 
-			<div  ng-messages="dadosPessoais.tipo_documento_conjuge.$error">
-				<div ng-message="required">
-					campo obrigatorio
+				<div  ng-messages="dadosPessoais.tipo_documento_conjuge.$error">
+					<div ng-message="required">
+						campo obrigatorio
+					</div>
 				</div>
-			</div>
 
-		</md-input-container><br>
-		<md-input-container class="md-icon-float md-block">
+			</md-input-container><br>
+			<md-input-container class="md-icon-float md-block">
 
-			<label>Numero de ID</label>
-			<md-icon >style</md-icon>
-			<input type="text" ng-model="pensao.numero_id" name="numero_id" required ng-pattern="vm.string">
-			<div  ng-messages="dadosPessoais.numer_id.$error">
-				<div ng-message="required">
-					campo obrigatorio
+				<label>Numero de ID</label>
+				<md-icon >style</md-icon>
+				<input type="text" ng-model="pensao.dados_pessoais.numero_id" name="numero_id" required ng-pattern="vm.string">
+				<div  ng-messages="dadosPessoais.numer_id.$error">
+					<div ng-message="required">
+						campo obrigatorio
+					</div>
+					<div ng-message="pattern">
+						o nome deve conter somente letras
+					</div>
 				</div>
-				<div ng-message="pattern">
-					o nome deve conter somente letras
-				</div>
-			</div>
 
-		</md-input-container> 
+			</md-input-container> 
+		</div>
 	</fieldset>
 
 
@@ -384,11 +387,11 @@
 
 </div>
 <div class="row " ng-if="step == 1">
-	<div class="col l6 m12">
+	<div class="col l6 m12 s12">
 
 		<fieldset>
 			<legend>Categoria do requerente</legend>
-			<md-radio-group ng-model="pensao.categoria">
+			<md-radio-group ng-model="pensao.dados_pessoais.categoria">
 
 				<md-radio-button value="Idoso" class="md-primary">Idoso</md-radio-button>
 				<md-radio-button value="Deficiente" class="md-primary">Deficiente</md-radio-button>
@@ -409,31 +412,31 @@
 		<fieldset>
 			<legend>Rendimento do seu agregado familiar provem de:</legend>
 			<p>
-				<input type="checkbox" id="salario" ng-model="pensao.rendimento_salario" ng-true-value="'salario'" />
+				<input type="checkbox" id="salario" ng-model="pensao.dados_pessoais.rendimento_salario" ng-true-value="'salario'" />
 				<label for="salario">Salario</label>
 			</p>
 			<p>
-				<input type="checkbox" id="renda" ng-model="pensao.rendimento_renda" ng-true-value="'renda'"/>
+				<input type="checkbox" id="renda" ng-model="pensao.dados_pessoais.rendimento_renda" ng-true-value="'renda'"/>
 				<label for="renda">Renda</label>
 			</p>
 			<p>
-				<input type="checkbox" id="pensao" ng-model="pensao.rendimento_pensao" ng-true-value="'pensao'"/>
-				<label for="pensao">Pensao</label>
+				<input type="checkbox" id="pensao.dados_pessoais" ng-model="pensao.dados_pessoais.rendimento_pensao.dados_pessoais" ng-true-value="'pensao.dados_pessoais'"/>
+				<label for="pensao.dados_pessoais">pensao.dados_pessoais</label>
 			</p>
 			<p>
-				<input type="checkbox" id="remessa" ng-model="pensao.rendimento_remessa" ng-true-value="'remessa'"/>
+				<input type="checkbox" id="remessa" ng-model="pensao.dados_pessoais.rendimento_remessa" ng-true-value="'remessa'"/>
 				<label for="remessa">Remessa</label>
 			</p>
 			<p>
-				<input type="checkbox" id="outro" ng-model="pensao.rendimento_outro" ng-true-value="'outro'"/>
+				<input type="checkbox" id="outro" ng-model="pensao.dados_pessoais.rendimento_outro" ng-true-value="'outro'"/>
 				<label for="outro">Outro</label>
 			</p>
 			<p>
-				<input type="checkbox" id="nao_dispoe" ng-model="pensao.rendimento_nao_dispoe" ng-true-value="'nao dispoe'"  ng-checked="pensao.rendimento_nao_dispoe"/>
+				<input type="checkbox" id="nao_dispoe" ng-model="pensao.dados_pessoais.rendimento_nao_dispoe" ng-true-value="'nao dispoe'"  ng-checked="pensao.dados_pessoais.rendimento_nao_dispoe"/>
 				<label for="nao_dispoe" >Nao dispoe</label>
 			</p>
 
-			<p class="red-text" ng-if="pensao.rendimento_nao_dispoe" class="page-contact">
+			<p class="red-text" ng-if="pensao.dados_pessoais.rendimento_nao_dispoe" class="page-contact">
 				Nao possuindo rendimento, por favor indicar na OBS como sobrevive
 				o agregado familiar
 
@@ -443,5 +446,6 @@
 
 
 	</div>
+	{{pensao}}
 	</div	
 

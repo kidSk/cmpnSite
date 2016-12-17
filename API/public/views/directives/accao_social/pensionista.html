@@ -1,0 +1,96 @@
+<form name="pensionistaForm" ng-show="step==2">
+
+  <md-input-container class="md-icon-float md-block">
+   <label>Nome Completo</label>
+   <md-icon>person_add</md-icon>
+   <input type="text" ng-model="prova_de_vida.pensionista.nome" required ng-pattern="vm.string" name="nome">
+   <div ng-messages="pensionistaForm.nome.$error">
+    <div ng-message="required">
+     Campo nome obrigatorio
+   </div>
+   <div ng-message="pattern">
+     Campo nome deve conter somente letras
+   </div>
+
+ </div>
+</md-input-container>
+<md-input-container class="md-icon-float md-block">
+
+  <label>Numero de B.I.</label>
+  <md-icon>style</md-icon>
+  <input type="text" ng-model="prova_de_vida.pensionista.num_bilhete" required ng-pattern="vm.number" name="num_bilhete">
+  <div ng-messages="pensionistaForm.num_bilhete.$error">
+   <div ng-message="required">
+    Campo nome obrigatorio
+  </div>
+  <div ng-message="pattern">
+    Campo numerico, aceita somente numeros!!
+  </div>
+
+</div>
+</md-input-container>
+<md-input-container class="md-icon-float md-block">
+
+  <label>Residencia</label>
+  <md-icon>home</md-icon>
+  <input type="text" ng-model="prova_de_vida.pensionista.residencia" required ng-pattern="vm.string" name="residencia">
+  <div ng-messages="pensionistaForm.residencia.$error">
+   <div ng-message="required">
+    Campo nome obrigatorio
+  </div>
+  <div ng-message="pattern">
+    Campo residencia deve conter somente letras
+  </div>
+
+</div>
+</md-input-container>
+
+<md-input-container class="md-icon-float md-block">
+
+  <label>Ponto de Referencia</label>
+  <md-icon>store</md-icon>
+  <input type="text" ng-model="prova_de_vida.pensionista.ponto_referencia" required ng-pattern="vm.string" name="punti_referencia">
+  <div ng-messages="pensionistaForm.ponto_referencia.$error">
+   <div ng-message="required">
+    Campo nome obrigatorio
+  </div>
+  <div ng-message="pattern">
+   Campo Ponto de Referencia deve conter somente letras
+ </div>
+
+</div>
+</md-input-container>
+<md-input-container class="md-icon-float md-block">
+
+  <label>Contacto</label>
+  <md-icon>phone</md-icon>
+  <input type="text" ng-model="prova_de_vida.pensionista.contacto" required ng-pattern="vm.number" name="contacto">
+  <div ng-messages="pensionistaForm.contacto.$error">
+   <div ng-message="required">
+    Campo nome obrigatorio
+  </div>
+  <div ng-message="pattern">
+    Campo numerico, aceita somente numeros!!
+  </div>
+
+</div>
+</md-input-container>
+<md-input-container class="md-icon-float md-block">
+
+  <label>Situacao do Pensionista</label>
+  <md-icon>assignment</md-icon>
+  <input type="text" ng-model="prova_de_vida.pensionista.situacao" required ng-pattern="vm.string" name="situacao">
+  <div ng-messages="pensionistaForm.situacao.$error">
+   <div ng-message="required">
+    Campo Situacao do Pensionista obrigatorio
+  </div>
+  <div ng-message="pattern">
+    Campo Ponto de Referencia deve conter somente letras
+  </div>
+
+</div>
+</md-input-container>
+
+
+
+</form>

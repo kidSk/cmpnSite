@@ -6,27 +6,30 @@
 
     self.activeTab = function(viewLocation){
 
-     if($location.path()=="/criar ficha de atendimento" || $location.path()=="/lista de atendimentos" || $location.path()=="/atendimento"){
-      $scope.color="blue";
-    }
-    if($location.path()=="/criar ficha de credencial" || $location.path()=="/credencial" ){
-      $scope.color="teal";
-    }
-    if($location.path()=="/pedido de pensao" || $location.path()=="/criar ficha de pedido de pensao"){
-      $scope.color="red";
-    }   
-    if($location.path()=="/inquerito para casos"){
-      $scope.color="purple";
-    }
-    if($location.path()=="/"){
-      $scope.color="green";
-    }
-    return viewLocation = $location.path();
+       if($location.path()=="/criar ficha de atendimento" || $location.path()=="/lista de atendimentos" || $location.path()=="/atendimento"){
+          $scope.color="blue";
+      }
+      if($location.path()=="/criar ficha de credencial" || $location.path()=="/credencial" ){
+          $scope.color="teal";
+      }
+      if($location.path()=="/pedido de pensao" || $location.path()=="/criar ficha de pedido de pensao"){
+          $scope.color="red";
+      }   
+      if($location.path()=="/inquerito para casos"){
+          $scope.color="purple";
+      }
+      if($location.path()=="/prova de vida" || $location.path()=="/criar ficha de prova de vida"){
+          $scope.color="orange";
+      }
+      if($location.path()=="/"){
+          $scope.color="green";
+      }
+      return viewLocation = $location.path();
 
   }
   $scope.clean = function(){
-   $scope.search = !$scope.search
-   $scope.procurar=null
+     $scope.search = !$scope.search
+     $scope.procurar=null
 
 
 
@@ -68,54 +71,21 @@
          {name: 'Pedido de Pensao', icon: 'group', color:'red-text', link:"#/pedido de pensao"},
          {name: 'Inquerito para Casos', icon: 'airplay',link:'#/inquerito para casos', color:'purple-text'},
 
-         {name: 'Centro de Dia', icon: 'business', color:'pink-text',click:function(ev){
-          $mdDialog.show(
-            $mdDialog.alert()
-            .parent(angular.element(document.querySelector('#popupContainer')))
-            .clickOutsideToClose(true)
-            .title('ALERTA')
-            .textContent('Disponivel Brevemente')
-            .ariaLabel('Alert Dialog')
-            .ok('OK')
-            .targetEvent(ev)
-            );
-        }},
-        {name: 'Galeria', icon: 'camera_alt', color:'orange-text',click:function(ev){
-          $mdDialog.show(
-            $mdDialog.alert()
-            .parent(angular.element(document.querySelector('#popupContainer')))
-            .clickOutsideToClose(true)
-            .title('ALERTA')
-            .textContent('Disponivel Brevemente')
-            .ariaLabel('Alert Dialog')
-            .ok('OK')
-            .targetEvent(ev)
-            );
-        }},
-        {name: 'Contactos', icon: 'contact_mail',click:function(ev){
-          $mdDialog.show(
-            $mdDialog.alert()
-            .parent(angular.element(document.querySelector('#popupContainer')))
-            .clickOutsideToClose(true)
-            .title('ALERTA')
-            .textContent('Disponivel Brevemente')
-            .ariaLabel('Alert Dialog')
-            .ok('OK')
-            .targetEvent(ev)
-            );
-        }},
+         {name: 'Centro de Dia', icon: 'business', color:'pink-text'},
+         {name: 'Prova de Vida', icon: 'directions_walk', color:'orange-text',link:'#/prova de vida'},
+         {name: 'Contactos', icon: 'contact_mail'},
 
 
 
-        ]; 
+         ]; 
 
 
 
 
 
-      }
+     }
 
-      angular.module('socialApp').controller('socialMainCtrl', socialMainCtrl);
+     angular.module('socialApp').controller('socialMainCtrl', socialMainCtrl);
 
 
-    })();
+ })();

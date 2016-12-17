@@ -6,6 +6,7 @@
 			templateUrl:'views/directives/accao_social/inquerito_social.html',
 			link: function($scope,$element,$attrs){
 				$scope.formName = "inqueritoSocialForm";
+				$scope.agregados=[];
 
 
 				$scope.addPerson = function(agregado) {

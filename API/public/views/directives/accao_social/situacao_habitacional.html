@@ -1,55 +1,464 @@
 	<div class="row">
-		<div class="col l12 s12 m9 " ng-show="step==3">
-			<form name="{{formName}}">
+		<div class="col l12 s12 m12 " ng-show="step==3">
+			<form name="situacaoHabitacionalForm">
 				<div class="row">
-					<div class="col l6 m6" ng-repeat="field  in field">
+					<div class="col l6 m12 s12">
 
 						<fieldset >
-							<legend>{{field.categoria}}</legend>
-							<md-radio-group ng-model="field.categoria" ng-hide="habitacao_outros">
+							<legend>Tipo de Habitacao</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.tipo_de_habitacao" ng-hide="tipo">
+								<md-radio-button ng-repeat="item in tipoDeHabitacao" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+							<div class="switch">
+								<h6 class="teal-text">Em caso de outro especifique</h6>
 
-								<md-radio-button  ng-repeat="item in field.tipo" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}</md-radio-button >
+								<label style="font-size: 14px;">
+
+									<input type="checkbox" ng-model="tipo">
+									<span class="lever"></span>
+									Outro
+								</label>
+							</div>
+
+							<md-input-container ng-hide="!tipo">
+								<label>Adiconar Outro</label>
+								<md-icon>add_box</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.tipo_de_habitacao">
+
+							</md-input-container>
+
+							<div align="right" ng-if="pensao.situacao_habitacional.tipo_de_habitacao">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.tipo_de_habitacao}}</span></h6>
+							</div>
 
 
+						</fieldset>
+						<br>
 
+					</div>
+					<div class="col l6 m12 s12">
 
-								</md-radio-group>
+						<fieldset >
+							<legend>Vive em casa</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.vive_em_casa" ng-hide="vive_em">
+								<md-radio-button ng-repeat="item in casa" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+							<div class="switch">
+								<h6 class="teal-text">Em caso de arrendamento especifique o montante</h6>
 
+								<label style="font-size: 14px;">
 
+									<input type="checkbox" ng-model="vive_em">
+									<span class="lever"></span>
+									Montante
+								</label>
+							</div>
 
-
-								<div class="switch">
-									<h6 class="teal-text">Em caso de Outros </h6>
-
-									<label style="font-size: 14px;">
-
-										<input type="checkbox" ng-model="habitacao_outros">
-										<span class="lever"></span>
-										Adicionar Outros
-									</label>
+							<md-input-container ng-hide="!vive_em">
+								<label>Adiconar Renda</label>
+								<md-icon>add_box</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.renda" ng-patter="vm-number" name="renda">
+								<div ng-messages="situacaoHabitacionalForm.renda.$error">
+									<div ng-message="pattern">
+										campo numerico, somente numeros!!!
+									</div>
+									
 								</div>
 
-								<md-input-container ng-hide="!habitacao_outros">
-									<label>Outros</label>
-									<md-icon>add_circle</md-icon>
-									<input type="text" ng-model="situacao_habitacional.tipo">
+							</md-input-container>
 
-								</md-input-container>
+							<div align="right" ng-if="pensao.situacao_habitacional.vive_em_casa">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.vive_em_casa}}</span></h6>
+								<h6 ><span style="opacity: 0.3"  ng-if="pensao.situacao_habitacional.renda">Montante de Renda</span>: <span class="teal-text">{{pensao.situacao_habitacional.renda}}</span></h6>
+							</div>
 
-								<div align="right">
-									<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{field.categoria}}</span></h6>
+
+						</fieldset>
+						<br>
+
+					</div>
+
+					<div class="col l6 m12 s12">
+
+						<fieldset >
+							<legend>Compartimentos da Habitacao</legend>
+							<md-input-container class="md-icon-float md-block">
+
+								<label>Numero de Divisoes</label>
+								<md-icon >aspect_ratio</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.compartimentos.numero_divisoes" name="numero_divisoes" required ng-pattern="vm.number">
+								<div  ng-messages="situacaoHabitacionalForm.numero_divisoes.$error">
+									<div ng-message="required">
+										campo obrigatorio
+									</div>
+									<div ng-message="pattern">
+										campo numerico, apenas numeros !!!
+									</div>
 								</div>
-								
 
-							</fieldset>
+							</md-input-container> 
+							<md-input-container class="md-icon-float md-block">
 
-						</div>
-						
+								<label>Numero de Quartos de Dormir</label>
+								<md-icon >aspect_ratio</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.compartimentos.quartos_durmir" name="quartos_durmir" required ng-pattern="vm.number">
+								<div  ng-messages="situacaoHabitacionalForm.quartos_durmir.$error">
+									<div ng-message="required">
+										campo obrigatorio
+									</div>
+									<div ng-message="pattern">
+										campo numerico, apenas numeros !!!
+									</div>
+								</div>
 
-					</form>
-					<md-button ng-click="guardar(situacao_habitacional)">guardar</md-button>
+							</md-input-container> 
+							<md-input-container class="md-icon-float md-block">
+
+								<label>Numero de Casas de Banho</label>
+								<md-icon >aspect_ratio</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.compartimentos.casa_de_banho" name="casa_de_banho" required ng-pattern="vm.number">
+								<div  ng-messages="situacaoHabitacionalForm.casa_de_banho.$error">
+									<div ng-message="required">
+										campo obrigatorio
+									</div>
+									<div ng-message="pattern">
+										campo numerico, apenas numeros !!!
+									</div>
+								</div>
+
+							</md-input-container> 
+
+
+						</fieldset>
+						<br>
+
+					</div>
+					<div class="col l6 m12 s12">
+
+						<fieldset >
+							<legend>Material predominante nas paredes</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.material_paredes" ng-hide="_paredes">
+								<md-radio-button ng-repeat="item in paredes" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+							<div class="switch">
+								<h6 class="teal-text">Em caso de outro especifique</h6>
+
+								<label style="font-size: 14px;">
+
+									<input type="checkbox" ng-model="_paredes">
+									<span class="lever"></span>
+									Outro
+								</label>
+							</div>
+
+							<md-input-container ng-hide="!_paredes">
+								<label>Adiconar Outro</label>
+								<md-icon>add_box</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.material_paredes">
+
+							</md-input-container>
+
+							<div align="right" ng-if="pensao.situacao_habitacional.material_paredes">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.material_paredes}}</span></h6>
+							</div>
+
+
+						</fieldset>
+						<br>
+
+					</div>
+					<div class="col l6 m12 s12">
+
+						<fieldset >
+							<legend>Material predominante no Chao</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.material_chao" ng-hide="_chao">
+								<md-radio-button ng-repeat="item in chao" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+							<div class="switch">
+								<h6 class="teal-text">Em caso de outro especifique</h6>
+
+								<label style="font-size: 14px;">
+
+									<input type="checkbox" ng-model="_chao">
+									<span class="lever"></span>
+									Outro
+								</label>
+							</div>
+
+							<md-input-container ng-hide="!_chao">
+								<label>Adiconar Outro</label>
+								<md-icon>add_box</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.material_chao">
+
+							</md-input-container>
+
+							<div align="right" ng-if="pensao.situacao_habitacional.material_chao">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.material_chao}}</span></h6>
+							</div>
+
+
+						</fieldset>
+						<br>
+
+					</div>
+					<div class="col l6 m12 s12">
+
+						<fieldset >
+							<legend>Estado de Conservacao da Habitacao</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.estado_habitacao">
+								<md-radio-button ng-repeat="item in estado" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+
+							<div align="right" ng-if="pensao.situacao_habitacional.estado_habitacao">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.estado_habitacao}}</span></h6>
+							</div>
+
+
+						</fieldset>
+						<br>
+
+					</div>
+
+					<div class="col l6 m12 s12">
+
+						<fieldset >
+							<legend>Fonte de Energia Utilizada Para Iluminacao</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.iluminacao" ng-hide="_iluminacao">
+								<md-radio-button ng-repeat="item in iluminacao" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+							<div class="switch">
+								<h6 class="teal-text">Em caso de outro especifique</h6>
+
+								<label style="font-size: 14px;">
+
+									<input type="checkbox" ng-model="_iluminacao">
+									<span class="lever"></span>
+									Outro
+								</label>
+							</div>
+
+							<md-input-container ng-hide="!_iluminacao">
+								<label>Adiconar Outro</label>
+								<md-icon>add_box</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.iluminacao">
+
+							</md-input-container>
+
+							<div align="right" ng-if="pensao.situacao_habitacional.iluminacao">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.iluminacao}}</span></h6>
+							</div>
+
+
+						</fieldset>
+						<br>
+
+					</div>
+
+
+					<div class="col l6 m12 s12">
+
+						<fieldset >
+							<legend>Fonte de Energia Utilizada Para Cozinhar</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.cozinhar" ng-hide="_cozinhar">
+								<md-radio-button ng-repeat="item in cozinhar" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+							<div class="switch">
+								<h6 class="teal-text">Em caso de outro especifique</h6>
+
+								<label style="font-size: 14px;">
+
+									<input type="checkbox" ng-model="_cozinhar">
+									<span class="lever"></span>
+									Outro
+								</label>
+							</div>
+
+							<md-input-container ng-hide="!_cozinhar">
+								<label>Adiconar Outro</label>
+								<md-icon>add_box</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.iluminacao">
+
+							</md-input-container>
+
+							<div align="right" ng-if="pensao.situacao_habitacional.cozinhar">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.cozinhar}}</span></h6>
+							</div>
+
+
+						</fieldset>
+						<br>
+
+					</div>
+
+
+					<div class="col l6 m12 s12">
+
+						<fieldset >
+							<legend>Fonte de Abastecimento</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.abastecimento" ng-hide="_abastecimento">
+								<md-radio-button ng-repeat="item in abastecimento" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+							<div class="switch">
+								<h6 class="teal-text">Em caso de outro especifique</h6>
+
+								<label style="font-size: 14px;">
+
+									<input type="checkbox" ng-model="_abastecimento">
+									<span class="lever"></span>
+									Outro
+								</label>
+							</div>
+
+							<md-input-container ng-hide="!_abastecimento">
+								<label>Adiconar Outro</label>
+								<md-icon>add_box</md-icon>
+								<input type="text" ng-model="pensao.situacao_habitacional.iluminacao">
+
+							</md-input-container>
+
+							<div align="right" ng-if="pensao.situacao_habitacional.abastecimento">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.abastecimento}}</span></h6>
+							</div>
+
+
+						</fieldset>
+						<br>
+
+					</div>
+					<div class="col l6 m12 s12">
+
+						<fieldset >
+							<legend>A Cozinha e de Uso</legend>
+							<md-radio-group ng-model="pensao.situacao_habitacional.uso_cozinha">
+								<md-radio-button ng-repeat="item in cozinha" ng-value="item.name" class="md-primary" aria-label="item.name" >{{item.name}}
+								</md-radio-button >
+							</md-radio-group>
+
+							<div align="right" ng-if="pensao.situacao_habitacional.uso_cozinha">
+								<h6 ><span style="opacity: 0.3">Opccao Selecionada </span>: <span class="teal-text">{{pensao.situacao_habitacional.uso_cozinha}}</span></h6>
+							</div>
+
+
+						</fieldset>
+						<br>
+
+					</div>
+
+
 
 
 
 				</div>
-			</div>
+				<div class="row">
+
+					<fieldset >
+						<legend>Bens e Servicos Existentes nao Agregado Familiar</legend>
+						<div class="col l4 m6">
+
+
+
+							<p>
+								<input type="checkbox" id="frigorifico" ng-model="pensao.situacao_habitacional.bens.frigorifico" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="frigorifico">Frigorifico</label>
+							</p>
+							<p>
+								<input type="checkbox" id="arca" ng-model="pensao.situacao_habitacional.bens.arca" ng-true-value="'sim'" />
+								<label for="arca">Arca Congeladora</label>
+							</p>
+							<p>
+								<input type="checkbox" id="fogao" ng-model="pensao.situacao_habitacional.bens.fogao" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="fogao">Fogao a gas / Campingas</label>
+							</p>
+							<p>
+								<input type="checkbox" id="maquina" ng-model="pensao.situacao_habitacional.bens.maquina_de_lavar" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="maquina">Maquina de Lavar Ropa</label>
+							</p>
+
+
+						</div>
+						<div class="col m6 l4">
+							<p>
+								<input type="checkbox" id="ar" ng-model="pensao.situacao_habitacional.bens.ar_condicionado" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="ar">Ar Condicionado</label>
+							</p>
+							<p>
+								<input type="checkbox" id="televisor" ng-model="pensao.situacao_habitacional.bens.televisor" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="televisor">Televisor</label>
+							</p>
+							<p>
+								<input type="checkbox" id="radio" ng-model="pensao.situacao_habitacional.bens.radio" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="radio">Radio</label>
+							</p>
+							<p>
+								<input type="checkbox" id="telefone" ng-model="pensao.situacao_habitacional.bens.telefone_fixo" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="telefone">Telefone Fixo</label>
+							</p>
+
+
+						</div>
+						<div class="col m6 l4">
+							<p>
+								<input type="checkbox" id="pc" ng-model="pensao.situacao_habitacional.bens.computador" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="pc">Computador / Portatil</label>
+							</p>
+							<p>
+								<input type="checkbox" id="internet" ng-model="pensao.situacao_habitacional.bens.internet" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="internet">Internet</label>
+							</p>
+							<p>
+								<input type="checkbox" id="acesso" ng-model="pensao.situacao_habitacional.bens.tv_por_assinatura" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="acesso">Tv por assinatura</label>
+							</p>
+							<p>
+								<input type="checkbox" id="automovel" ng-model="pensao.situacao_habitacional.bens.automovel" ng-true-value="'sim'" ng-false-value="'nao'"/>
+								<label for="automovel">Automovel</label>
+							</p>
+
+						</div>
+					</fieldset>
+					
+					<br>
+
+
+					
+					<form class="col s12 ">
+						<div class="switch" align="right">
+
+							<label style="font-size: 14px;">
+
+								<input type="checkbox" ng-model="obs1">
+								<span class="lever"></span>
+								Observacao
+							</label>
+						</div>
+						<fieldset ng-show="obs1">
+							<div class="row" ">
+								<div class="input-field col s12 l12">
+									<textarea id="textarea1" class="materialize-textarea" ng-model="pensao.situacao_habitacional.obs"></textarea>
+									<label for="textarea1">Indique a sua Observacao</label>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+
+					{{pensao}}
+				</div>
+
+
+
+
+			</form>
+
+
+
+
+		</div>
+	</div>
