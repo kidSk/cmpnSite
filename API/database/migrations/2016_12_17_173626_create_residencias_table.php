@@ -14,6 +14,13 @@ class CreateResidenciasTable extends Migration
     {
         Schema::create('residencias', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('zona');
+            $table->string('freguesia');
+            $table->string('concelho');
+            $table->string('ilha');
+            $table->string('ponto_referencia');
+            $table->integer('people_id')->unsigned();
+            $table->foreign('people_id')->references('id')->on('people');
             $table->timestamps();
         });
     }

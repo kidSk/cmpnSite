@@ -45,6 +45,15 @@ Route::group(['middleware'=>'cors'],function(){
 	Route::resource('usuariosRegistados','usuariosRegistadosController');
 	Route::resource('mensagemPresidente','mensagemPresidenteController');
 	Route::resource('atendimento','atendimentoController');
+	//person route
+	Route::resource('person','personController');
+	Route::resource('person/{id}/residencia','personController@residencia');
+	Route::resource('person/{id}/contact','personController@contact');
+	//tutor route
+	Route::resource('tutor','tutorController');
+	Route::resource('tutor/{id}/people','tutorController@people');
+	//pensionista route
+	Route::resource('pensionista','pensionistaController');
 	Route::get('users','loginController@index');
 	Route::get('users/{id}','loginController@show');
 	

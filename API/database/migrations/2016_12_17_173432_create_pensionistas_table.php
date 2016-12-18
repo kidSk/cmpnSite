@@ -14,6 +14,12 @@ class CreatePensionistasTable extends Migration
     {
         Schema::create('pensionistas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('situacao');
+            $table->integer('people_id')->unsigned();
+            $table->foreign('people_id')->references('id')->on('people');
+            $table->integer('tutor_id')->unsigned();
+            $table->foreign('tutor_id')->references('id')->on('tutors');
+
             $table->timestamps();
         });
     }

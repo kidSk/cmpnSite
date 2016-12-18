@@ -27,7 +27,8 @@ angular.module('socialApp', [
 	'datatables',
 	'datatables.buttons',
 	'datatables.bootstrap',
-	'datatables.columnfilter'
+	'datatables.columnfilter',
+	'personService',
 	
 	
 

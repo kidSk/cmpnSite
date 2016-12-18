@@ -1,5 +1,5 @@
 (function(){
-	function provaDeVidaCtrl($scope,$location,$http,$resource){
+	function provaDeVidaCtrl($scope,$location,$http,personService){
 		var self =this;
 		self.color ="orange"
 		$scope.card=[
@@ -28,8 +28,10 @@
 		
 
 		self.save = function(data){
+			personService.guardar(data);
+
 			console.log(data);
-			console.log(data.pensionista);
+
 			
 
 		}

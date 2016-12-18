@@ -21,7 +21,7 @@
 
 					<md-button  class="{{color}}-text" ng-click="prevStep()" ng-hide="step==1"><md-icon class="{{color}}-text material-icons">arrow_left</md-icon>voltar</md-button>
 					<md-button class="md-raised" ng-hide="step==2" ng-class="{'{{color}} white-text' : tutorForm.$valid}" ng-click="nextStep()"  ng-disabled="tutorForm.$invalid">proximo<md-icon ng-class="{'white-text' : tutorForm.$valid}">arrow_right</md-icon></md-button>     
-					<md-button class="md-raised" ng-show="step==2" ng-class="{'{{color}} white-text' : pensionistaForm.$valid}" ng-click="vm.save(prova_de_vida)" ng-disabled="pensionistaForm.$invalid">Guardar <md-icon ng-class="{'white-text' : pensionistaForm.$valid}">save</md-icon></md-button>     
+					<md-button class="md-raised" ng-show="step==2" ng-class="{'{{color}} white-text' : pensionistaForm.$valid}" ng-click="vm.save(people)" ng-disabled="pensionistaForm.$valid">Guardar <md-icon ng-class="{'white-text' : pensionistaForm.$valid}">save</md-icon></md-button>     
 
 
 
